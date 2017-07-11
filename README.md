@@ -1,6 +1,6 @@
 # 4.0 Schools WordPress Theme
 
-This public repo contains the _upcoming_ WordPress theme for [4pt0.org].
+This public repo contains the _upcoming_ WordPress theme for [4pt0.org]. This theme is designed with young creatives from [YEP Design Works].
 
 ## Issue Reporting and Questions
 Issues and questions can be added under this repo's ["Issues" tab]. Labels should be added to each issue and issues can be assigned to particular developers. [@bbertucc] is the primary developer of the 4.0 Schools project. Checkout the [repo wiki] for helpful guides.
@@ -22,14 +22,14 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 ## Core Dev/Design Team
 - Blake Bertuccelli ([@bbertucc]), Lead Dev / Designer
 - Taylor Osbey ([@tosbey1]), Apprentice Dev
-- Jihad Doucette
-- Tevin Clark
-- Alberta Wright
+- Jihad Doucette, YEP Apprentice Designer
+- Tevin Clark, YEP Apprentice Designer
+- Alberta Wright, YEP Design Director
 - **You?** Start contributing and we'll add your name.
 
+[YEP Design Works]:http://yepdesignworks.org
 [repo wiki]:https://github.com/4pt0/4pt0-theme/wiki
 [Advanced Custom Fields]:https://www.advancedcustomfields.com/
-[Co-Authors Plus]:https://wordpress.org/plugins/co-authors-plus/
 [4pt0.org]:http://4pt0.org
 [Sage]:https://github.com/roots/sage
 [_s]:https://github.com/Automattic/_s
