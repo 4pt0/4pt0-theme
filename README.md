@@ -1,4 +1,4 @@
-# ViaNolaVie WordPress Theme
+# 4.0 Schools WordPress Theme
 
 This public repo contains the _upcoming_ WordPress theme for [4pt0.org].
 
