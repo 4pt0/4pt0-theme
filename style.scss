@@ -1,0 +1,54 @@
+/*!
+Theme Name: 4pt0
+Theme URI: http://decubing.com/
+Author: Decubing
+Author URI: http://4pt0.org
+Description: A Theme for 4.0 Schools
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: decubing
+Tags:
+*/
+
+/*--------------------------------------------------------------
+# Standard Variables
+--------------------------------------------------------------*/
+@import "sass/standards";
+
+/*--------------------------------------------------------------
+# Helper Classes
+--------------------------------------------------------------*/
+@import "sass/helper_classes/animate";
+@import "sass/helper_classes/backgrounds";
+@import "sass/helper_classes/effects";
+@import "sass/helper_classes/grid";
+@import "sass/helper_classes/responsive";
+@import "sass/helper_classes/sizing_and_alignments";
+@import "sass/helper_classes/wordpress";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "sass/elements/buttons";
+@import "sass/elements/forms";
+@import "sass/elements/images";
+@import "sass/elements/links";
+@import "sass/elements/tables";
+@import "sass/elements/text";
+
+/*--------------------------------------------------------------
+# Template Parts
+--------------------------------------------------------------*/
+@import "sass/template_parts/features";
+@import "sass/template_parts/footer";
+@import "sass/template_parts/header";
+@import "sass/template_parts/includes";
+@import "sass/template_parts/loop_content";
+@import "sass/template_parts/layouts";
+@import "sass/template_parts/sidebar";
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+@import "sass/fonts/font-awesome/scss/font-awesome";

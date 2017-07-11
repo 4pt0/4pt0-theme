@@ -1,0 +1,58 @@
+body {
+  font-family: $font-family-ubuntu;
+  font-weight: $font-weight-bold;
+  @media (max-width: $screen-smaller) {
+    font-size: 93%;
+  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  ::selection {
+    background: rgba(240,117,72,.99) !important;
+    color: $color-white !important;
+    opacity: 1;
+  }
+}
+
+h1, h2, h3, h4 {
+  color: $color-dark_blue;
+  line-height: $line-height-standard;
+}
+
+h1 {
+  font: $font-largest;
+}
+
+h2 {
+  font: $font-larger;
+}
+
+h3 {
+  font-size: $font-standard;
+}
+
+h4 {
+  font: $font-smaller;
+}
+
+.lead{
+  font: $font-larger;
+  line-height: $line-height-standard;
+}
+
+.quote_and_headshot-quote {
+	font-family: $font-family-permanent_marker;
+}
+
+.meta{
+	text-transform: uppercase;
+  color: $color-dark_blue;
+  margin-bottom: $cell-smallest;
+  @extend .responsive-smaller_font;
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  margin-bottom: $cell-smallest/2;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  margin-bottom: $cell-smallest/4;
+  }
+}

@@ -1,0 +1,82 @@
+//Header Styles
+.header {
+  background-color: $color-white;
+  border-bottom: $border-standard;
+  .header-header_content{
+    position: relative;
+    @extend .flex-center;
+  	.header_content-logo {
+  		height: $cell-smallest*11;
+  		width: $cell-standard*5;
+  		margin: $cell-smaller 0;
+      @extend .flex-center;
+      @media only screen and (min-width: $screen-largest){
+    		height: $cell-smallest*15;
+    		width: $cell-standard*7;
+        margin: $cell-largest 0;
+      }
+      @media only screen and (max-width: $screen-largest){
+    		height: $cell-smallest*13;
+    		width: $cell-standard*6;
+        margin: $cell-larger 0;
+      }
+      @media only screen and (max-width: $screen-smallest) {
+  		  margin: $cell-smaller 0;
+    		height: $cell-smallest*11;
+        width: $cell-standard*5;
+      }
+  		.logo-image{
+    		width: 100%;
+    		height: auto;
+  		}
+  	}
+  	.header_content-nav_toggle {
+    	position: absolute;
+    	z-index: 99999999999;
+      right: $cell-standard*1;
+      cursor: pointer;
+      @media only screen and (max-width: $screen-smallest) {
+        right: $cell-smaller;
+      }
+      @extend .flex-center,.button,.button-circle;
+      .nav_toggle-x, .nav_toggle-bars {
+	    	font-size: 26px !important;
+      }
+      .nav_toggle-bars {
+        @extend .fa,.fa-bars;
+      }      
+      .nav_toggle-x {
+	    	@extend .fa,.fa-times;
+      }
+    }		  	
+  	.header_content-links {
+    	display: none;
+      position: fixed;
+      width: 100%;
+			height: 100% !important;
+      left: 0;
+      top: 0;
+      z-index: 9999999;
+      background-color: rgba(0,0,0, 0.9);
+			padding: $cell-standard;
+      font: $font-largest; 
+			@media only screen and (max-width: $screen-smallest) {
+ 			 padding: $cell-smaller;
+  		}
+  		.links-navigation {
+    		list-style: none;
+	  		padding: 0;
+	  		margin: 0;
+	  		li {
+		  		a {
+			  		text-decoration: none;
+			  		color: $color-white;
+		  		}
+	  		}
+  		}
+    }
+  }
+}
+.fixed {
+	position: fixed !important;
+}

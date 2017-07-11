@@ -1,0 +1,29 @@
+//Footer Styles
+.footer{
+	border-top: 2px solid $color-light_gray;
+  text-align: center;
+  color: $color-dark_gray;
+  border-top: $border-standard;
+  @extend .responsive-container_padding, .responsive-standard_font;
+  .footer-logo {
+    display: inline-block;
+	  color: $color-dark_gray;
+	  width: 100%;
+	  max-width: $cell-standard*13;
+	  @media only screen and (min-width: $screen-largest){
+  	  max-width: $cell-standard*18; 
+    }
+	  .logo-image{
+  	  width: 100%;
+	  }
+  }
+  .footer-info{
+    padding-top: $cell-smallest;
+    @media only screen and (min-width: $screen-largest){
+      padding-top: $cell-standard;
+    }
+ 	  .info-get_involved {
+ 		  color: $color-dark_gray;
+ 	  }    
+  }
+}

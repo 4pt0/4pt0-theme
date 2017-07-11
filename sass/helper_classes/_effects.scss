@@ -1,0 +1,13 @@
+//variables
+$transition-time: .2s;
+
+//Effects
+.effect-hover_glow{
+  transition: $transition-time box-shadow;
+  &:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+  }
+}
+.animated{
+  opacity: 0;
+}

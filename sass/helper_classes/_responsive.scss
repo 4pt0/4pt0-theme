@@ -1,0 +1,207 @@
+/*--------------------------------------------------------------
+# Responsive Helper Classes: 
+--------------------------------------------------------------*/
+
+//Standard Width
+.responsive-standard_width{
+  max-width: $cell-standard*24;
+}
+//Smaller Width
+.responsive-smaller_width{
+  transition: max-width .2s;
+  @media only screen and (min-width: $screen-largest){
+	  max-width: $screen-larger;
+  }
+  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
+	  max-width: $screen-standard;
+  }
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+	  max-width: $screen-smaller;
+  }
+  @media only screen and (max-width: $screen-standard){
+	  max-width: $screen-smallest;
+  }
+}
+
+//Thick Container Padding
+.responsive-thick_container_padding{
+  overflow: hidden;
+  @media only screen and (min-width: $screen-largest){
+	  padding: $cell-largest*2 $cell-smallest;
+  }
+  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
+	  padding: $cell-larger*2 $cell-smallest;
+  }
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+	  padding: $cell-standard*2 $cell-smallest;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  padding: $cell-smaller*2 $cell-smallest;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  padding: $cell-smallest*2 $cell-smallest;
+  }
+}
+
+//Container Padding
+.responsive-container_padding{
+  overflow: hidden;
+  @media only screen and (min-width: $screen-larger) {
+	  padding: $cell-larger $cell-smallest;
+  }
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+	  padding: $cell-standard $cell-smallest;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  padding: $cell-smaller $cell-smallest;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  padding: $cell-smallest;
+  }
+}
+
+//Thin Container Padding
+.responsive-thin_padding{
+  @media only screen and (min-width: $screen-larger) {
+	  padding: $cell-larger/2 $cell-smallest;
+  }
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+	  padding: $cell-standard/2 $cell-smallest;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  padding: $cell-smaller/2 $cell-smallest;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  padding: $cell-smallest;
+  }
+}
+
+
+//Circle
+.responsive-circle{
+	border-radius: $border-radius-circle;
+  transition: height .2s, width .2s;
+  @media only screen and (min-width: $screen-largest){
+  	height: $cell-largest * 6;
+  	width: $cell-largest * 6;
+  }
+  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
+  	height: $cell-larger * 6;
+  	width: $cell-larger * 6;
+  }
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  	height: $cell-standard * 6;
+  	width: $cell-standard * 6;
+  }
+  @media only screen and (max-width: $screen-standard){
+  	height: $cell-smaller * 6;
+  	width: $cell-smaller * 6;
+  }
+}
+
+//Padding Left
+.responsive-padding_left{
+  transition: padding-left .2s;
+  @media only screen and (min-width: $screen-largest){
+	  padding-left: $cell-largest;
+  }
+  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
+	  padding-left: $cell-larger;
+  }
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+	  padding-left: $cell-standard;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  padding-left: $cell-smaller;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  padding-left: $cell-smallest;
+  }
+}
+
+//Smaller Font
+.responsive-smaller_font{
+  transition: font-size .2s;
+  @media only screen and (min-width: $screen-largest){
+	  font: $font-larger;
+  }
+  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
+    font: $font-standard;
+  }
+  @media only screen and  (max-width: $screen-larger){
+	  font: $font-smaller;
+  }
+}
+
+//Largest Font
+.responsive-largest_font{
+  @media only screen and (min-width: $screen-standard){
+	  font: $font-largest;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  font: $font-larger;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  font: $font-standard;
+  }
+}
+
+//Larger Font
+.responsive-larger_font{
+  @media only screen and (min-width: $screen-standard){
+    font: $font-larger;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  font: $font-standard;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  font: $font-smaller;
+  }
+}
+
+//Standard Font
+.responsive-standard_font{
+  @media only screen and (min-width: $screen-standard){
+	  font: $font-standard;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  font: $font-smaller;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  font: $font-smallest;
+  }
+}
+
+//Smaller Font
+.responsive-smaller_font{
+  @media only screen and (min-width: $screen-standard){
+	  font: $font-smaller;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  font: $font-smallest;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  font: $font-smallest;
+  }
+}
+
+//Marker Font
+.responsive-marker_font{
+  transition: font-size .2s;
+  @media only screen and (min-width: $screen-largest){
+	  font: $font-marker-largest;
+  }
+  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
+    font: $font-marker-larger;
+  }
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+	  font: $font-marker-standard;
+  }
+  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+	  font: $font-marker-smaller;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  font: $font-marker-smallest;
+  }
+}
+
