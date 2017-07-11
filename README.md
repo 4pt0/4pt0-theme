@@ -21,11 +21,11 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 
 ## Core Dev/Design Team
 - The Great Team from 4.0 Schools
-- Blake Bertuccelli ([@bbertucc]), Lead Dev / Designer
-- Taylor Osbey ([@tosbey1]), Apprentice Dev
-- Jihad Doucette, YEP Apprentice Designer
-- Tevin Clark, YEP Apprentice Designer
-- Alberta Wright, YEP Design Director
+- Blake Bertuccelli ([@bbertucc])
+- Taylor Osbey ([@tosbey1])
+- Jihad Doucette
+- Tevin Clark
+- Alberta Wright
 - **You?** Start contributing and we'll add your name.
 
 [YEP Design Works]:http://yepdesignworks.org
