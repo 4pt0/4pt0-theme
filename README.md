@@ -40,4 +40,4 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 [@bbertucc's gist]:https://gist.github.com/bbertucc/0918e342a8c981e78e88e714cde1e9d5
 [code guide]:http://codeguide.co/
 [@mdo]:https://github.com/mdo
-["Issues" tab]:https://github.com/lowling/vianolavie.com/issues
+["Issues" tab]:https://github.com/4pt0/4pt0-theme/issues
