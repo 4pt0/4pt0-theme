@@ -22,9 +22,9 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 ## Core Dev/Design Team
 - The Great Team from 4.0 Schools
 - Blake Bertuccelli ([@bbertucc])
-- Taylor Osbey ([@tosbey1])
-- Jihad Doucette
 - Tevin Clark
+- Jihad Doucette
+- Taylor Osbey ([@tosbey1])
 - Alberta Wright
 - **You?** Start contributing and we'll add your name.
 
