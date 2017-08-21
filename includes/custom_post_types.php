@@ -1,11 +1,14 @@
 <?php 
 
 //======================================================================
-// "VENTURES" CUSTOM POST TYPE
+// "VENTURE" CUSTOM POST TYPE
 //======================================================================
 
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
+
 function create_posttype() {
-  register_post_type( 'ventures',
+  register_post_type( 'venture',
     array(
       'labels' => array(
 	      'name' => __( 'Ventures' ),
@@ -13,13 +16,12 @@ function create_posttype() {
       ),
       'public' => true,
       'has_archive' => true,
-      'rewrite' => array('slug' => 'ventures'),
-      'taxonomies' => array('category' ),
+      'rewrite' => array('slug' => 'venture'),
+      'taxonomies' => array('category'),
     )
   );
 }
 
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
-
 ?>

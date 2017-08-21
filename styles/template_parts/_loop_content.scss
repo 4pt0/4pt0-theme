@@ -1,0 +1,409 @@
+/*--------------------------------------------------------------
+# Loop_content content requires the loop to exist
+--------------------------------------------------------------*/
+
+//Venture Header
+.loop_content-venture_header{
+  background: $color-light_blue;
+  @include responsive-smaller_padding();
+  .venture_header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    @include responsive-standard_container();
+    @media only screen and (max-width: $screen-smaller){
+  	  display: block;
+  	  text-align: center;
+    }    
+    .content-title{
+      color: $color-dark_blue;
+      @include responsive-larger_font();
+    }
+    .content-meta{
+      display: flex;
+      align-items: center;
+      @media only screen and (max-width: $screen-smaller){
+    	  margin-top: $cell-smallest;
+    	  display: block;
+      }    
+      .meta-post_type, .meta-category, .meta-city{
+        @include button-smallest();
+      }
+      .meta-post_type, .meta-category{
+        margin-right: $cell-smallest;
+      }
+      .meta-post_type{
+        background: $color-purple;
+      }
+      .meta-category{
+        background: $color-orange;
+      }
+      .meta-city{
+        background: $color-dark_gray;
+        &:before{
+          @include fa-icon();
+          content: $fa-var-map-marker;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+//Standard Page
+.loop_content-standard_page{
+  border-top: $border-standard;
+  @include responsive-standard_padding();
+  .standard_page-page_title, .standard_page-standard_content{
+    @include responsive-standard_container();
+    margin: 0 auto;
+  }
+  .standard_page-page_title {
+  	margin: 0 auto;
+    color: $color-dark_blue;
+    @include responsive-largest_font();
+  }  
+  .standard_page-standard_content{
+    @include responsive-standard_font();
+  }
+}
+
+//Segments + User List
+.loop_content-segmented_page, 
+.loop_content-user_list{
+
+  //One and Two Column Segment + User List Header
+  .segmented_page-one_column_segment, 
+  .segmented_page-two_column_segment, 
+  .user_list-header{
+    position: relative;
+    @include responsive-standard_padding();    
+  }
+  
+  //One Column Segment + User List Header  
+  .segmented_page-one_column_segment,
+  .user_list-header{
+    
+    //Content
+    .one_column_segment-content,
+    .header-content{
+      
+      //Text and Features
+      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text, .content-features{
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      //Text
+      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text{
+        
+        //Title, Subtitle and Body
+      	.brief_text-title, .regular_text-title, .long_text-title,
+      	.brief_text-subtitle, .regular_text-subtitle, .long_text-subtitle,
+      	.brief_text-body, .regular_text-body, .long_text-body{
+          text-align: center;
+        }
+        
+        //Title and Body
+        .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title,
+        .brief_text-body, .regular_text-body, .regular_text_with_paragraphs-body, .long_text-body{
+          margin-top: $cell-smaller;
+        }
+                
+        //Title
+        .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title {
+          @include responsive-larger_font();
+      	}
+      	
+      	//Subtitle
+        .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle, .long_text-subtitle{
+          margin-top: $cell-smallest;
+        	@include responsive-matt_font-standard();
+        }
+        
+        //Body
+      	.brief_text-body {
+          @include responsive-standard_font();
+      	}
+      	.regular_text-body, .regular_text_with_paragraphs-body, .long_text-body {
+          @include responsive-smaller_font();
+      	}
+      	.long_text-body {
+        	text-align: justify;
+        	column-count: 2;
+        	column-gap: $cell-standard;
+          @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
+        	  column-gap: $cell-smallest;
+          }
+          @media only screen and (max-width: $screen-smallest){
+        	  column-count: 1;
+          }
+        	p:first-of-type{
+          	margin-top: 0;
+          	&:first-letter{
+              @include responsive-largest_font();
+              float: left;
+              padding: 0 $cell-smallest;
+              @media only screen and (max-width: $screen-smaller){
+                @include responsive-smaller_font();
+                float: none;
+                padding: 0;
+              }
+          	}
+        	}
+      	}
+      }
+      
+      //Text Widths
+      .content-brief_text, .content-long_text{
+        max-width: $cell-standard*19; 
+      }
+      .content-regular_text, .content-regular_text_with_paragraphs{
+        max-width: $cell-standard*15; 
+      }
+    }
+  }
+}
+
+//Segments
+.loop_content-segmented_page{
+  
+  //One and Two Column Segment
+  .segmented_page-one_column_segment, 
+  .segmented_page-two_column_segment{
+    
+    //Content
+    .one_column_segment-content, .two_column_segment-content{
+      
+      //Text
+      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text{
+        
+        //Title
+        .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title{
+          color: $color-dark_blue;
+        }
+        
+      }
+      
+    }
+    
+    //Background
+    .one_column_segment-white_background, .two_column_segment-white_background,
+    .one_column_segment-transparent_background, .two_column_segment-transparent_background,
+    .one_column_segment-light_blue_background, .two_column_segment-light_blue_background,
+    .one_column_segment-blue_background, .two_column_segment-blue_background,
+    .one_column_segment-blue_watercolor_background, .two_column_segment-blue_watercolor_background,
+    .one_column_segment-orange_background, .two_column_segment-orange_background{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1
+    }
+    .one_column_segment-white_background, .two_column_segment-white_background{
+      @include background(white);
+    }
+    .one_column_segment-transparent_background, .two_column_segment-transparent_background{
+      @include background(transparent);
+    }
+    .one_column_segment-light_blue_background, .two_column_segment-light_blue_background{
+      @include background(light_blue);
+    }
+    .one_column_segment-blue_background, .two_column_segment-blue_background{
+      @include background(blue, white_sibling);
+    }
+    .one_column_segment-blue_watercolor_background, .two_column_segment-blue_watercolor_background{
+      @include background(blue_watercolor, white_sibling);
+    }
+    .one_column_segment-orange_background, .two_column_segment-orange_background{
+      @include background(orange, white_sibling);
+    }
+    
+    //Button
+    .one_column_segment-button, .two_column_segment-button{
+      text-shadow: none;
+      text-align: center;
+      @include responsive-smaller_padding();
+      .button-link{
+        @include button-standard();
+        background: $color-orange;
+      }
+    }          
+        
+    //Scroll Icon
+    .one_column_segment-scroll_icon,
+    .two_column_segment-scroll_icon{
+      text-align: center;
+      @include responsive-matt_font-standard();
+    }
+  }
+  
+  //One Column Segment
+  .segmented_page-one_column_segment{    
+    
+    //Content
+    .one_column_segment-content{
+/*
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      min-height: $cell-standard*6;
+      flex-wrap: wrap;
+      @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+        min-height: $cell-smaller*6;
+      }
+      @media only screen and (max-width: $screen-smaller){
+        min-height: $cell-smaller*6;
+      }
+*/
+      
+      //Features
+      .content-features{
+        max-width: $cell-standard*23;
+        width: 100%;
+        margin-top: $cell-standard;
+        @media only screen and (max-width: $screen-smaller){
+          margin-top: $cell-smallest;
+        }
+      }
+    }    
+  }
+  
+  //Two Column Segment
+  .segmented_page-two_column_segment{
+   
+    //Content
+    .two_column_segment-content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      @media only screen and (max-width: $screen-smaller){
+        display: block;
+      }
+
+      //Text
+      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text {
+        max-width: $cell-smallest*31;
+        width: 100%;
+        margin-right: $cell-standard*3;
+        @media only screen and (min-width: $screen-smaller) and (max-width: $cell-standard*23){
+          padding-right: $cell-smaller;
+        }
+        @media only screen and (max-width: $screen-smaller){
+          padding-right: 0;
+          max-width: $cell-standard*9 !important;
+          margin: 0 auto;
+        }
+        
+        //Title
+      	.brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title {
+          @include responsive-standard_font();
+      	}
+      	
+      	//Subtitle
+        .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle, .long_text-subtitle{
+        	@include responsive-matt_font-smaller();
+        }
+        
+        //Body
+        .brief_text-body, .regular_text-body, .regular_text_with_paragraphs-body, .long_text-body {
+          @include responsive-smaller_font();
+        }
+        
+      }
+
+      //Features
+      .content-features{
+        max-width: $cell-smallest*31;
+        width: 100%;
+        @media only screen and (max-width: $screen-smaller){
+          max-width: 100%;
+          @include responsive-standard_padding();
+        }
+      }
+    }
+  }
+}
+
+//User List
+.loop_content-user_list{
+  
+  //User List Header
+  .user_list-header{
+    color: $color-white;
+    @include background(orange_connections);
+    
+    //Content
+    .header-content{
+      
+      //Options
+      .content-options{
+    		padding-top: $cell-standard;
+    		text-align: center;
+        max-width: $cell-standard*23;
+        margin: 0 auto;
+    		div:first-of-type{
+      		margin-left: 0!important;
+    		}
+    		.options-map_toggle, .options-filter{
+  				display: inline-block;
+  				margin-left: $cell-smallest;
+  				margin-top: $cell-smallest;
+  				position: relative;
+  				@include button-standard();
+  				border: 4px solid $color-white;
+  				background: transparent; 
+          @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
+  				  border: 3px solid $color-white;
+            margin-left: 0;
+          }
+  				@media only screen and (max-width: $screen-smallest){
+            width: 100%;
+            margin-left: 0;
+    		  }
+  				&.selected{
+    				background: $color-white;
+    				color: $color-orange;
+    				.map_toggle-checkbox{
+      				background: $color-orange;
+    				}
+  				}
+  				.filter-checkbox{
+  					position: absolute;
+  					left: -10000000px;
+  				}
+        }
+        .options-map_toggle{
+          padding-left: 54px;
+          @media only screen and (max-width: $screen-smaller){
+            padding-left: 24px;
+          }
+  				.map_toggle-checkbox{
+    				position: absolute;
+    				-webkit-appearance: none;
+    				border-radius: $border-radius-circle;
+    				display: inline-block;
+    				pointer-events: none;
+    				padding: $cell-smallest;
+    				background: $color-white;
+    				outline: none;
+    				margin-right: 4px;
+    				top: 18px;
+    				left: $cell-smallest;
+            @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+      				top: 13px;
+      				padding: 12px;
+            }
+            @media only screen and (max-width: $screen-smaller){
+      				padding: 12px;
+      				top: 10px;
+            }
+  				}
+        }
+      }      
+    }
+  }
+}

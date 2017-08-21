@@ -1,0 +1,48 @@
+@mixin background($type, $text_option:""){
+  color: $color-white; 
+  a{
+    color: $color-white;
+  }
+  @if $type == "white" {
+    background-color: $color-white;
+    a{
+      color: inherit;
+    }
+  }
+  @if $type == "transparent" {
+    background-color: transparent;
+  }
+  @if $type == "orange" {
+    background-color: $color-orange;
+  }
+  @if $type == "orange_connections" {
+    background-color: $color-orange;
+    background-image: url('images/background-connections.svg');
+    background-size: 100%;
+    background-position: center center;
+  }
+  @if $type == "light_blue" {
+    background-color: $color-light_blue;
+    color: inherit;
+    a{
+      color: inherit;
+    }
+  }
+  @if $type == "blue" {
+    background-color: $color-blue;
+  }
+  @if $type == "blue_watercolor" {
+    background-image: url('images/background-blue_watercolor.jpg');
+    background-size: 100%;
+    background-position: center top;
+    color: $color-white; 
+  }
+  @if $text_option == "white_sibling" {
+    & ~ div{
+      color: $color-white;
+      a{
+        color: $color-white;
+      }
+    }
+  }
+}

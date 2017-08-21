@@ -1,22 +1,41 @@
 <?php
 if(is_author()):
 
-$location = get_field('location',$post->ID);
-$address = explode( "," , $location['address']);
-$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+  //Author Variables
+  $user_data = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+  $location = get_field('location', 'user_'.$user_data->ID);
+  $city = explode( "," , $location['address'])[1];
+  print_r()
 ?>
 
 <div class="layout-user">
   <div class="user-header">
 	  <div class="header-content">
 		  <div class="content-avatar">
-				<div class="avatar-headshot"><?php echo get_avatar( $curauth->ID, 1000 ); ?></div>
+				<div class="avatar-headshot"><?php echo get_avatar( $user_data->ID, 1000 ); ?></div>
 		  </div>
-			<div class= "content-user_meta">
-				<div class="user_meta-name"><?php echo $curauth->display_name; ?></div>
-				<div class="user_meta-title">Founder &#8226; <a class="title-explorable" href="#"> Explorable Places</a></div>
-				<div class="user_meta-tags">
-				  <a class="tags-role" href="#">Tiny Alum</a> <a class="tags-location" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> New York</a>
+			<div class= "content-meta">
+				<div class="meta-name"><?php echo $user_data->display_name; ?></div>
+				<div class="meta-title_and_venture">
+  				
+  				<?php
+          //Job Title
+          if(get_field('job_title', 'user_'.$user_data->ID))
+  				  echo '<div class="title_and_venture-title">'.get_field('job_title', 'user_'.$user_data->ID).'</div>';
+  				?>
+  				<div class="title_and_venture-venture">
+            <a class="venture-link" href="#">Explorable Places</a>
+  				</div>
+        </div>
+				<div class="meta-tags">
+				  <a class="tags-role" href="#">Tiny Alum</a> 
+				  <?php
+  				//Roles
+  				  
+  				//Location
+  				if($location)
+				    echo '<div class="tags-location" href="#">'.$city.'</a>';
+				  ?>
 			  </div>
 		  </div>
 	  </div>
@@ -26,17 +45,15 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
   </div>
   <div class="user-bio">
 	  <div class="bio-title">About <?php echo $curauth->first_name; ?></div>
-	  <div class="bio-body">Meg Davis set product vision and direction for Explorable Places: a responsive web-based platform for finding field trips aligned to the curriculum. Conducted user testing with teachers and museum professionals to refine product and developed requirements based on user needs. Worked with technical co-founder to develop wireframes, business requirements and UX. Created a strategic marketing and communications plan. Oversaw product launch to facilitate over 400 field trip bookings for nearly 10,000 students in 4 months. Worked with city institutions to build over 25 strategic partnerships and recruit 15 paying customers for our software platform.</div>
+	  <div class="bio-body">This user set product vision and direction for Explorable Places: a responsive web-based platform for finding field trips aligned to the curriculum. Conducted user testing with teachers and museum professionals to refine product and developed requirements based on user needs. Worked with technical co-founder to develop wireframes, business requirements and UX. Created a strategic marketing and communications plan. Oversaw product launch to facilitate over 400 field trip bookings for nearly 10,000 students in 4 months. Worked with city institutions to build over 25 strategic partnerships and recruit 15 paying customers for our software platform.</div>
   </div>
   <div class="user-footer">
 	  <div class="footer-venture_and_contact">
 		  <div class="venture_and_contact-venture">
-  		  <div class="venture-content">
-  			  <div class="content-heading"><?php echo $curauth->first_name; ?>'s Venture</div>
-  				<div class="content-title">Explorable Places</div>
-  				<div class="content-body">You know getting outside the classroom makes learning stick and creates a lasting impression on your students. But you don't have the time to do all the legwork. At Explorable Places, we've done the legwork for you. Each venue has been vetted by us to be sure there are programs that engage and inspire your students.</div>
-  				<a class="content-url" href="#">Visit Explorableplaces.com</a>
-  		  </div>
+			  <div class="venture-heading"><?php echo $user_data->first_name; ?>'s Venture</div>
+				<div class="venture-title">Explorable Places</div>
+				<div class="venture-body">You know getting outside the classroom makes learning stick and creates a lasting impression on your students. But you don't have the time to do all the legwork. At Explorable Places, we've done the legwork for you. Each venue has been vetted by us to be sure there are programs that engage and inspire your students.</div>
+				<a class="venture-url" href="#">Visit Explorableplaces.com</a>
 			</div>
 			<div class="venture_and_contact-contact">
 				<div class="contact-title">Contact <?php echo $curauth->first_name; ?></div>
@@ -48,20 +65,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 				  </div>
 				</div>
 			</div>
-	  </div>
-	  
-		<?php if ( have_posts() ) : ?>
-	  <div class="footer-posts">
-  	  <div class="posts-pretext">Posts by <?php echo $curauth->first_name; ?></div>
-  	  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	  
-  	  <a class="posts-single_post" href="#" style="<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );if ( has_post_thumbnail() ){echo 'background-image: url('. $url.')">'; } else { ?> background-image: url('<?php bloginfo("template_directory"); ?>/images/background.jpeg')" alt="<?php the_title(); ?>" <?php } ?> >
-      	<div class="single_post-title"><?php the_title();?></div>  
-  	  </a>
-  	  
-  	  <?php endwhile; endif;?>
-    </div>
-    <?php endif; ?>
-    
+	  </div>    
   </div>
 </div>
 

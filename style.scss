@@ -14,41 +14,51 @@ Tags:
 /*--------------------------------------------------------------
 # Standard Variables
 --------------------------------------------------------------*/
-@import "sass/standards";
-
-/*--------------------------------------------------------------
-# Helper Classes
---------------------------------------------------------------*/
-@import "sass/helper_classes/animate";
-@import "sass/helper_classes/backgrounds";
-@import "sass/helper_classes/effects";
-@import "sass/helper_classes/grid";
-@import "sass/helper_classes/responsive";
-@import "sass/helper_classes/sizing_and_alignments";
-@import "sass/helper_classes/wordpress";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "sass/elements/buttons";
-@import "sass/elements/forms";
-@import "sass/elements/images";
-@import "sass/elements/links";
-@import "sass/elements/tables";
-@import "sass/elements/text";
-
-/*--------------------------------------------------------------
-# Template Parts
---------------------------------------------------------------*/
-@import "sass/template_parts/features";
-@import "sass/template_parts/footer";
-@import "sass/template_parts/header";
-@import "sass/template_parts/includes";
-@import "sass/template_parts/loop_content";
-@import "sass/template_parts/layouts";
-@import "sass/template_parts/sidebar";
+@import "styles/standards";
 
 /*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
-@import "sass/fonts/font-awesome/scss/font-awesome";
+@import "styles/fonts/font-awesome/scss/font-awesome";
+@import "styles/fonts/matt_font/matt_font";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700,700i');
+
+/*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+@import "styles/mixins/backgrounds";
+@import "styles/mixins/buttons";
+@import "styles/mixins/responsive";
+
+/*--------------------------------------------------------------
+# Helper Classes
+--------------------------------------------------------------*/
+@import "styles/helper_classes/animate";
+@import "styles/helper_classes/effects";
+@import "styles/helper_classes/grid";
+@import "styles/helper_classes/sizing_and_alignments";
+@import "styles/helper_classes/wordpress";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "styles/elements/forms";
+@import "styles/elements/images";
+@import "styles/elements/links";
+@import "styles/elements/tables";
+@import "styles/elements/text";
+
+/*--------------------------------------------------------------
+# Template Parts
+--------------------------------------------------------------*/
+@import "styles/template_parts/features";
+@import "styles/template_parts/loop_content";
+@import "styles/template_parts/layouts";
+
+/*--------------------------------------------------------------
+# Additional Elements: Script Styles, Includes, Header, .. etc.
+--------------------------------------------------------------*/
+@import "styles/etc/fancybox";
+@import "styles/etc/footer";
+@import "styles/etc/header";
+@import "styles/etc/includes";

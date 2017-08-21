@@ -53,7 +53,7 @@
         }
         input.trigger('change');
         $('html, body').animate({
-          scrollTop: ($('.header-options').first().offset().top)
+          scrollTop: ($('.text-options').first().offset().top)
         },500);
       });
               

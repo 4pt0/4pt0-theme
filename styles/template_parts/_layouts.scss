@@ -1,0 +1,196 @@
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+//Page
+.layout-single_page {
+  .single_page-content, .single_page-blue_watercolor_content{
+  }
+  .single_page-blue_watercolor_content{
+    @include background(blue_watercolor);
+    text-shadow: 1px 1px 16px rgba(0,0,0,.5);
+  }
+}
+
+//Userpage
+.layout-user {
+  background-color: $color-white;
+  .user-header {
+	  background-color: $color-light_blue;
+		.header-content {
+			margin: 0 auto;
+      @include responsive-standard_padding();
+			@extend .flex-center;
+			@media only screen and (max-width: $screen-smallest) {
+				flex-direction: column;
+			}
+      .content-avatar {
+  	    .avatar-headshot {
+  			  img {
+            @include responsive-circle();
+  			  }
+  		  }
+  	  }
+      .content-meta {
+  	    display: flex;
+  	    flex-direction: column;
+        color: $color-dark_blue;
+        @include responsive-padding_left();
+    		@media only screen and (max-width: $screen-smallest) {
+          padding-left: 0;
+          text-align: center
+        }
+  	    .meta-name{
+          @include responsive-larger_font();
+        }
+        .meta-title_and_venture{
+          @include responsive-standard_font();
+          div:nth-child(2){
+            &:before{
+              content: '•';
+              margin: 0 4px;
+              padding-right: 3px;
+            }
+          }
+          .title_and_venture-title, .title_and_venture-venture{
+            display: inline-block;
+          }
+        }
+        .meta-tags {
+          margin-top: $cell-smallest;
+          .tags-role, .tags-location{
+            @include button-smallest();
+            margin-right: $cell-smallest;
+        		@media only screen and (max-width: $screen-smallest) {
+              margin-right: 0;
+            }
+          }
+          .tags-role{
+            background: $color-purple;
+          }
+          .tags-location{
+            background: $color-dark_gray;
+          }
+        }
+      } 
+    }
+  }
+  .user-quote {
+    @include background(blue_watercolor);
+	  .quote-body {
+			color: $color-white;
+			margin: 0 auto;
+			text-align: center;
+      @include responsive-larger_padding();
+      @include responsive-matt_font-standard();
+      @include responsive-smaller_container();
+	  }
+  }
+  .user-bio {
+    margin: 0 auto;
+    max-width: $cell-standard*23;
+    @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+  	  max-width: $cell-smaller*23;
+    }
+    @media only screen and (max-width: $screen-smaller){
+  	  max-width: $cell-smallest*38;
+    }
+    @include responsive-standard_padding();
+	  .bio-title {
+      @extend .meta;
+	  }
+	  .bio-body{
+      @include responsive-standard_font();
+	  }
+  }
+  .user-footer { 
+		background-color: $color-light_blue;
+	  .footer-venture_and_contact {
+      @extend .flex-center;
+      align-items: stretch;
+      width: 100%;
+      max-width: $cell-standard*23;
+      margin: 0 auto;
+      @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+    	  max-width: $cell-smaller*23;
+      }
+      @media only screen and (max-width: $screen-smaller){
+    	  max-width: $cell-smallest*38;
+    	  display: block;
+      }
+  	  .venture_and_contact-venture, .venture_and_contact-contact{
+        @include responsive-standard_padding();
+  	  }
+		  .venture_and_contact-venture {
+			  margin-right: $cell-standard;
+        max-width: $cell-standard*14;
+        width: 100%;
+        @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+      	  max-width: $cell-smaller*14;
+			    margin-right: $cell-smaller;
+        }
+        @media only screen and (max-width: $screen-smaller){
+			    margin-right: 0;
+        }
+			  .venture-heading {
+          @extend .meta;
+			  }
+			  .venture-title {
+				  color: $color-dark_blue;
+          @include responsive-larger_font();
+			  }
+			  .venture-body, .venture-url {
+          @include responsive-smaller_font();
+			  }
+			  .venture-url {
+  			  margin-top: $cell-smallest;
+  			  @extend .include-inline_link;
+			  }
+		  }
+		  .venture_and_contact-contact {
+			  padding-left: $cell-standard;
+			  border-left: $border-standard;
+        max-width: $cell-standard*8;
+        width: 100%;
+        @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+      	  max-width: $cell-smaller*8;
+			  padding-left: $cell-smallest;
+        }
+			  @media only screen and (max-width: $screen-smaller){
+  			  @include responsive-standard_padding();
+          border-left: 0;
+          border-top: $border-standard;
+          max-width: 100%;
+				}
+				.contact-title {
+          @extend .meta;
+				}
+				.contact-links{
+  				.links-website, .links-social_media{
+  				  @media only screen and (max-width: $screen-smaller){
+    				  display: inline-block;
+    				  margin-right: $cell-smallest/2;
+    				}
+  				}
+  			  .links-website {
+  				  @include button-smallest();
+    				background: $color-dark_blue;
+  			  }
+				  .links-social_media {
+  				  margin-top: $cell-smallest;
+    				@media only screen and (max-width: $screen-smaller){
+      				margin-top: $cell-smallest/2;
+            }
+					  .social_media-link {
+  				    @include button-circle();
+    				  margin-right: $cell-smallest;
+              background: $color-dark_blue;
+    				  @media only screen and (max-width: $screen-smaller){
+      				  margin-right: $cell-smallest/2;
+      				}
+						}
+					}
+        }
+      }
+	  }
+  }
+}

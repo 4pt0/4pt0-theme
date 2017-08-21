@@ -8,7 +8,8 @@ function theme_scripts_and_styles() {
 	wp_enqueue_style( 'theme-style', get_stylesheet_uri() );	
 	
 	//Scripts
-	wp_enqueue_script( 'navigation-modal', get_template_directory_uri() . '/scripts/navigationModal.js', array( 'jquery',));
+	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/scripts/jquery.fancybox.min.js', array( 'jquery',));
+	wp_enqueue_script( 'theme-navigation', get_template_directory_uri() . '/scripts/themeNavigation.js', array( 'jquery',));
   wp_enqueue_script( 'theme-user_map', get_template_directory_uri() . '/scripts/userMap.js', array( 'jquery', 'google-map', 'map-markerclusterer', 'map-tiles'   ) );
   wp_enqueue_script( 'theme-user_list', get_template_directory_uri() . '/scripts/filterableContent.js', array( 'jquery', 'google-map' ) );
   wp_enqueue_script( 'map-richmarker',  get_template_directory_uri().'/scripts/richmarker.js', array( 'google-map' ) );

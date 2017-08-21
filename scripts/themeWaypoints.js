@@ -9,8 +9,8 @@ jQuery(document).ready(function($) {
   }
   waypointFunc ('.masthead-content','50%','fadeInUp');
   waypointFunc ('.loop_content-page_title','50%','fadeIn');
-  waypointFunc ('.standard_content-newsletter_singup','80%','fadeIn');
-  waypointFunc ('.header-title','80%','fadeInLeft');
+  waypointFunc ('.feature-newsletter_singup','80%','fadeIn');
+  waypointFunc ('.content-title','80%','fadeInLeft');
   waypointFunc ('.options-map_toggle','92%','fadeInUp');
   waypointFunc ('.options-filter','92%','fadeInUp');
 	waypointFunc ('.content-avatar','60%','fadeIn');
@@ -28,10 +28,10 @@ jQuery(document).ready(function($) {
 	waypointFunc ('.links-website','87%','fadeIn');
 	waypointFunc ('.social_media-link','87%','fadeIn');
 	waypointFunc ('.posts-pretext','90%','fadeInLeft');
-  $('.standard_content-segment_title').addClass('animated');
-		$('.standard_content-segment_title').css('opacity', 0);
-		$('.standard_content-segment_body').addClass('animated');
-		$('.standard_content-segment_body').css('opacity', 0);
+  $('.one_column_content-title').addClass('animated');
+		$('.one_column_content-title').css('opacity', 0);
+		$('.one_column_content-segment_body').addClass('animated');
+		$('.one_column_content-segment_body').css('opacity', 0);
 		$('.blocks-page').addClass('animated');
 		$('.blocks-page').css('opacity', 0);
 		$('.blocks-alumni_quote').addClass('animated');
@@ -58,13 +58,13 @@ jQuery(document).ready(function($) {
       }
     }, delay)
   }
-  $(".standard_content-segment_title").waypoint(function () {
+  $(".one_column_content-title").waypoint(function () {
     itemQueue.push(this.element)
     processItemQueue()
   }, {
     offset: '90%'
   });
-	$(".standard_content-segment_body").waypoint(function () {
+	$(".one_column_content-segment_body").waypoint(function () {
     itemQueue.push(this.element)
     processItemQueue()
   }, {

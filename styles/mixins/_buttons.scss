@@ -1,0 +1,69 @@
+//Button Defaults
+.button{
+  display: inline-block;
+  line-height: 1;
+  border-radius: $border-radius-standard;
+  color: $color-white;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  background: $color-blue_gradient;
+  box-shadow: $box-shadow-smallest;
+  &:hover{
+    box-shadow: $box-shadow-smaller;
+  }
+  &:active{
+    box-shadow: $box-shadow-smallest;
+  }
+}
+
+//Mixins
+@mixin button-standard(){
+  @extend .button;
+  @include responsive-standard_font();
+  padding: $cell-smallest $cell-smaller;
+  @media only screen and (max-width: $screen-smaller){
+	  display: block;
+  }    
+}
+@mixin button-smaller(){
+  @extend .button;
+  @include responsive-smaller_font();
+  padding: 5px $cell-smallest;
+}
+@mixin button-smallest(){
+  @extend .button;
+  @include responsive-smallest_font();
+  padding: 3px $cell-smallest;
+}
+@mixin button-circle(){
+  display: inline-block;
+  border-radius: $border-radius-circle;
+  padding: 7px 0;
+  font: $font-smaller;
+  height: $cell-standard;
+  width: $cell-standard;
+  color: $color-white;
+  text-align: center;
+  &:hover{
+    box-shadow: $box-shadow-smaller;
+  }
+  &:active{
+    box-shadow: $box-shadow-smallest;
+  }
+  @media only screen and (min-width: $screen-largest){
+    font: $font-standard;
+    height: $cell-larger;
+    width: $cell-larger;
+    padding: 10px 0;
+  }
+  @media only screen and (max-width: $screen-smaller){
+    font: $font-smallest;
+    height: $cell-smaller;
+    width: $cell-smaller;
+    padding: 3px 0;
+  }    
+}

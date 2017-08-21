@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+# Standard Variables
+--------------------------------------------------------------*/
+
+//Typeface Settings
+$font-family-ubuntu: 'Ubuntu', sans-serif;
+$font-family-matt_font: 'matt_font', cursive;
+$font-FontAwesome: 'FontAwesome';
+$font-weight-bold: 700;
+$font-weight-standard: 400;
+
+//Item specific variables
+$line-height-standard: 1.4em;
+
+//Font Settings
+$font-largest: $font-weight-bold 60px/1.4em $font-family-ubuntu;
+$font-larger: $font-weight-bold 40px/1.4em $font-family-ubuntu;
+$font-standard: $font-weight-bold 30px/1.4em $font-family-ubuntu;
+$font-smaller: $font-weight-bold 20px/1.4em $font-family-ubuntu;
+$font-smallest: $font-weight-bold 16px/1.4em $font-family-ubuntu;
+$font-matt_font-smallest: 16px/1.4em  $font-family-matt_font; 
+$font-matt_font-smaller: 20px/1.4em  $font-family-matt_font;
+$font-matt_font-standard: 30px/1.4em  $font-family-matt_font;
+$font-matt_font-larger: 40px/1.4em  $font-family-matt_font; 
+$font-matt_font-largest: 16px/1.4em  $font-family-matt_font;
+
+//Single Cell Settings
+$cell-largest: 84px; // Standard Font Size * Line Height
+$cell-larger: 63px; // Larger Font Size * Line Height
+$cell-standard: 42px; // Standard Font Size * Line Height
+$cell-smaller: 28px; // Standard Font Size * Line Height
+$cell-smallest: 14px; // Standard Font Size * Line Height
+
+//Screen Sizes
+$screen-smallest: $cell-smallest*24;
+$screen-smaller: $cell-smaller*24;
+$screen-standard: $cell-standard*24;
+$screen-larger: $cell-larger*24;
+$screen-largest: $cell-largest*24;
+
+//Colors
+$color-standard: #231F20;
+$color-white: #ffffff;
+$color-light_gray: #EBEBEB;
+$color-transparent_gray: rgba(0, 0, 0, 0.15);
+$color-dark_gray: rgb(109,110,112);
+$color-blue: rgb(42,152,211);
+$color-dark_blue: rgb(33, 61, 100);
+$color-light_blue: rgb(239,245,249);
+$color-blue_gradient: linear-gradient(rgb(42,168,211) 0%, rgb(48,158,211) 100%);
+$color-dark_blue_gradient: linear-gradient(rgba(33,60,90, 0) 0%, $color-dark_blue 100%);
+$color-orange: rgb(241,118,73);
+$color-purple: rgb(101,49,143);
+
+//Effects
+$box-shadow-smallest: 0px 1px 2px -1px $color-dark_gray;
+$box-shadow-smaller: 0px 1px 6px -1px $color-standard;
+$box-shadow-standard: 0px 1px 12px -1px $color-standard;
+$text-shadow-standard: 1px 1px 3px $color-dark_gray;
+
+//Border Settings
+$border-width-standard: 3px;
+$border-standard: $border-width-standard solid $color-transparent_gray;
+$border-radius-standard: 999999999px; //A Huge Number to make sure rectangles stay rounded
+$border-radius-circle: 50%;

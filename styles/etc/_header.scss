@@ -1,0 +1,61 @@
+//Header Styles
+.header {
+  .header-header_content{
+      @include responsive-standard_padding();
+
+    position: relative;
+    margin: 0 auto;
+    justify-content: space-between;
+    @extend .flex-center;
+    @include responsive-standard_container();
+    padding-left: 0;
+    padding-right: 0;
+  	.header_content-logo {
+    	width: $cell-standard*5;
+  		.logo-image{
+    		width: 100%;
+    		height: auto;
+  		}
+  	}
+  	.header_content-nav_toggle {
+    	@include button-standard();
+    	background: $color-dark_blue;
+    	&:before{
+        @include fa-icon();
+        content: $fa-var-bars;
+    	}
+    	&:after{
+      	content: 'Menu';
+      	margin-left: $cell-smallest;
+        @media only screen and (max-width: $screen-smaller){
+      	  content: '';
+      	  margin-left: 0;
+        }
+      }
+    }		  	
+    .header_content-action_button{
+    	@include button-standard();
+    }
+  }
+  .header-navigation{
+    .navigation-menu{
+      list-style: none;
+      margin: 0;
+      padding: 0;      
+      .menu-item{
+        border-top: $border-standard;
+        display: none;
+        @include responsive-standard_padding(); 
+        @include responsive-larger_font();
+        &:last-of-type{
+          border-bottom: $border-standard;
+        }
+        a{
+          display: block;
+          margin: 0 auto;
+          @include responsive-standard_container();
+        }
+      }
+    }
+  }
+}

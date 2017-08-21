@@ -18,8 +18,8 @@ include_once('includes/require_plugins.php' );
 //Admin Notices
 include_once('includes/admin_notices.php' );
 
-//WYSIWG Settings
-include_once('includes/wysiwyg_settings.php' );
+//Tinymce Settings
+include_once('includes/tinymce.php' );
 
 //Custom Post Types
 include_once('includes/custom_post_types.php' );
@@ -29,5 +29,8 @@ include_once('includes/filterable_content.php' );
 
 //Advanced Custom Fields Settings
 include_once('includes/acf_settings.php' );
+
+//Newsletter Signup Shortcode
+include_once('includes/newsletter_signup.php' );
 
 ?>
