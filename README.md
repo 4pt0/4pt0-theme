@@ -21,7 +21,7 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 
 ## Core Dev/Design Team
 - Blake Bertuccelli ([@bbertucc])
-- Tevin Clark
+- Tevin Clark ([@tevintc])
 - Jihad Doucette
 - Taylor Osbey ([@tosbey1])
 - Alberta Wright
@@ -37,6 +37,7 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 [DeployHQ]:https://www.deployhq.com/
 [DRY]:https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [@tosbey1]:https://github.com/tosbey1
+[@tevintc]:https://github.com/tevintc
 [@bbertucc's gist]:https://gist.github.com/bbertucc/0918e342a8c981e78e88e714cde1e9d5
 [code guide]:http://codeguide.co/
 [@mdo]:https://github.com/mdo
