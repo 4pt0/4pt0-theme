@@ -20,6 +20,8 @@ function theme_scripts_and_styles() {
   wp_enqueue_script( 'waypoints',  get_template_directory_uri().'/scripts/jquery.waypoints.min.js', array( 'jquery' ) );
   wp_enqueue_script( 'theme-flowtype',  get_template_directory_uri().'/scripts/themeFlowtype.js', array( 'jquery' ) );
   wp_enqueue_script( 'flowtype',  get_template_directory_uri().'/scripts/flowtype.js', array( 'jquery' ) );
+  wp_enqueue_script( 'theme-slideshow',  get_template_directory_uri().'/scripts/themeSlideshow.js', array( 'jquery' ) );
+
 
   //Ajax
   wp_localize_script( 'theme-user_list', 'ajax_params', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );

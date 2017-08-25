@@ -1,9 +1,9 @@
 <?php
 //Mosaic Segment
-if( get_sub_field('add_feature') == 'Mosaic'):
+if( get_sub_field('add_media') == 'Mosaic'):
 ?>
 
-<div class="feature-mosaic <?php the_sub_field('segment_background');?>">
+<div class="media-mosaic">
 
   <?php
   //Mosaic Blocks

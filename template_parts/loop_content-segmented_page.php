@@ -46,7 +46,7 @@ if( get_field('content_display') == 'Segmented Page' && have_rows('segments') ):
 
     <?php
     //Start Segment Text
-    if( get_sub_field('segment_type') == 'Text' || get_sub_field('segment_type') == 'Text and Features' ):
+    if( get_sub_field('segment_type') == 'Text' || get_sub_field('segment_type') == 'Text and Media' ):
     
       //Text Fields
       $title = get_sub_field('title');
@@ -89,20 +89,18 @@ if( get_field('content_display') == 'Segmented Page' && have_rows('segments') ):
     endif;
 
     //Start Segment Features
-    if(get_sub_field('segment_type') == 'Only Features' || get_sub_field('segment_type') == 'Text and Features' ):
+    if(get_sub_field('segment_type') == 'Only Media' || get_sub_field('segment_type') == 'Text and Media' ):
     ?>
       
-      <div class="content-features">
+        <div class="content-media">
           
         <?php  
-        //Media Blocks, Slideshow, and Circles
-        get_template_part('template_parts/feature', 'media');
-            
-        //Mosaic
-        get_template_part('template_parts/feature', 'mosaic');
-        
-        //Newsletter Signup
-        get_template_part('template_parts/feature', 'newsletter_signup');
+        //Media
+        get_template_part('template_parts/media', 'grid');
+        get_template_part('template_parts/media', 'portrait_and_landscape');
+        get_template_part('template_parts/media', 'single_media_item');
+        get_template_part('template_parts/media', 'slideshow');
+        get_template_part('template_parts/media', 'mosaic');
         ?>
         
       </div>

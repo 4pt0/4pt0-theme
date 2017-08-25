@@ -52,9 +52,11 @@
           $(this).addClass('selected');
         }
         input.trigger('change');
-        $('html, body').animate({
-          scrollTop: ($('.text-options').first().offset().top)
-        },500);
+        if($('.text-options').length) {
+	        $('html, body').animate({
+	          scrollTop: ($('.text-options').first().offset().top)
+	        },500);
+        }
       });
               
       //Declare User Role

@@ -89,8 +89,8 @@
     .one_column_segment-content,
     .header-content{
       
-      //Text and Features
-      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text, .content-features{
+      //Text and Media
+      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text, .content-media{
         margin-left: auto;
         margin-right: auto;
       }
@@ -204,6 +204,7 @@
     }
     .one_column_segment-white_background, .two_column_segment-white_background{
       @include background(white);
+      border-top: $border-standard;
     }
     .one_column_segment-transparent_background, .two_column_segment-transparent_background{
       @include background(transparent);
@@ -245,22 +246,13 @@
     
     //Content
     .one_column_segment-content{
-/*
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      min-height: $cell-standard*6;
-      flex-wrap: wrap;
-      @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-        min-height: $cell-smaller*6;
-      }
+      margin-bottom: $cell-standard;
       @media only screen and (max-width: $screen-smaller){
-        min-height: $cell-smaller*6;
+        margin-bottom: $cell-smallest;
       }
-*/
       
       //Features
-      .content-features{
+      .content-media{
         max-width: $cell-standard*23;
         width: 100%;
         margin-top: $cell-standard;
@@ -316,7 +308,7 @@
       }
 
       //Features
-      .content-features{
+      .content-media{
         max-width: $cell-smallest*31;
         width: 100%;
         @media only screen and (max-width: $screen-smaller){

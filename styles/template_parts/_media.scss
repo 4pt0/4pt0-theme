@@ -1,0 +1,527 @@
+/*--------------------------------------------------------------
+# Media: Media elements within the loop.
+--------------------------------------------------------------*/
+
+//Mosaic
+.media-mosaic{
+  .mosaic-blocks{
+    width: 100%;
+    max-width: $screen-larger;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    @extend .flex-center;
+    & > div{      
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: $color-orange;
+      position: relative;
+      padding-bottom: 35%;
+      margin-bottom: 3%;
+      &:nth-of-type(odd){
+        width: 62%;
+        margin-right: 3%;
+        .user-content{
+          padding: 0 $cell-standard;
+          .content-quote:after{
+            margin-right: $cell-standard;
+          }
+        }
+      }
+      &:nth-of-type(even){
+        width: 35%;
+        .content-quote:before{
+          @include fa-icon();
+          content: $fa-var-quote-right;
+        }
+      }
+      &:last-of-type:before{
+        display: none;
+      }
+      & > a{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding: $cell-smaller;
+        color: $color-white;
+        text-decoration: none;
+        @extend .flex-center;
+      }
+      &.with_background a{
+        background: $color-dark_blue_gradient;
+        justify-content: flex-start !important;
+        align-items: flex-end !important;
+      }
+      &.blocks-page{
+        .page-clickable_area{
+          font: $font-larger;
+          line-height: 1em;
+        }
+      }
+      &.blocks-alumni_quote{
+        background-color: transparent;
+        position: relative;
+        padding-bottom: 35%;
+        .alumni_quote-user{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          .user-content{
+            .content-quote{
+              font: $font-standard;
+              &:before, &:after{
+                @include fa-icon();
+                opacity: .4;
+                position: absolute;
+              }
+              &:before{
+                content: $fa-var-quote-left;
+                margin-top: -$cell-standard;
+              }
+              &:after{
+                content: $fa-var-quote-right;
+                right: 0;
+              }
+            }
+            .content-name{
+              font: $font-smaller;
+            }
+            .content-alumni_roles{
+              font: $font-smallest;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      &.blocks-link{
+        font: $font-larger;
+      }
+    }
+    @media only screen and (min-width: $screen-largest) {
+      max-width: $screen-largest;
+      & > div{      
+        &:nth-of-type(even){
+          &:before{
+            left: -15%;
+            bottom: -15%;
+          }
+        }
+        & > a{
+          padding: $cell-standard;
+        }
+      }     
+    }
+    @media only screen and (max-width: $screen-larger) {
+      & > div{      
+        padding-bottom: 36%;
+        margin-bottom: 2%;
+        &:nth-of-type(odd){
+          width: 63%;
+          margin-right: 2%;
+        }
+        &.blocks-alumni_quote{
+          .alumni_quote-user{
+            .user-content{
+              .content-quote{
+                &:before{
+                  margin-top: -$cell-standard;
+                }
+                &:after{
+                  right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @media only screen and (max-width: $screen-standard) {
+      & > div{      
+        &:nth-of-type(odd){
+          .user-content{
+            padding: 0 $cell-smaller;
+          }
+        }
+        &:nth-of-type(even){
+          &:before{
+            width: $cell-smaller;
+            height: $cell-smaller;
+            border: $cell-smallest $color-white solid;
+            left: -12%;
+            bottom: -12%;
+          }
+        }
+        & > a{
+          padding: $cell-smallest;
+        }
+        &.blocks-page{
+          .page-clickable_area{
+            font: $font-larger;
+          }
+        }
+        &.blocks-alumni_quote{
+          .alumni_quote-user{
+            .user-content{
+              .content-quote{
+                font: $font-smaller;
+                &:before{
+                  margin-top: -$cell-smaller*2;
+                }
+                &:after{
+                  right: 0;
+                }
+              }
+              .content-name{
+                font: $font-smaller;
+              }
+              .content-alumni_roles{
+                font: $font-smallest;
+              }
+            }
+          }
+        }
+        &.blocks-link{
+          font: $font-standard;
+        }
+      }
+    }
+    @media only screen and (max-width: $screen-smaller) {
+      & > div{      
+        padding-bottom: 37%;
+        margin-bottom: 1%;
+        &:nth-of-type(odd){
+          width: 64%;
+          margin-right: 1%;
+          .user-content{
+            padding: 0 $cell-smallest;
+          }
+        }
+        &:nth-of-type(even){
+          &:before{
+            width: $cell-smallest;
+            height: $cell-smallest;
+            border: $cell-smallest/1.3 $color-white solid;
+            left: -9%;
+            bottom: -9%;
+          }
+        }
+        &.blocks-page{
+          .page-clickable_area{
+            font: $font-standard;
+          }
+        }
+        &.blocks-alumni_quote{
+          .alumni_quote-user{
+            .user-content{
+              .content-quote{
+                &:before{
+                  margin-top: -$cell-smallest*2;
+                  font-size: 20px;
+                }
+                &:after{
+                  font-size: 40px;
+                }
+              }
+              .content-name{
+                font: $font-smallest;
+              }
+              .content-alumni_roles{
+                font: $font-smallest;
+              }
+            }
+          }
+        }
+        &.blocks-link{
+          font: $font-smaller;
+        }
+      }
+    }
+    @media only screen and (max-width: $screen-smallest) {
+      & > div{      
+        padding-bottom: 60%;
+        margin-bottom: $cell-smallest;
+        
+        &:nth-of-type(odd){
+          width: 100%;
+          margin-right: 0;
+        }
+        &:nth-of-type(even){
+          width: 100%;
+          &:before{
+            display: none;
+          }
+        }
+        & > a{
+          padding: $cell-smaller;
+        }
+        &.blocks-alumni_quote{
+          padding: $cell-smallest 0;
+          .alumni_quote-user{
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Grid + Portrait and Landscape Media
+.media-grid, .media-portrait_and_landscape, .media-single_media_item, .media-slideshow{
+
+  //Items
+  .grid-item, .single_media_item-item, .portrait_and_landscape-portrait, .portrait_and_landscape-landscape, .slideshow-slide{
+    display: inline-block;
+    position: relative;
+    box-shadow: none;
+    overflow: hidden;
+    color: $color-white;
+    text-decoration: none;
+    @media only screen and (max-width: $screen-smallest){
+  	  width: 100% !important;
+    }
+    &:hover{
+      box-shadow: $box-shadow-standard;
+    }
+
+    //Image, Icons and Caption
+    .portrait-image, .portrait-caption, .portrait-play_icon, .portrait-pdf_icon, .landscape-image, .landscape-caption, .landscape-play_icon, .landscape-pdf_icon, .item-image, .item-caption, .item-play_icon, .item-pdf_icon, .slide-image, .slide-caption{
+      position: absolute;
+      width: 100%
+    }  
+    
+    //Image
+    .item-image, .portrait-image, .landscape-image, .slide-image {
+      height: 100%;
+      background-color: $color-blue;
+      .image-the_image{
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+    //Caption
+    .item-caption, .portrait-caption, .landscape-caption, .slide-caption  {
+      bottom: 0;
+      background: $color-dark_blue_gradient;
+      text-align: center;
+    } 
+    
+    //Icons
+    .item-play_icon, .item-pdf_icon, .portrait-play_icon, .portrait-pdf_icon, .landscape-play_icon, .landscape-pdf_icon{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      &:before{
+        @include fa-icon();
+        text-shadow: 1px 1px 30px rgba(0,0,0,.4);
+      }
+      &:active{
+        opacity: .7;
+      }
+      @media only screen and (max-width: $screen-smaller){
+    	  font-size: 3em !important;
+      }
+    }
+    .item-pdf_icon, .portrait-pdf_icon, .landscape-pdf_icon{
+      &:before{
+        content: $fa-var-file-pdf-o;
+      }
+    }
+    .item-play_icon, .portrait-play_icon, .landscape-play_icon{
+      &:before{
+        content: $fa-var-play-circle-o;
+      }
+    }
+  }
+}
+
+//Grid + Portrait and Landscape Media
+.media-grid, .media-portrait_and_landscape{
+
+  //Items
+  .grid-item, .portrait_and_landscape-portrait, .portrait_and_landscape-landscape{
+    border: $cell-smallest/2 solid transparent;
+    &:hover{
+      font-size: 104%;
+      border: 0 solid transparent;
+    }
+  }
+}
+
+
+//Grid
+.media-grid{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  
+  //Grid Items
+  .grid-item{
+    width: 33.3333333333%;
+    padding-bottom: 18.7466666667%; 
+    @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
+      width: 50%;
+  	  padding-bottom: 30%;
+    }
+    @media only screen and (max-width: $screen-smallest){
+  	  width: 100% !important;
+  	  padding-bottom: 60%;
+    }
+    
+    //Caption
+    .item-caption {
+      padding: $cell-smallest/2;
+      @include responsive-smallest_font();
+    }    
+    
+    //Icon
+    .item-pdf_icon, .item-play_icon, {
+      font-size: 4.5em;
+    }
+  }
+    
+  //Landscape Media
+  .blocks-full_landscape, .blocks-half_landscape{
+    padding-bottom: 56.24%;
+  }
+  
+  //Portrait Media
+  .blocks-full_portrait, .blocks-half_portrait{
+    padding-bottom: 100%;
+  }
+  //Square Media
+  .blocks-full_square, .blocks-half_square{
+    padding-bottom: 50%;
+  }
+}
+
+//Portrait and Landscape Media
+.media-portrait_and_landscape{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  @media only screen and (max-width: $screen-smallest){
+	  display: block;
+  }
+  
+  //P & L 
+  .portrait_and_landscape-portrait, .portrait_and_landscape-landscape{
+    padding-bottom: 42%; 
+      
+    //Caption
+    .portrait-caption, .landscape-caption  {
+      @include responsive-smaller_font();
+      padding: $cell-smallest;
+      @media only screen and (max-width: $screen-smaller){
+    	  padding: $cell-smallest/2;
+      }
+    }    
+    
+    //Icon
+    .portrait-play_icon, .landscape-play_icon, .portrait-pdf_icon, .landscape-pdf_icon {
+      font-size: 6em;
+    }
+  }
+  
+  //Portrait
+  .portrait_and_landscape-portrait{
+    width: 32%;
+    @media only screen and (max-width: $screen-smallest){
+  	  padding-bottom: 120%;
+    }
+    .portrait-image{
+      .image-the_image{
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+    
+  //Landscape
+  .portrait_and_landscape-landscape{
+    width: 68%;
+    @media only screen and (max-width: $screen-smallest){
+  	  padding-bottom: 60%;
+    }
+  }
+}
+
+//Single Media Item
+.media-single_media_item{
+
+  //Item
+  .single_media_item-item{
+    padding-bottom: 60%; 
+    width: 100%;
+
+    //Caption
+    .item-caption  {
+      @include responsive-standard_font();
+      padding: $cell-smaller;
+      @media only screen and (max-width: $screen-smaller){
+    	  padding: $cell-smaller/2;
+      }
+    }   
+    
+    //Icon
+    .item-pdf_icon, .item-play_icon, {
+      font-size: 7.5em;
+    }
+  }
+}
+
+//Slideshow
+.media-slideshow{
+  position: relative;
+  padding-bottom: 60%;
+    
+  //Item
+  .slideshow-slide{
+    position: absolute;
+    padding-bottom: 60%; 
+    width: 100%;
+
+    //Caption
+    .slide-caption {
+      @include responsive-standard_font();
+      padding: $cell-smaller;
+      @media only screen and (max-width: $screen-smaller){
+    	  padding: $cell-smaller/2;
+      }
+    }   
+  }
+  
+  //Controls
+  .slideshow-next, .slideshow-previous{
+    color: $color-white;
+    position: absolute;
+    display: inline-block;
+    z-index: 9999;
+    top: 50%;
+    margin-top: -20px;
+    text-decoration: none;
+    text-shadow: $text-shadow-standard;
+    @include fa-icon();
+    font-size: 40px;
+    &:focus{
+      opacity: .7;
+    }
+  }
+  .slideshow-next{
+    right: $cell-smaller;
+    &:before{
+      content: $fa-var-chevron-right;
+    }
+  }
+  .slideshow-previous{
+    left: $cell-smaller;
+    &:before{
+      content: $fa-var-chevron-left; 
+    }
+  }
+}

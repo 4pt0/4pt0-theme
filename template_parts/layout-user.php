@@ -5,7 +5,6 @@ if(is_author()):
   $user_data = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
   $location = get_field('location', 'user_'.$user_data->ID);
   $city = explode( "," , $location['address'])[1];
-  print_r()
 ?>
 
 <div class="layout-user">
