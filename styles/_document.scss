@@ -34,7 +34,9 @@ a{
   }
 }
 form{
-  
+  input, textarea{
+    border: $border-standard;
+  }
 }
 table{
   
