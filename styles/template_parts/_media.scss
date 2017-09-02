@@ -9,7 +9,9 @@
     max-width: $screen-larger;
     margin: 0 auto;
     flex-wrap: wrap;
-    @extend .flex-center;
+    display: flex;
+  	justify-content: center;
+  	align-items: center;
     & > div{      
       background-size: cover;
       background-repeat: no-repeat;
@@ -44,7 +46,9 @@
         padding: $cell-smaller;
         color: $color-white;
         text-decoration: none;
-        @extend .flex-center;
+        display: flex;
+      	justify-content: center;
+      	align-items: center;
       }
       &.with_background a{
         background: $color-dark_blue_gradient;
@@ -268,7 +272,7 @@
   }
 }
 
-//Grid + Portrait and Landscape Media
+//Grid + Portrait and Landscape + Slideshow Media
 .media-grid, .media-portrait_and_landscape, .media-single_media_item, .media-slideshow{
 
   //Items

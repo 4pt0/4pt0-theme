@@ -9,7 +9,6 @@ if ( get_sub_field('add_media') == 'Grid' ):
   //Set Out-of-Repeater Variables
   $gallery_id = uniqid(); //To group media in Fancybox
   
-  
   //Start Media Repeater 
   if(have_rows('media')): while(have_rows('media')): the_row();
     

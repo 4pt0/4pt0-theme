@@ -40,6 +40,9 @@
   @if $text_option == "white_sibling" {
     & ~ div{
       color: $color-white;
+      padding-top: 4%;
+      padding-bottom: 4%;
+
       a{
         color: $color-white;
       }

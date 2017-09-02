@@ -4,6 +4,9 @@ if ( get_sub_field('add_media') == 'Slideshow' ):
 ?>
 
 <div class="media-slideshow">
+
+  <a class="slideshow-next" href="#"></a>
+  <a class="slideshow-previous" href="#"></a>
     
   <?php
   //Set Out of Repeater Variables
@@ -66,10 +69,7 @@ if ( get_sub_field('add_media') == 'Slideshow' ):
     ?>
 
   </a>
-  
-  <a class="slideshow-next" href="#"></a>
-  <a class="slideshow-previous" href="#"></a>
-  
+    
   <?php
   //End Media Repeater
   endwhile; endif;

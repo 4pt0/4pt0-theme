@@ -14,7 +14,7 @@ Tags:
 /*--------------------------------------------------------------
 # Standard Variables
 --------------------------------------------------------------*/
-@import "styles/standards";
+@import "styles/variables";
 
 /*--------------------------------------------------------------
 # Fonts
@@ -31,35 +31,25 @@ Tags:
 @import "styles/mixins/responsive";
 
 /*--------------------------------------------------------------
-# Helper Classes
---------------------------------------------------------------*/
-@import "styles/helper_classes/animate";
-@import "styles/helper_classes/effects";
-@import "styles/helper_classes/grid";
-@import "styles/helper_classes/sizing_and_alignments";
-@import "styles/helper_classes/wordpress";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "styles/elements/forms";
-@import "styles/elements/images";
-@import "styles/elements/links";
-@import "styles/elements/tables";
-@import "styles/elements/text";
-
-/*--------------------------------------------------------------
 # Template Parts
 --------------------------------------------------------------*/
 @import "styles/template_parts/features";
-@import "styles/template_parts/loop_content";
+@import "styles/template_parts/footer";
+@import "styles/template_parts/header";
 @import "styles/template_parts/layouts";
+@import "styles/template_parts/loop_content";
 @import "styles/template_parts/media";
 
 /*--------------------------------------------------------------
 # Additional Elements: Script Styles, Includes, Header, .. etc.
 --------------------------------------------------------------*/
-@import "styles/etc/fancybox";
-@import "styles/etc/footer";
-@import "styles/etc/header";
+@import "styles/etc/animate";
 @import "styles/etc/includes";
+@import "styles/etc/fancybox";
+@import "styles/etc/wordpress";
+
+
+/*--------------------------------------------------------------
+# Document Properties
+--------------------------------------------------------------*/
+@import "styles/document";
