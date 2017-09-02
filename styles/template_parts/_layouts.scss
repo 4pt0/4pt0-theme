@@ -63,6 +63,7 @@
           .tags-role, .tags-location{
             @include button-smallest();
             margin-right: $cell-smallest;
+            text-transform: capitalize;
         		@media only screen and (max-width: $screen-smallest) {
               margin-right: 0;
             }
@@ -99,7 +100,8 @@
     }
     @include responsive-standard_padding();
 	  .bio-title {
-      @extend .meta;
+      @include responsive-smaller_font();
+      margin-bottom: $cell-smallest;
 	  }
 	  .bio-body{
       @include responsive-standard_font();
@@ -137,7 +139,8 @@
 			    margin-right: 0;
         }
 			  .venture-heading {
-          @extend .meta;
+          @include responsive-smaller_font();
+          margin-bottom: $cell-smallest;
 			  }
 			  .venture-title {
 				  color: $color-dark_blue;
@@ -167,7 +170,8 @@
           max-width: 100%;
 				}
 				.contact-title {
-          @extend .meta;
+          @include responsive-smaller_font();
+          margin-bottom: $cell-smallest;
 				}
 				.contact-links{
   				.links-website, .links-social_media{
