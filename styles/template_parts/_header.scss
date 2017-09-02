@@ -48,7 +48,7 @@
         border-top: $border-standard;
         display: none;
         @include responsive-standard_padding(); 
-        @include responsive-larger_font();
+        @include responsive-larger_standard_font();
         &:last-of-type{
           border-bottom: $border-standard;
         }

@@ -12,6 +12,8 @@
     display: flex;
   	justify-content: center;
   	align-items: center;
+  	
+  	//All blocks
     & > div{      
       background-size: cover;
       background-repeat: no-repeat;
@@ -19,6 +21,8 @@
       position: relative;
       padding-bottom: 35%;
       margin-bottom: 3%;
+      
+      //Bigger COntent
       &:nth-of-type(odd){
         width: 62%;
         margin-right: 3%;
@@ -29,6 +33,8 @@
           }
         }
       }
+      
+      //Smaller Content
       &:nth-of-type(even){
         width: 35%;
         .content-quote:before{
@@ -36,9 +42,8 @@
           content: $fa-var-quote-right;
         }
       }
-      &:last-of-type:before{
-        display: none;
-      }
+      
+      // Clickable Areas
       & > a{
         position: absolute;
         height: 100%;
@@ -50,17 +55,23 @@
       	justify-content: center;
       	align-items: center;
       }
+      
+      //Clickable Areas (Over Background)
       &.with_background a{
         background: $color-dark_blue_gradient;
         justify-content: flex-start !important;
         align-items: flex-end !important;
       }
+      
+      //Page Block
       &.blocks-page{
         .page-clickable_area{
-          font: $font-larger;
+          @include responsive-largest_standard_font();
           line-height: 1em;
         }
       }
+      
+      //Alumni Quotes
       &.blocks-alumni_quote{
         background-color: transparent;
         position: relative;
@@ -75,7 +86,7 @@
           align-items: center;
           .user-content{
             .content-quote{
-              font: $font-standard;
+              @include responsive-standard_font();
               &:before, &:after{
                 @include fa-icon();
                 opacity: .4;
@@ -91,19 +102,23 @@
               }
             }
             .content-name{
-              font: $font-smaller;
+              font: $font-smaller_standard;
             }
             .content-alumni_roles{
-              font: $font-smallest;
+              font: $font-smallest_standard;
               text-transform: uppercase;
             }
           }
         }
       }
+      
+      //Link Blcok
       &.blocks-link{
-        font: $font-larger;
+              @include responsive-standard_font();
       }
     }
+    
+    //Blocks (Largest Screen)
     @media only screen and (min-width: $screen-largest) {
       max-width: $screen-largest;
       & > div{      
@@ -118,7 +133,9 @@
         }
       }     
     }
-    @media only screen and (max-width: $screen-larger) {
+    
+    //Bocks (Larger to Largest screen)
+    @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest) {
       & > div{      
         padding-bottom: 36%;
         margin-bottom: 2%;
@@ -142,7 +159,9 @@
         }
       }
     }
-    @media only screen and (max-width: $screen-standard) {
+    
+    //Bocks (Standard to Larger screen)
+    @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger) {
       & > div{      
         &:nth-of-type(odd){
           .user-content{
@@ -163,14 +182,13 @@
         }
         &.blocks-page{
           .page-clickable_area{
-            font: $font-larger;
+            font: $font-larger_standard;
           }
         }
         &.blocks-alumni_quote{
           .alumni_quote-user{
             .user-content{
               .content-quote{
-                font: $font-smaller;
                 &:before{
                   margin-top: -$cell-smaller*2;
                 }
@@ -179,10 +197,10 @@
                 }
               }
               .content-name{
-                font: $font-smaller;
+                font: $font-smaller_standard;
               }
               .content-alumni_roles{
-                font: $font-smallest;
+                font: $font-smallest_standard;
               }
             }
           }
@@ -192,7 +210,9 @@
         }
       }
     }
-    @media only screen and (max-width: $screen-smaller) {
+    
+    //Bocks (Smaller to Standard screen)
+    @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard) {
       & > div{      
         padding-bottom: 37%;
         margin-bottom: 1%;
@@ -230,20 +250,22 @@
                 }
               }
               .content-name{
-                font: $font-smallest;
+                font: $font-smallest_standard;
               }
               .content-alumni_roles{
-                font: $font-smallest;
+                font: $font-smallest_standard;
               }
             }
           }
         }
         &.blocks-link{
-          font: $font-smaller;
+          font: $font-smaller_standard;
         }
       }
     }
-    @media only screen and (max-width: $screen-smallest) {
+    
+    //Bocks (Anything under Smaller screen)
+    @media only screen and (max-width: $screen-smaller) {
       & > div{      
         padding-bottom: 60%;
         margin-bottom: $cell-smallest;
@@ -263,8 +285,12 @@
         }
         &.blocks-alumni_quote{
           padding: $cell-smallest 0;
+          margin: $cell-smallest 0;
           .alumni_quote-user{
             position: relative;
+            .user-content{
+              padding: 0 $cell-smallest;
+            }
           }
         }
       }
@@ -380,7 +406,7 @@
     //Caption
     .item-caption {
       padding: $cell-smallest/2;
-      @include responsive-smallest_font();
+      @include responsive-smallest_standard_font();
     }    
     
     //Icon
@@ -419,7 +445,7 @@
       
     //Caption
     .portrait-caption, .landscape-caption  {
-      @include responsive-smaller_font();
+      @include responsive-smaller_standard_font();
       padding: $cell-smallest;
       @media only screen and (max-width: $screen-smaller){
     	  padding: $cell-smallest/2;

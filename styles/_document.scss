@@ -5,7 +5,7 @@
   box-sizing: border-box !important;
 }
 body {
-  font-family: $font-family-ubuntu;
+  font-family: $font-family-standard;
   font-weight: $font-weight-bold;
   margin: 0;
 
@@ -45,11 +45,11 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  @include responsive-largest_font();
+  @include responsive-largest_standard_font();
 }
 
 h2 {
-  @include responsive-larger_font();
+  @include responsive-larger_standard_font();
 }
 
 h3 {
@@ -57,9 +57,9 @@ h3 {
 }
 
 h4 {
-  @include responsive-smaller_font();
+  @include responsive-smaller_standard_font();
 }
 
 .lead{
-  @include responsive-larger_font();
+  @include responsive-larger_standard_font();
 }

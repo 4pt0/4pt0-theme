@@ -31,19 +31,19 @@
 }
 @mixin button-smaller(){
   @extend .button;
-  @include responsive-smaller_font();
+  @include responsive-smaller_standard_font();
   padding: 5px $cell-smallest;
 }
 @mixin button-smallest(){
   @extend .button;
-  @include responsive-smallest_font();
+  @include responsive-smallest_standard_font();
   padding: 3px $cell-smallest;
 }
 @mixin button-circle(){
   display: inline-block;
   border-radius: $border-radius-circle;
   padding: 7px 0;
-  font: $font-smaller;
+  font: $font-smaller_standard;
   height: $cell-standard;
   width: $cell-standard;
   color: $color-white;
@@ -61,7 +61,7 @@
     padding: 10px 0;
   }
   @media only screen and (max-width: $screen-smaller){
-    font: $font-smallest;
+    font: $font-smallest_standard;
     height: $cell-smaller;
     width: $cell-smaller;
     padding: 3px 0;

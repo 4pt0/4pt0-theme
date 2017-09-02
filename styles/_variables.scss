@@ -3,8 +3,8 @@
 --------------------------------------------------------------*/
 
 //Typeface Settings
-$font-family-ubuntu: 'Ubuntu', sans-serif;
-$font-family-matt_font: 'matt_font', cursive;
+$font-family-standard: 'Ubuntu', sans-serif;
+$font-family-alternate: 'matt_font', cursive;
 $font-FontAwesome: 'FontAwesome';
 $font-weight-bold: 700;
 $font-weight-standard: 400;
@@ -13,16 +13,16 @@ $font-weight-standard: 400;
 $line-height-standard: 1.4em;
 
 //Font Settings
-$font-largest: $font-weight-bold 60px/1.4em $font-family-ubuntu;
-$font-larger: $font-weight-bold 40px/1.4em $font-family-ubuntu;
-$font-standard: $font-weight-bold 30px/1.4em $font-family-ubuntu;
-$font-smaller: $font-weight-bold 20px/1.4em $font-family-ubuntu;
-$font-smallest: $font-weight-bold 16px/1.4em $font-family-ubuntu;
-$font-matt_font-smallest: 16px/1.4em  $font-family-matt_font; 
-$font-matt_font-smaller: 20px/1.4em  $font-family-matt_font;
-$font-matt_font-standard: 30px/1.4em  $font-family-matt_font;
-$font-matt_font-larger: 40px/1.4em  $font-family-matt_font; 
-$font-matt_font-largest: 16px/1.4em  $font-family-matt_font;
+$font-largest_standard: $font-weight-bold 60px/1.4em $font-family-standard;
+$font-larger_standard: $font-weight-bold 40px/1.4em $font-family-standard;
+$font-standard: $font-weight-bold 30px/1.4em $font-family-standard;
+$font-smaller_standard: $font-weight-bold 20px/1.4em $font-family-standard;
+$font-smallest_standard: $font-weight-bold 16px/1.4em $font-family-standard;
+$font-smallest_alternate: 16px/1.4em  $font-family-alternate; 
+$font-smaller_alternate: 20px/1.4em  $font-family-alternate;
+$font-alternate: 30px/1.4em  $font-family-alternate;
+$font-larger_alternate: 40px/1.4em  $font-family-alternate; 
+$font-largest_alternate: 16px/1.4em  $font-family-alternate;
 
 //Single Cell Settings
 $cell-largest: 84px; // Standard Font Size * Line Height
@@ -52,7 +52,7 @@ $color-dark_blue_gradient: linear-gradient(rgba(33,60,90, 0) 0%, $color-dark_blu
 $color-orange: rgb(241,118,73);
 $color-purple: rgb(101,49,143);
 
-//Effects
+//Shadows
 $box-shadow-smallest: 0px 1px 2px -1px $color-dark_gray;
 $box-shadow-smaller: 0px 1px 6px -1px $color-standard;
 $box-shadow-standard: 0px 1px 12px -1px $color-standard;

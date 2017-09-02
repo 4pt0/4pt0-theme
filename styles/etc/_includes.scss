@@ -69,7 +69,7 @@
       }
       .single_user-title {
         text-transform: capitalize;
-        @include responsive-smaller_font();
+        @include responsive-smaller_standard_font();
       }
     }
   }

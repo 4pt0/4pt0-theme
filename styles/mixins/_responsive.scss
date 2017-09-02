@@ -134,25 +134,11 @@
   }
 }
 
-//Smaller Font
-@mixin responsive-smaller_font(){
-  transition: font-size .2s;
-  @media only screen and (min-width: $screen-largest){
-	  font: $font-larger;
-  }
-  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
-    font: $font-standard;
-  }
-  @media only screen and  (max-width: $screen-larger){
-	  font: $font-smaller;
-  }
-}
-
 //Largest Font
-@mixin responsive-largest_font(){
-  font: $font-largest;
+@mixin responsive-largest_standard_font(){
+  font: $font-largest_standard;
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-	  font: $font-larger;
+	  font: $font-larger_standard;
   }
   @media only screen and (max-width: $screen-smaller){
 	  font: $font-standard;
@@ -160,13 +146,13 @@
 }
 
 //Larger Font
-@mixin responsive-larger_font(){
-  font: $font-larger;
+@mixin responsive-larger_standard_font(){
+  font: $font-larger_standard;
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
 	  font: $font-standard;
   }
   @media only screen and (max-width: $screen-smaller){
-	  font: $font-smaller;
+	  font: $font-smaller_standard;
   }
 }
 
@@ -174,40 +160,42 @@
 @mixin responsive-standard_font(){
   font: $font-standard;
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-	  font: $font-smaller;
+	  font: $font-smaller_standard;
   }
   @media only screen and (max-width: $screen-smaller){
-	  font: $font-smallest;
+	  font: $font-smallest_standard;
   }
 }
 
 //Smaller Font
-@mixin responsive-smaller_font(){
-  font: $font-smaller;
+@mixin responsive-smaller_standard_font(){
+  font: $font-smaller_standard;
   @media only screen and (max-width:  $screen-standard){
-	  font: $font-smallest;
+	  font: $font-smallest_standard;
   }
 }
 
 //Smallest Font
-@mixin responsive-smallest_font(){
-  font: $font-smallest;
+@mixin responsive-smallest_standard_font(){
+  font: $font-smallest_standard;
 }
 
-//Matt Font
-@mixin responsive-matt_font-standard(){
-  font: $font-matt_font-standard;
+//Alternate Font
+@mixin responsive-alternate_font(){
+  font: $font-alternate;
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-	  font: $font-matt_font-smaller;
+	  font: $font-smaller_alternate;
   }
   @media only screen and (max-width: $screen-smaller){
-	  font: $font-matt_font-smallest;
+	  font: $font-smallest_alternate;
   }  
 }
-@mixin responsive-matt_font-smaller(){
-  font: $font-matt_font-smaller;
+
+//Smaller Alternate Font
+@mixin responsive-smaller_alternate_font(){
+  font: $font-smaller_alternate;
   @media only screen and (max-width: $screen-standard){
-	  font: $font-matt_font-smallest;
+	  font: $font-smallest_alternate;
   }  
 }
 

@@ -18,7 +18,7 @@
     }    
     .content-title{
       color: $color-dark_blue;
-      @include responsive-larger_font();
+      @include responsive-larger_standard_font();
     }
     .content-meta{
       display: flex;
@@ -62,7 +62,7 @@
   .standard_page-page_title {
   	margin: 0 auto;
     color: $color-dark_blue;
-    @include responsive-largest_font();
+    @include responsive-largest_standard_font();
   }  
   .standard_page-standard_content{
     @include responsive-standard_font();
@@ -113,13 +113,13 @@
                 
         //Title
         .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title {
-          @include responsive-larger_font();
+          @include responsive-larger_standard_font();
       	}
       	
       	//Subtitle
         .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle, .long_text-subtitle{
           margin-top: $cell-smallest;
-        	@include responsive-matt_font-standard();
+        	@include responsive-alternate_font();
         }
         
         //Body
@@ -127,7 +127,7 @@
           @include responsive-standard_font();
       	}
       	.regular_text-body, .regular_text_with_paragraphs-body, .long_text-body {
-          @include responsive-smaller_font();
+          @include responsive-smaller_standard_font();
       	}
       	.long_text-body {
         	text-align: justify;
@@ -142,11 +142,11 @@
         	p:first-of-type{
           	margin-top: 0;
           	&:first-letter{
-              @include responsive-largest_font();
+              @include responsive-largest_standard_font();
               float: left;
               padding: 0 $cell-smallest;
               @media only screen and (max-width: $screen-smaller){
-                @include responsive-smaller_font();
+                @include responsive-smaller_standard_font();
                 float: none;
                 padding: 0;
               }
@@ -243,7 +243,7 @@
       width: 100%;
       left: 0;
       text-align: center;
-      @include responsive-matt_font-standard();
+      @include responsive-alternate_font();
     }
   }
   
@@ -303,12 +303,12 @@
       	
       	//Subtitle
         .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle, .long_text-subtitle{
-        	@include responsive-matt_font-smaller();
+        	@include responsive-smaller_alternate_font();
         }
         
         //Body
         .brief_text-body, .regular_text-body, .regular_text_with_paragraphs-body, .long_text-body {
-          @include responsive-smaller_font();
+          @include responsive-smaller_standard_font();
         }
         
       }
