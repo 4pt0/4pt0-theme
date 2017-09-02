@@ -3,16 +3,19 @@
   a{
     color: $color-white;
   }
-  @if $type == "white" {
+  @if $type == "white_background" {
     background-color: $color-white;
     a{
       color: inherit;
     }
   }
+  @if $type == "blue_background" {
+    background-color: $color-blue;
+  }
   @if $type == "transparent" {
     background-color: transparent;
   }
-  @if $type == "orange" {
+  @if $type == "orange_background" {
     background-color: $color-orange;
   }
   @if $type == "orange_connections" {
@@ -28,9 +31,6 @@
       color: inherit;
     }
   }
-  @if $type == "blue" {
-    background-color: $color-blue;
-  }
   @if $type == "blue_watercolor" {
     background-image: url('images/background-blue_watercolor.jpg');
     background-size: 100%;
@@ -39,12 +39,11 @@
   }
   @if $text_option == "white_sibling" {
     & ~ div{
-      color: $color-white;
+      color: $color-white !important;
       padding-top: 4%;
       padding-bottom: 4%;
-
       a{
-        color: $color-white;
+        color: $color-white !important;
       }
     }
   }

@@ -175,16 +175,7 @@
     
     //Content
     .one_column_segment-content, .two_column_segment-content{
-      
-      //Text
-      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text{
-        
-        //Title
-        .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title{
-          color: $color-dark_blue;
-        }
-      }
-      
+          
       //Button
       .content-button{
         display: block;
@@ -196,8 +187,8 @@
           @include button-standard();
           background: $color-orange;
         }
-      }        
-        
+      }     
+      
     }
     
     //Background
@@ -215,7 +206,7 @@
       z-index: -1
     }
     .one_column_segment-white_background, .two_column_segment-white_background{
-      @include background(white);
+      @include background(white_background);
       border-top: $border-standard;
     }
     .one_column_segment-transparent_background, .two_column_segment-transparent_background{
@@ -225,13 +216,13 @@
       @include background(light_blue);
     }
     .one_column_segment-blue_background, .two_column_segment-blue_background{
-      @include background(blue, white_sibling);
+      @include background(blue_background, white_sibling);
     }
     .one_column_segment-blue_watercolor_background, .two_column_segment-blue_watercolor_background{
       @include background(blue_watercolor, white_sibling);
     }
     .one_column_segment-orange_background, .two_column_segment-orange_background{
-      @include background(orange, white_sibling);
+      @include background(orange_background, white_sibling);
     }
     
     //Scroll Icon
