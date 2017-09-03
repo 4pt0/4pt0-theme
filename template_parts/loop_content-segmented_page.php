@@ -18,8 +18,11 @@ if( get_field('content_display') == 'Segmented Page' && have_rows('segments') ):
     //Set Segment Content Classes
     if(get_sub_field('segment_display') == 'One Column' || !get_sub_field('segment_display'))
       $content_class = 'one_column_segment';
-    if(get_sub_field('segment_display') == 'Two Column')
+    if( get_sub_field('segment_display') == 'Two Column' && ( (get_sub_field('add_media') == 'Single Media Item' && get_sub_field('segment_type') == 'Text and Media' ) ||  (get_sub_field('add_media') == 'Slideshow'  && get_sub_field('segment_type') == 'Text and Media' ) ) ){
       $content_class = 'two_column_segment';
+    }else{
+      $content_class = 'one_column_segment';
+    }
   ?>
   
   <div class="segmented_page-<?php echo $content_class;?>" id="segment-<?php echo $count;?>">
