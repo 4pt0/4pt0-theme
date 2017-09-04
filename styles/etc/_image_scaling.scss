@@ -1,0 +1,8 @@
+//Update .image-the_image to fit on IE
+.ie_scaled-image {
+  background-size: cover;
+  background-position: center center;
+  .image-the_image {
+    opacity: 0;
+  }
+}

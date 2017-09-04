@@ -12,6 +12,7 @@
   text-decoration: none;
   background: $color-blue_gradient;
   box-shadow: $box-shadow-smallest;
+  text-shadow: none !important;
   &:hover{
     box-shadow: $box-shadow-smaller;
   }
@@ -25,9 +26,6 @@
   @extend .button;
   @include responsive-standard_font();
   padding: $cell-smallest $cell-smaller;
-  @media only screen and (max-width: $screen-smaller){
-	  display: block;
-  }    
 }
 @mixin button-smaller(){
   @extend .button;
@@ -42,10 +40,8 @@
 @mixin button-circle(){
   display: inline-block;
   border-radius: $border-radius-circle;
-  padding: 7px 0;
-  font: $font-smaller_standard;
-  height: $cell-standard;
-  width: $cell-standard;
+  background: $color-dark_blue;
+  box-shadow: $box-shadow-smallest;
   color: $color-white;
   text-align: center;
   &:hover{
@@ -53,17 +49,23 @@
   }
   &:active{
     box-shadow: $box-shadow-smallest;
-  }
-  @media only screen and (min-width: $screen-largest){
+  } 
+  @media only screen and (min-width: $screen-larger){
     font: $font-standard;
     height: $cell-larger;
     width: $cell-larger;
     padding: 10px 0;
   }
-  @media only screen and (max-width: $screen-smaller){
+  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+    font: $font-smaller_standard;
+    padding: 7px 0;
+    height: $cell-standard;
+    width: $cell-standard;
+  }
+  @media only screen and (max-width: $screen-standard){
     font: $font-smallest_standard;
     height: $cell-smaller;
     width: $cell-smaller;
     padding: 3px 0;
-  }    
+  }
 }

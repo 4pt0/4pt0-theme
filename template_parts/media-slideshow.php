@@ -51,11 +51,12 @@ if ( get_sub_field('add_media') == 'Slideshow' ):
         
         //Set Up Image Variables
         $img_src = wp_get_attachment_image_url( $image['ID'], 'medium' );
-        $img_srcset =  wp_get_attachment_image_srcset( $image['ID'], 'medium' );;
-        $img_sizes = '(max-width: 672px) 424px, 657px';
+        $img_srcset =  wp_get_attachment_image_srcset( $image['ID'], 'medium' );
+        $img_sizes = '(min-width: 1512px) 1484px, 980px ';
         
         //The Image
-        echo '<img class="image-the_image" src="'.esc_url($img_src).'" srcset="'.esc_attr($img_srcset).'" sizes="'.$img_sizes.'">';
+        echo '<img class="image-the_image" src="'.esc_url($img_src).'" srcset="'.esc_attr($img_srcset).'" sizes="'.$img_sizes.'" style="object-position:'.get_sub_field('image_focal_point').'">';
+        
       }
       ?>
 

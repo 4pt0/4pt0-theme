@@ -1,63 +1,170 @@
 //Header Styles
 .header {
-  .header-header_content{
-      @include responsive-standard_padding();
-
-    position: relative;
-    margin: 0 auto;
-    justify-content: space-between;
-    display: flex;
-  	justify-content: center;
-  	align-items: center;
+  width: 100%;
+  
+  //Content
+  .header-content{
     @include responsive-standard_container();
-    padding-left: 0;
-    padding-right: 0;
-  	.header_content-logo {
-    	width: $cell-standard*5;
-  		.logo-image{
-    		width: 100%;
-    		height: auto;
-  		}
-  	}
-  	.header_content-nav_toggle {
-    	@include button-standard();
-    	background: $color-dark_blue;
-    	&:before{
-        @include fa-icon();
-        content: $fa-var-bars;
-    	}
-    	&:after{
-      	content: 'Menu';
-      	margin-left: $cell-smallest;
-        @media only screen and (max-width: $screen-smaller){
-      	  content: '';
-      	  margin-left: 0;
-        }
+    @include responsive-standard_padding();
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    
+    //Logo
+    .content-logo{
+      .logo-link{
+        display: inline-block;
+        .link-image{
+          max-width: 100%;
+          width: auto;
+        }        
       }
-    }		  	
-    .header_content-action_button{
-    	@include button-standard();
     }
-  }
-  .header-navigation{
-    .navigation-menu{
+    
+    //Alternate Logo
+    .content-alternate_logo{
+      display: none;
+    }
+    
+    //Menu
+    .content-menu{
+      text-align: right;
       list-style: none;
-      margin: 0;
-      padding: 0;      
       .menu-item{
-        border-top: $border-standard;
-        display: none;
-        @include responsive-standard_padding(); 
-        @include responsive-larger_standard_font();
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        @include responsive-smallest_standard_font();
         &:last-of-type{
-          border-bottom: $border-standard;
+          margin-right: 0;
+        }
+        &.current-menu-item{
+          a{
+            display: inline-block;
+            position: relative;
+            &:after{
+              content: '';
+              position: absolute;
+              width: 100%;
+              bottom: -6px;
+              left: 0;
+              border-bottom: 3px solid $color-standard;
+            }
+          }
         }
         a{
-          display: block;
-          margin: 0 auto;
-          @include responsive-standard_container();
+          text-decoration: none;
+          color: $color-dark_blue;
+        }
+      }
+      @media only screen and (max-width: $screen-smaller){
+        display: none;
+      }
+    }
+    
+    //Toggle
+    .content-toggle{
+      display: none;
+      position: absolute;
+      @include button-standard();
+      &:before{
+        @include fa-icon();
+        content: $fa-var-bars
+      }
+    }
+    
+    //Responsive Settings
+    @media only screen and (min-width: $screen-larger){
+      align-content: center;
+      align-items: center;
+      .content-logo{
+        width: 40%;
+        .logo-link{
+          .link-image{
+            max-height: $cell-largest;
+          }
+        }
+      }
+      .content-menu{
+      width: 60%;
+        .menu-item{
+          display: inline-block !important;
+          margin-right: $cell-smaller;
         }
       }
     }
+    @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+      align-content: center;
+      align-items: center;
+      .content-logo{
+        width: 35%;
+        .logo-link{
+          .link-image{
+            max-height: $cell-larger;
+          }
+        }
+      }
+      .content-menu{
+        width: 65%;
+        .menu-item{
+          display: inline-block !important;
+          margin-right: $cell-smallest;
+        }
+      }
+    }
+    @media only screen and (max-width: $screen-standard){
+      align-content: center;
+      .content-menu{
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: $cell-smaller 0 0 0;
+        .menu-item{
+          display: none;
+          text-align: left;
+          border-top: $border-standard;
+          padding: $cell-smallest;
+          &:last-of-type{
+            border-bottom: $border-standard;
+          }
+        }
+      }
+      .content-toggle{
+        display: block;
+        right: 0;
+      }
+    }
+    @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+      .content-logo{
+        width: 70%;
+      }
+      .content-menu{
+        margin: 0;
+        .menu-item:first-of-type{
+          margin-top: $cell-smaller;
+        }
+      }
+    }
+    @media only screen and (max-width: $screen-smaller){
+      .content-logo{
+        display: none;
+      }
+      .content-alternate_logo{
+        display: table-cell;
+        width: 100%;
+        text-align: center;
+        .alternate_logo-link{
+          .link-image{
+            max-height: $cell-largest;
+          }
+        }
+      }
+      .content-toggle{
+        display: block;
+        margin: $cell-smallest $cell-smallest 0 0;
+      }
+    }
+    
   }
+  
 }

@@ -1,31 +1,181 @@
 //Footer Styles
 .footer{
   background: $color-light_gray;
-	border-top: 2px solid $color-light_gray;
-  text-align: center;
-  color: $color-dark_gray;
   border-top: $border-standard;
+	color:  $color-dark_gray;
   @include responsive-standard_padding();
-  @include responsive-standard_font();
-  .footer-logo {
-    display: inline-block;
-	  color: $color-dark_gray;
-	  width: 100%;
-	  max-width: $cell-standard*13;
-	  @media only screen and (min-width: $screen-largest){
-  	  max-width: $cell-standard*18; 
-    }
-	  .logo-image{
-  	  width: 100%;
-	  }
+
+  a{
+    color: $color-dark_blue;
   }
-  .footer-info{
-    padding-top: $cell-smallest;
-    @media only screen and (min-width: $screen-largest){
-      padding-top: $cell-standard;
+  
+  //Links
+  .footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    @include responsive-standard_container();
+    
+    //All items
+    & > div{
+      @media only screen and (max-width: $screen-smallest){
+        display: block;
+        text-align: center;
+      }
     }
- 	  .info-footer_action {
- 		  color: $color-dark_gray;
- 	  }    
+    
+    //Menu
+    .content-menu{
+      list-style: none;
+      padding-left: 0;
+      .menu-item{
+        display: inline-block;
+        border-right: 1px solid $color-dark_gray;
+        line-height: 1;
+        &:last-of-type{
+          border-right: 0;
+          padding-right: 0;
+          margin-right: 0;
+        }
+        a{
+          @include responsive-smallest_standard_font();
+          line-height: 1;
+          text-decoration: none;
+        }
+      }
+    }
+    
+    //Text
+    .content-text{
+      width: 50%;
+      padding-top: $cell-smallest;
+      @include responsive-smaller_standard_font();
+    }
+        
+    //Social Links
+    .content-social{
+      width: 50%;
+      padding-top: $cell-smallest;
+      text-align: right;
+      //All Icons
+      & > a{
+        @include button-circle();
+        &:last-of-type{
+          margin-right: 0;
+        }
+        & > span{
+          @include fa-icon();
+        }
+      } 
+      
+      //Facebook Link
+      .social-facebook{
+        .facebook-icon{
+          &:before{
+            content: $fa-var-facebook;
+          }
+        }
+      }
+  
+      //Twitter Link
+      .social-twitter{
+        .twitter-icon{
+          &:before{
+            content: $fa-var-twitter;
+          }
+        }
+      }
+  
+      //Instagram Link
+      .social-instagram{
+        .instagram-icon{
+          &:before{
+            content: $fa-var-instagram;
+          }
+        }
+      }
+  
+      //Pinterest Link
+      .social-pinterest{
+        .pinterest-icon{
+          &:before{
+            content: $fa-var-pinterest;
+          }
+        }
+      }
+  
+      //Medium Link
+      .social-medium{
+        .medium-icon{
+          &:before{
+            content: $fa-var-medium;
+          }
+        }
+      }
+
+      //YouTube Link
+      .social-youtube{
+        .youtube-icon{
+          &:before{
+            content: $fa-var-youtube;
+          }
+        }
+      }
+      
+    }
+      
+    //Responsive Sizes
+    @media only screen and (min-width: $screen-larger){
+      .content-menu{
+        .menu-item{
+          padding-right: $cell-smaller;
+          margin-right: $cell-smaller;
+        }
+      }
+      .content-social a{
+        margin-right: $cell-smallest;
+      }
+    }
+    @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+      .content-menu{
+        .menu-item{
+          padding-right: $cell-smallest;
+          margin-right: $cell-smallest;
+        }
+      }
+      .content-social a{
+        margin-right: $cell-smallest/2;
+      }
+    }
+    @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+      .content-menu{
+        .menu-item{
+          padding-right: $cell-smallest/2;
+          margin-right: $cell-smallest/2;
+        }
+      }
+      .content-social{
+        text-align: center;
+        a{
+          margin-right: $cell-smallest/3;
+        }
+      }
+    }
+    @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
+      .content-menu{
+        display: none;
+      }
+      .content-social a{
+        margin-right: $cell-smallest/4;
+      }
+    }
+    @media only screen and (max-width: $screen-smallest){
+      .content-menu{
+        display: none;
+      }
+    }
   }
+    
 }

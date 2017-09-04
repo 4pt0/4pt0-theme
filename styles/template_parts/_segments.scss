@@ -1,0 +1,299 @@
+/*--------------------------------------------------------------
+# Segment content that is within loop content.
+--------------------------------------------------------------*/
+
+//Background
+.segment-background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  & > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  //General Backgrounds  
+  .background-white, .background-transparent, .background-light_blue, .background-blue, .background-blue_watercolor, .background-orange {
+    z-index: -2;
+  }
+  
+  //White
+  .background-white{
+    @include background('white_background');
+    border-top: $border-standard;
+  }
+
+  //Transparent
+  .background-transparent{
+    background: transparent
+  }
+  
+  //Light Blue
+  .background-light_blue{
+    @include background('light_blue');
+    border-top: $border-standard;
+  }
+  
+  //Blue
+  .background-blue{
+    @include background('blue_background');
+  }
+  
+  //Blue Watercolor
+  .background-blue_watercolor{
+    @include background('blue_watercolor');
+  }
+
+  //Orange
+  .background-orange{
+    @include background('orange_background');
+  }
+  
+  //Orange Connections
+  .background-orange{
+    @include background('orange_connections');
+  }
+  
+}
+
+//One Column
+.segment-one_column{
+  position: relative;
+  @include responsive-standard_padding();    
+
+  //Text and Meida
+  & > div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  //Text (All)
+  .one_column-brief_text, .one_column-regular_text, .one_column-regular_text_with_paragraphs, .one_column-long_text, .one_column-brief_text_inverted, .one_column-regular_text_inverted, .one_column-regular_text_with_paragraphs_inverted, .one_column-long_text_inverted{
+
+    //Title, Subtitle and Body
+    & > div{
+      margin-top: $cell-smaller;
+    }
+    
+    //Title
+    .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title, .brief_text_inverted-title, .regular_text_inverted-title, .regular_text_with_paragraphs_inverted-title,  .long_text_inverted-title{
+      @include responsive-larger_standard_font();
+    }
+    
+    //Subtitle
+    .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle,  .long_text-subtitle, .brief_text_inverted-subtitle, .regular_text_inverted-subtitle, .regular_text_with_paragraphs_inverted-subtitle, .long_text_inverted-subtitle{
+      @include responsive-alternate_font();
+    }
+    
+    //Body
+    .brief_text-body, .regular_text-body, .regular_text_with_paragraphs-body, .long_text-body, .brief_text_inverted-body, .regular_text_inverted-body, .regular_text_with_paragraphs_inverted-body, .long_text_inverted-body{
+      @include responsive-smaller_standard_font();
+    }
+    
+  } 
+  
+  //Text (Brief)
+  .one_column-brief_text, .one_column-brief_text_inverted{
+    @include responsive-smaller_container();    
+    & > div{
+      text-align: center;
+    }
+    .brief_text-body, .brief_text_inverted-body{
+    }
+  } 
+  
+  //Text (Regular)
+  .one_column-regular_text, .one_column-regular_text_inverted{
+    @include responsive-smaller_container();    
+    & > div{
+      text-align: center;
+    }
+    .regular_text-body, .regular_text_inverted-body{
+    }
+  } 
+
+  //Text (Regular with Paragraphs)
+  .one_column-regular_text_with_paragraphs, .one_column-regular_text_with_paragraphs_inverted{
+    @include responsive-smaller_container();    
+    & > div{
+    }
+    .regular_text_with_paragraphs-body, .regular_text_with_paragraphs_inverted-body{
+    }
+  } 
+  
+  //Text (Long)
+  .one_column-long_text, .one_column-long_text_inverted{
+    & > div{
+    }
+    .long_text-title, .long_text_inverted-title, .long_text-subtitle, .long_text_inverted-subtitle{
+      @include responsive-smaller_container();  
+      @include responsive-top_padding();
+      text-align: center; 
+    }
+    .long_text-body, .long_text_inverted-body{
+      @include responsive-standard_padding();    
+      @include responsive-standard_container();    
+    	text-align: justify;
+    	column-count: 2;
+      @media only screen and (min-width: $screen-larger){
+    	  column-gap: $cell-larger;
+      }
+      @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+    	  column-gap: $cell-standard;
+      }
+      @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+    	  column-gap: $cell-smaller;
+      }
+      @media only screen and (max-width: $screen-smaller){
+    	  column-count: 1;
+      }      
+    	p:first-of-type{
+      	margin-top: 0;
+      	&:first-letter{
+          @include responsive-largest_standard_font();
+          float: left;
+          padding: 0 $cell-smallest;
+          @media only screen and (max-width: $screen-smaller){
+            @include responsive-smaller_standard_font();
+            float: none;
+            padding: 0;
+          }
+      	}
+    	}
+    }
+  }
+  
+  //Text (inverted)
+  .one_column-brief_text_inverted, .one_column-regular_text_inverted, .one_column-regular_text_with_paragraphs_inverted, .one_column-long_text_inverted{
+     & > div{
+      color: $color-white;
+      a{
+        color: $color-white;
+      }
+    }
+  }
+ 
+  //Media
+  .one_column-media{
+    @include responsive-standard_container();    
+    @include responsive-standard_padding();
+    @media only screen and (max-width: $screen-smaller){
+      margin-top: $cell-smallest;
+    }
+  }
+  
+  //All Content
+  & > div:first-of-type{
+    padding-top: 0 !important;
+  }
+  
+}
+
+//Two Column
+.segment-two_column{
+  position: relative;
+  @include responsive-standard_padding();    
+
+  //Content (all)
+  .two_column-content_with_left_text, .two_column-content_with_right_text, .two_column-content_with_left_text_inverted, .two_column-content_with_right_text_inverted{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    @include responsive-standard_container();    
+    @media only screen and (max-width: $screen-smallest){
+      display: block;
+    }
+
+    //Text
+    .content_with_left_text-text, .content_with_right_text-text, .content_with_left_text_inverted-text, .content_with_right_text_inverted-text{
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      width: 40%;
+      @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
+        width: 49%;
+      }      
+      @media only screen and (max-width: $screen-smallest){
+        display: block;
+        width: 100%;
+      }
+      .text-title, .text-subtitle .text-body{
+        width: 100%;
+        margin: 0 auto;
+      }
+      .text-title{
+        @include responsive-standard_font();
+      }
+      .text-subtitle{
+        	@include responsive-smaller_alternate_font();
+      }
+      .text-body{
+        @include responsive-smaller_standard_font();
+      }
+    }
+    
+    //Media
+    .content_with_left_text-media, .content_with_right_text-media, .content_with_left_text_inverted-media, .content_with_right_text_inverted-media{
+      width: 56%;
+      @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
+        width: 49%;
+      }      
+      @media only screen and (max-width: $screen-smallest){
+        display: block;
+        width: 100%;
+        @include responsive-standard_padding();
+      }
+    }
+    
+  }
+    
+  //Content (Right Text)
+  .two_column-content_with_right_text, .two_column-content_with_right_text_inverted{
+    .content_with_right_text-text, .content_with_right_text_inverted-text{
+      order: 2;
+    }
+    .content_with_right_text-media, .content_with_right_text_inverted-media{
+      order: 1;
+    }
+  }  
+  
+  //Content (inverted)
+  .two_column-content_with_left_text_inverted, .two_column-content_with_right_text_inverted{
+    .content_with_left_text_inverted-text, .content_with_right_text_inverted-text{
+      .text-title, .text-body{
+        color: $color-white;
+        a{
+          color: $color-white;
+        }
+      }
+    }
+  }
+      
+}
+
+//Button
+.segment-button{
+  @include responsive-standard_padding();
+  padding-top: 0 !important;
+  text-align: center;
+  .button-link{
+    @include button-standard();    
+    background: $color-orange;
+  }
+}
+
+//Scroll Icon
+.segment-scroll_icon{
+  display: block;
+  width: 100%;
+  text-align: center;
+  @include responsive-standard_padding();
+  padding-top: 0 !important;
+  @include responsive-alternate_font();
+  .scroll_icon-inverted{
+    color: $color-white;
+  }
+}

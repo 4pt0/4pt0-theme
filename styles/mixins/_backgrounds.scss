@@ -1,19 +1,9 @@
 @mixin background($type, $text_option:""){
-  color: $color-white; 
-  a{
-    color: $color-white;
-  }
   @if $type == "white_background" {
     background-color: $color-white;
-    a{
-      color: inherit;
-    }
   }
   @if $type == "blue_background" {
     background-color: $color-blue;
-  }
-  @if $type == "transparent" {
-    background-color: transparent;
   }
   @if $type == "orange_background" {
     background-color: $color-orange;
@@ -26,10 +16,6 @@
   }
   @if $type == "light_blue" {
     background-color: $color-light_blue;
-    color: inherit;
-    a{
-      color: inherit;
-    }
   }
   @if $type == "blue_watercolor" {
     background-image: url('images/background-blue_watercolor.jpg');

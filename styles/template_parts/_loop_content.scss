@@ -51,52 +51,51 @@
   }
 }
 
-//Standard Page
-.loop_content-standard_page{
+//Standard Content
+.loop_content-standard_content{
   border-top: $border-standard;
   @include responsive-standard_padding();
-  .standard_page-page_title, .standard_page-standard_content{
+  .standard_content-page_title, .standard_content-the_content{
     @include responsive-standard_container();
-    margin: 0 auto;
+    @include responsive-side_padding();
   }
-  .standard_page-page_title {
+  .standard_content-page_title {
   	margin: 0 auto;
     color: $color-dark_blue;
     @include responsive-largest_standard_font();
   }  
-  .standard_page-standard_content{
+  .standard_content-the_content{
     @include responsive-standard_font();
   }
 }
 
 //Segments + User List
-.loop_content-segmented_page, 
-.loop_content-user_list{
-
-  //One and Two Column Segment + User List Header
-  .segmented_page-one_column_segment, 
-  .segmented_page-two_column_segment, 
+.loop_content-segments, 
+.loop_content-user_list{  
+  //Single Segment + User List Header
+  .segments-segment,
   .user_list-header{
     position: relative;
-    @include responsive-standard_padding();    
   }
   
-  //One Column Segment + User List Header  
-  .segmented_page-one_column_segment,
+}
+
+//User List
+.loop_content-user_list{
+  
+  //User List Header
   .user_list-header{
+    color: $color-white;
+    @include background(orange_connections);
     
     //Content
-    .one_column_segment-content,
     .header-content{
-      
-      //Text and Media
-      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text, .content-media{
-        margin-left: auto;
-        margin-right: auto;
-      }
+  
   
       //Text
       .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text{
+        margin-left: auto;
+        margin-right: auto;
         
         //Title, Subtitle and Body
       	.brief_text-title, .regular_text-title, .long_text-title,
@@ -153,180 +152,16 @@
           	}
         	}
       	}
-      }
-      
-      //Text Widths
-      .content-brief_text, .content-long_text{
-        max-width: $cell-standard*19; 
-      }
-      .content-regular_text, .content-regular_text_with_paragraphs{
-        max-width: $cell-standard*15; 
-      }
-    }
-  }
-}
-
-//Segments
-.loop_content-segmented_page{
-  
-  //One and Two Column Segment
-  .segmented_page-one_column_segment, 
-  .segmented_page-two_column_segment{
-    
-    //Content
-    .one_column_segment-content, .two_column_segment-content{
-          
-      //Button
-      .content-button{
-        display: block;
-        width: 100%;
-        text-shadow: none;
-        text-align: center;
-        @include responsive-smaller_padding();
-        .button-link{
-          @include button-standard();
-          background: $color-orange;
-        }
-      }     
-      
-    }
-    
-    //Background
-    .one_column_segment-white_background, .two_column_segment-white_background,
-    .one_column_segment-transparent_background, .two_column_segment-transparent_background,
-    .one_column_segment-light_blue_background, .two_column_segment-light_blue_background,
-    .one_column_segment-blue_background, .two_column_segment-blue_background,
-    .one_column_segment-blue_watercolor_background, .two_column_segment-blue_watercolor_background,
-    .one_column_segment-orange_background, .two_column_segment-orange_background{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1
-    }
-    .one_column_segment-white_background, .two_column_segment-white_background{
-      @include background(white_background);
-      border-top: $border-standard;
-    }
-    .one_column_segment-transparent_background, .two_column_segment-transparent_background{
-      @include background(transparent);
-    }
-    .one_column_segment-light_blue_background, .two_column_segment-light_blue_background{
-      @include background(light_blue);
-    }
-    .one_column_segment-blue_background, .two_column_segment-blue_background{
-      @include background(blue_background, white_sibling);
-    }
-    .one_column_segment-blue_watercolor_background, .two_column_segment-blue_watercolor_background{
-      @include background(blue_watercolor, white_sibling);
-    }
-    .one_column_segment-orange_background, .two_column_segment-orange_background{
-      @include background(orange_background, white_sibling);
-    }
-    
-    //Scroll Icon
-    .one_column_segment-scroll_icon,
-    .two_column_segment-scroll_icon{
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      left: 0;
-      text-align: center;
-      @include responsive-alternate_font();
-    }
-  }
-  
-  //One Column Segment
-  .segmented_page-one_column_segment{    
-    
-    //Content
-    .one_column_segment-content{
-      
-      @media only screen and (max-width: $screen-smaller){
-        margin-bottom: $cell-smallest;
-      }
-      
-      //Features
-      .content-media{
-        max-width: $cell-standard*23;
-        width: 100%;
-        margin-top: $cell-standard;
-        @media only screen and (max-width: $screen-smaller){
-          margin-top: $cell-smallest;
-        }
-      }      
-    }    
-  }
-  
-  //Two Column Segment
-  .segmented_page-two_column_segment{
-   
-    //Content
-    .two_column_segment-content{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      @media only screen and (max-width: $screen-smaller){
-        display: block;
-      }
-
-      //Text
-      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text {
-        max-width: $cell-smallest*31;
-        width: 100%;
-        margin-right: $cell-standard*3;
-        @media only screen and (min-width: $screen-smaller) and (max-width: $cell-standard*23){
-          padding-right: $cell-smaller;
-        }
-        @media only screen and (max-width: $screen-smaller){
-          padding-right: 0;
-          max-width: $cell-standard*9 !important;
-          margin: 0 auto;
-        }
-        
-        //Title
-      	.brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title {
-          @include responsive-standard_font();
-      	}
       	
-      	//Subtitle
-        .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle, .long_text-subtitle{
-        	@include responsive-smaller_alternate_font();
+        //Text Widths
+        .content-brief_text, .content-long_text{
+          max-width: $cell-standard*19; 
         }
-        
-        //Body
-        .brief_text-body, .regular_text-body, .regular_text_with_paragraphs-body, .long_text-body {
-          @include responsive-smaller_standard_font();
+        .content-regular_text, .content-regular_text_with_paragraphs{
+          max-width: $cell-standard*15; 
         }
-        
+      	
       }
-
-      //Features
-      .content-media{
-        max-width: $cell-smallest*31;
-        width: 100%;
-        @media only screen and (max-width: $screen-smaller){
-          max-width: 100%;
-          @include responsive-standard_padding();
-        }
-      }
-    }
-  }
-}
-
-//User List
-.loop_content-user_list{
-  
-  //User List Header
-  .user_list-header{
-    color: $color-white;
-    @include background(orange_connections);
-    
-    //Content
-    .header-content{
       
       //Options
       .content-options{

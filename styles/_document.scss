@@ -8,10 +8,6 @@ body {
   font-family: $font-family-standard;
   font-weight: $font-weight-bold;
   margin: 0;
-
-  @media (max-width: $screen-smaller) {
-    font-size: 93%;
-  }
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
