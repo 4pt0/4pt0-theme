@@ -16,6 +16,9 @@ To run this theme on your own WordPress site, [Advanced Custom Fields] (version 
 ## Code Style & Naming Conventions
 We're a stickler about naming conventions and style. Checkout [@bbertucc's gist] to understand how we style WordPress theme code. We also love the [code guide] by [@mdo].
 
+## Image Sizes
+This theme works with high density pixel displays. *You should upload images that are `2500px` x `1600px` or larger.* More media specs are available on the [repo's wiki].
+
 ## Contributing
 `4pt0-theme` is open for contributions. You can report issues under the ["Issues" tab], or fork this repo and help code. We'd love to include your updates!
 
@@ -27,6 +30,7 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 - Alberta Wright
 - **You?** Start contributing and we'll add your name.
 
+[repo's wiki]:https://github.com/4pt0/4pt0-theme/wiki
 [YEP Design Works]:http://yepdesignworks.org
 [repo wiki]:https://github.com/4pt0/4pt0-theme/wiki
 [Advanced Custom Fields]:https://www.advancedcustomfields.com/

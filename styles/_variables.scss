@@ -38,6 +38,12 @@ $screen-standard: $cell-standard*24;
 $screen-larger: $cell-larger*24;
 $screen-largest: $cell-largest*24;
 
+//Image Base Sizes
+$image-base_height: 60%;
+$image-landscape_width: 100%;
+$image-portrait_width: 45%;
+$image-square_width: $image-base_height;
+
 //Colors
 $color-standard: #231F20;
 $color-white: #ffffff;

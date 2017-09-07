@@ -283,3 +283,8 @@
 	  font: $font-smallest_alternate;
   }      
 }
+
+//Image Padding Bottom
+@mixin responsive-image_padding_bottom($total_length_of_images){
+  padding-bottom: (100/$total_length_of_images)*$image-base_height; //Thanks @ebertucc!
+}

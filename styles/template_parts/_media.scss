@@ -10,7 +10,7 @@
     margin: 0 auto;
     flex-wrap: wrap;
     display: flex;
-  	justify-content: center;
+  	justify-content: space-between;
   	align-items: center;
   	
   	//All blocks
@@ -19,13 +19,12 @@
       background-repeat: no-repeat;
       background-color: $color-orange;
       position: relative;
-      padding-bottom: 35%;
-      margin-bottom: 3%;
+      @include responsive-image_padding_bottom(161);
+      margin-bottom: 1%;
       
-      //Bigger COntent
+      //Bigger Content
       &:nth-of-type(odd){
-        width: 62%;
-        margin-right: 3%;
+        width: 61.6112733%;
         .user-content{
           padding: 0 $cell-standard;
           .content-quote:after{
@@ -36,7 +35,7 @@
       
       //Smaller Content
       &:nth-of-type(even){
-        width: 35%;
+        width: 37.3887267%;
         .content-quote:before{
           @include fa-icon();
           content: $fa-var-quote-right;
@@ -75,7 +74,6 @@
       &.blocks-alumni_quote{
         background-color: transparent;
         position: relative;
-        padding-bottom: 35%;
         .alumni_quote-user{
           position: absolute;
           width: 100%;
@@ -137,12 +135,6 @@
     //Bocks (Larger to Largest screen)
     @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest) {
       & > div{      
-        padding-bottom: 36%;
-        margin-bottom: 2%;
-        &:nth-of-type(odd){
-          width: 63%;
-          margin-right: 2%;
-        }
         &.blocks-alumni_quote{
           .alumni_quote-user{
             .user-content{
@@ -214,11 +206,7 @@
     //Bocks (Smaller to Standard screen)
     @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard) {
       & > div{      
-        padding-bottom: 37%;
-        margin-bottom: 1%;
         &:nth-of-type(odd){
-          width: 64%;
-          margin-right: 1%;
           .user-content{
             padding: 0 $cell-smallest;
           }
@@ -267,15 +255,13 @@
     //Bocks (Anything under Smaller screen)
     @media only screen and (max-width: $screen-smaller) {
       & > div{      
-        padding-bottom: 60%;
         margin-bottom: $cell-smallest;
-        
-        &:nth-of-type(odd){
-          width: 100%;
+        &:nth-of-type(odd), &:nth-of-type(even){
           margin-right: 0;
+          width: 100%;
+          padding-bottom: $image-base_height;
         }
         &:nth-of-type(even){
-          width: 100%;
           &:before{
             display: none;
           }
@@ -308,7 +294,6 @@
     overflow: hidden;
     color: $color-white;
     text-decoration: none;
-    width: 100%;
     transition: .1s box-shadow;
     &:hover{
       box-shadow: $box-shadow-standard;
@@ -374,24 +359,24 @@
 .media-grid{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
   width: 100%;
   
   //Grid Items
   .grid-item{
-    width: 31.3333333333%;
-    margin: 1%;
-    padding-bottom: 18.7466666667%; 
+    width: 32.66666667%;
+    @include responsive-image_padding_bottom(302); 
     background: $color-blue;
+    margin-bottom: 1%;
     @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
-      width: 48%;
-  	  padding-bottom: 30%;
+      width: 49.5%;
+      @include responsive-image_padding_bottom(201); 
     }
     @media only screen and (max-width: $screen-smallest){
   	  width: 100% !important;
-  	  padding-bottom: 60%;
+      @include responsive-image_padding_bottom(100); 
     }
     
     //Caption
@@ -408,38 +393,19 @@
       font-size: 4.5em;
     }
   }
-    
-  //Landscape Media
-  .blocks-full_landscape, .blocks-half_landscape{
-    padding-bottom: 56.24%;
-  }
-  
-  //Portrait Media
-  .blocks-full_portrait, .blocks-half_portrait{
-    padding-bottom: 100%;
-  }
-  //Square Media
-  .blocks-full_square, .blocks-half_square{
-    padding-bottom: 50%;
-  }
 }
 
 //Portrait and Landscape
 .media-portrait_and_landscape{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   
   //Landscape and Portrait (all)
   .portrait_and_landscape-landscape_with_right_portrait, .portrait_and_landscape-landscape_with_left_portrait,
   .portrait_and_landscape-left_portrait, .portrait_and_landscape-right_portrait{
-    padding-bottom: 44%;
+    @include responsive-image_padding_bottom(146); 
 
-    //Image
-    .landscape_with_right_portrait-image, .landscape_with_left_portrait-image,
-    .left_portrait-image, .right_portrait-image{
-      .image-the_image{
-      }    
-    }
     
     //Caption
     .landscape_with_left_portrait-caption, .landscape_with_right_portrait-caption, .left_portrait-caption, .right_portrait-caption{
@@ -454,23 +420,21 @@
   
   //Landscape (All)
   .portrait_and_landscape-landscape_with_right_portrait, .portrait_and_landscape-landscape_with_left_portrait{
-    width: 69%;
+    width: 68.2771855%;
   }
   
   //Landscape (Portrait Right)
   .portrait_and_landscape-landscape_with_right_portrait{
-    margin-right: 1%;
   }
   
   //Landscape (Portrait Left)
   .portrait_and_landscape-landscape_with_left_portrait{
     order: 2;
-    margin-left: 1%;
   }
   
   //Portrait (All)
   .portrait_and_landscape-right_portrait, .portrait_and_landscape-left_portrait{
-    width: 30%;
+    width: 30.7228145%;
   }
   
   //Portrait (Left)
@@ -487,13 +451,8 @@
     
   //Item
   .single_media_item-item{
-    padding-bottom: 60%; 
-
-    //Image
-    .item-image{
-      .image-the_image{
-      }
-    }
+    width: 100%;
+    @include responsive-image_padding_bottom(100); 
 
     //Caption
     .item-caption{
@@ -513,21 +472,17 @@
 
 //Slideshow
 .media-slideshow{
-  position: relative;
-  padding-bottom: 60%;
-    
+  position: relative; 
+  width: 100%;
+  @include responsive-image_padding_bottom(100); 
+  
   //Item
   .slideshow-slide{
     position: absolute;
-    padding-bottom: 60%; 
+    width: 100%;
+    @include responsive-image_padding_bottom(100); 
     @media only screen and (max-width: $screen-smallest){
   	  width: 100% !important;
-    }
-
-    //Image
-    .slide-image {
-      .image-the_image{
-      }
     }
 
     //Caption
