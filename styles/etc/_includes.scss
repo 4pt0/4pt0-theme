@@ -79,19 +79,17 @@
 	border-radius: $border-radius-standard;
 	padding: $cell-smaller $cell-standard; 
 	@media only screen and (max-width: $screen-smaller) {
-		flex-wrap: wrap;
-		height: 100%;
-		border-radius: 0;
 		justify-content: center;
 		padding: $cell-smallest;
 		margin: 0;
+		border-radius: 0;
 	}
 	.newsletter_singup-label {
 		color: $color-dark_blue;
 		padding-right: $cell-smallest;
 		display: inline-block;
 		@include responsive-standard_font();
-    @media only screen and (max-width: $screen-smaller) {
+    @media only screen and (max-width: $screen-smallest) {
 			display: block;
 			padding-right: 0;
 			padding-bottom: $cell-smallest;
@@ -99,12 +97,14 @@
 	}
 	.newsletter_singup-input_group {
   	display: inline-block;
-  	width: 70%;
+  	width: 68%;
   	position: relative;
-    @media only screen and (max-width: $screen-smaller) {
-			display: block;
-			width: 100%;
+    @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard) {
+    	width: 67%;
 		}
+  	@media only screen and (max-width: $screen-smaller) {
+  	  width: 100%;
+  	}
 		.input_group-input {
 			border-radius: $border-radius-standard;
 			padding: $cell-smallest $cell-standard;
@@ -112,24 +112,25 @@
 			width: 100%;
 			line-height: 1;
       @include responsive-standard_font();
-      @media only screen and (max-width: $screen-smaller) {
-  			padding: $cell-smallest;
+      @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard) {
+  			padding: $cell-smallest 30px;
       }      
+      @media only screen and (max-width: $screen-smaller) {
+  			padding: $cell-smallest 20px;
+  			margin-top: $cell-smallest;
+  		}
 		}
 		.input_group-input:focus {
 			outline:0;
 		}
 		.input_group-button {
       position: absolute;
-      top: 2px;
-      right: 2px;
-      @extend .button;		
+      top: 0px;
+      right: 0px;
+      @include button-standard();
       @media only screen and (max-width: $screen-smaller) {
-				position: relative;
-				top: 0;
-				right: 0;
-				margin-top: $cell-smallest;
-      }		
+  			margin-top: $cell-smallest;
+  		}
 		}
 		button:focus {outline:0;}
 	}
