@@ -137,10 +137,7 @@
       @include responsive-standard_container();    
     	text-align: justify;
     	column-count: 2;
-      @media only screen and (min-width: $screen-larger){
-    	  column-gap: $cell-larger;
-      }
-      @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+      @media only screen and (min-width: $screen-standard){
     	  column-gap: $cell-standard;
       }
       @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){

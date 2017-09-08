@@ -6,7 +6,7 @@
 .media-mosaic{
   .mosaic-blocks{
     width: 100%;
-    max-width: $screen-larger;
+    max-width: $screen-standard;
     margin: 0 auto;
     flex-wrap: wrap;
     display: flex;
@@ -115,45 +115,9 @@
         @include responsive-standard_font();
       }
     }
-    
-    //Blocks (Largest Screen)
-    @media only screen and (min-width: $screen-largest) {
-      max-width: $screen-largest;
-      & > div{      
-        &:nth-of-type(even){
-          &:before{
-            left: -15%;
-            bottom: -15%;
-          }
-        }
-        & > a{
-          padding: $cell-standard;
-        }
-      }     
-    }
-    
-    //Bocks (Larger to Largest screen)
-    @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest) {
-      & > div{      
-        &.blocks-alumni_quote{
-          .alumni_quote-user{
-            .user-content{
-              .content-quote{
-                &:before{
-                  margin-top: -$cell-standard;
-                }
-                &:after{
-                  right: 0;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    
+        
     //Bocks (Standard to Larger screen)
-    @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger) {
+    @media only screen and (min-width: $screen-standard) {
       & > div{      
         &:nth-of-type(odd){
           .user-content{
@@ -359,9 +323,7 @@
 .media-grid{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
+  justify-content:center;
   width: 100%;
   
   //Grid Items
@@ -370,6 +332,10 @@
     @include responsive-image_padding_bottom(302); 
     background: $color-blue;
     margin-bottom: 1%;
+    margin-right: 1%;
+    &:nth-of-type(3n), &:last-of-type{
+      margin-right: 0;
+    }
     @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
       width: 49.5%;
       @include responsive-image_padding_bottom(201); 

@@ -51,7 +51,7 @@ if ( get_sub_field('add_media') == 'Grid' ):
           //Set Up Image Variables
           $img_src = wp_get_attachment_image_url( $image['ID'], 'small' );
           $img_srcset =  wp_get_attachment_image_srcset( $image['ID'], 'small' );;
-          $img_sizes = '(min-width: 1512px) 464px, 291px ';
+          $img_sizes = '291px ';
           
           //The Image
           echo '<img class="image-the_image" src="'.esc_url($img_src).'" srcset="'.esc_attr($img_srcset).'" sizes="'.$img_sizes.'" style="object-position:'.get_sub_field('image_focal_point').'">';

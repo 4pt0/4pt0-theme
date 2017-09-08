@@ -5,10 +5,7 @@
 //Standard Container
 @mixin responsive-standard_container(){
   margin: 0 auto;
-  @media only screen and (min-width: $screen-larger){
-	  width: $screen-larger;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  width: $screen-standard;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -22,10 +19,7 @@
 //Smaller Container
 @mixin responsive-smaller_container(){
   margin: 0 auto;
-  @media only screen and (min-width: $screen-larger){
-	  width: $screen-standard;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  width: $screen-smaller;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -39,10 +33,7 @@
 //Smallest Container
 @mixin responsive-smallest_container(){
   margin: 0 auto;
-  @media only screen and (min-width: $screen-larger){
-	  width: $screen-smaller;
-  }
-  @media only screen and (min-width: $screen-smallest) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-smallest){
 	  width: $screen-smallest;
   }
   @media only screen and (max-width: $screen-smallest){
@@ -53,13 +44,7 @@
 //Thick Container Padding
 @mixin responsive-larger_padding(){
   overflow: hidden;
-  @media only screen and (min-width: $screen-largest){
-	  padding: $cell-largest*2 0;
-  }
-  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
-	  padding: $cell-larger*2 0;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  padding: $cell-standard*2 0;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -72,10 +57,7 @@
 
 //Container Padding
 @mixin responsive-standard_padding(){
-  @media only screen and (min-width: $screen-larger) {
-	  padding: $cell-larger $cell-smallest;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  padding: $cell-standard $cell-smallest;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -88,10 +70,7 @@
 
 //Thin Container Padding
 @mixin responsive-smaller_padding(){
-  @media only screen and (min-width: $screen-larger) {
-	  padding: $cell-larger/2 $cell-smallest;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  padding: $cell-standard/2 $cell-smallest;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -104,10 +83,7 @@
 
 //Top Padding
 @mixin responsive-top_padding(){
-  @media only screen and (min-width: $screen-larger){
-	  padding-top: $cell-larger;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  padding-top: $cell-standard;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -120,11 +96,7 @@
 
 //Top Padding
 @mixin responsive-side_padding(){
-  @media only screen and (min-width: $screen-larger){
-	  padding-left: $cell-larger;
-	  padding-right: $cell-larger;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  padding-left: $cell-standard;
 	  padding-right: $cell-standard;
   }
@@ -142,15 +114,7 @@
 @mixin responsive-circle(){
 	border-radius: $border-radius-circle;
   transition: height .2s, width .2s;
-  @media only screen and (min-width: $screen-largest){
-  	height: $cell-largest * 6;
-  	width: $cell-largest * 6;
-  }
-  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
-  	height: $cell-larger * 6;
-  	width: $cell-larger * 6;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
   	height: $cell-standard * 6;
   	width: $cell-standard * 6;
   }
@@ -163,13 +127,7 @@
 //Padding Left
 @mixin responsive-padding_left(){
   transition: padding-left .2s;
-  @media only screen and (min-width: $screen-largest){
-	  padding-left: $cell-largest;
-  }
-  @media only screen and (min-width: $screen-larger) and (max-width: $screen-largest){
-	  padding-left: $cell-larger;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  padding-left: $cell-standard;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -182,10 +140,7 @@
 
 //Largest Font
 @mixin responsive-largest_standard_font(){
-  @media only screen and (min-width: $screen-larger){
-	  font: $font-largest_standard;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  font: $font-largest_standard;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -198,10 +153,7 @@
 
 //Larger Font
 @mixin responsive-larger_standard_font(){
-  @media only screen and (min-width: $screen-larger){
-	  font: $font-largest_standard;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  font: $font-larger_standard;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -214,10 +166,7 @@
 
 //Standard Font
 @mixin responsive-standard_font(){
-  @media only screen and (min-width: $screen-larger){
-	  font: $font-larger_standard;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  font: $font-standard;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -230,10 +179,7 @@
 
 //Smaller Font
 @mixin responsive-smaller_standard_font(){
-  @media only screen and (min-width: $screen-larger){
-	  font: $font-standard;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  font: $font-smaller_standard;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -246,18 +192,12 @@
 
 //Smallest Font
 @mixin responsive-smallest_standard_font(){
-  @media only screen and (min-width: $screen-larger){
-	  font: $font-smaller_standard;
-  }
   font: $font-smallest_standard;
 }
 
 //Alternate Font
 @mixin responsive-alternate_font(){
-  @media only screen and (min-width: $screen-larger){
-	  font: $font-larger_alternate;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  font: $font-alternate;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
@@ -270,10 +210,7 @@
 
 //Smaller Alternate Font
 @mixin responsive-smaller_alternate_font(){
-  @media only screen and (min-width: $screen-larger){
-	  font: $font-alternate;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
 	  font: $font-smaller_alternate;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){

@@ -43,9 +43,6 @@
     	padding: $cell-smallest;
     	text-align: center;
     	box-shadow: $box-shadow-standard;
-    	@media only screen and (min-width: $screen-largest){
-        width: 23%;
-      }
     	@media only screen and (max-width: $screen-smaller){
         width: 48%;
       }

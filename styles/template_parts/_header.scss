@@ -74,26 +74,7 @@
     }
     
     //Responsive Settings
-    @media only screen and (min-width: $screen-larger){
-      align-content: center;
-      align-items: center;
-      .content-logo{
-        width: 40%;
-        .logo-link{
-          .link-image{
-            max-height: $cell-largest;
-          }
-        }
-      }
-      .content-menu{
-      width: 60%;
-        .menu-item{
-          display: inline-block !important;
-          margin-right: $cell-smaller;
-        }
-      }
-    }
-    @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+    @media only screen and (min-width: $screen-standard){
       align-content: center;
       align-items: center;
       .content-logo{

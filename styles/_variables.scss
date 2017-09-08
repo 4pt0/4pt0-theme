@@ -2,6 +2,20 @@
 # Standard Variables
 --------------------------------------------------------------*/
 
+//Colors
+$color-standard: #231F20;
+$color-white: #ffffff;
+$color-light_gray: #EBEBEB;
+$color-transparent_gray: rgba(0, 0, 0, 0.15);
+$color-dark_gray: rgb(109,110,112);
+$color-blue: rgb(42,152,211);
+$color-dark_blue: rgb(33, 61, 100);
+$color-light_blue: rgb(239,245,249);
+$color-blue_gradient: linear-gradient(rgb(42,168,211) 0%, rgb(48,158,211) 100%);
+$color-dark_blue_gradient: linear-gradient(rgba(33,60,90, 0) 0%, $color-dark_blue 100%);
+$color-orange: rgb(241,118,73);
+$color-purple: rgb(101,49,143);
+
 //Typeface Settings
 $font-family-standard: 'Ubuntu', sans-serif;
 $font-family-alternate: 'matt_font', cursive;
@@ -44,28 +58,14 @@ $image-landscape_width: 100%;
 $image-portrait_width: 45%;
 $image-square_width: $image-base_height;
 
-//Colors
-$color-standard: #231F20;
-$color-white: #ffffff;
-$color-light_gray: #EBEBEB;
-$color-transparent_gray: rgba(0, 0, 0, 0.15);
-$color-dark_gray: rgb(109,110,112);
-$color-blue: rgb(42,152,211);
-$color-dark_blue: rgb(33, 61, 100);
-$color-light_blue: rgb(239,245,249);
-$color-blue_gradient: linear-gradient(rgb(42,168,211) 0%, rgb(48,158,211) 100%);
-$color-dark_blue_gradient: linear-gradient(rgba(33,60,90, 0) 0%, $color-dark_blue 100%);
-$color-orange: rgb(241,118,73);
-$color-purple: rgb(101,49,143);
+//Border Settings
+$border-width-standard: 3px;
+$border-standard: $border-width-standard solid $color-transparent_gray;
+$border-radius-standard: 999999999px; //A Huge Number to make sure rectangles stay rounded
+$border-radius-circle: 50%;
 
 //Shadows
 $box-shadow-smallest: 0px 1px 2px -1px $color-dark_gray;
 $box-shadow-smaller: 0px 1px 6px -1px $color-standard;
 $box-shadow-standard: 0px 1px 12px -1px $color-standard;
 $text-shadow-standard: 1px 1px 3px $color-dark_gray;
-
-//Border Settings
-$border-width-standard: 3px;
-$border-standard: $border-width-standard solid $color-transparent_gray;
-$border-radius-standard: 999999999px; //A Huge Number to make sure rectangles stay rounded
-$border-radius-circle: 50%;

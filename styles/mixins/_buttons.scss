@@ -50,13 +50,7 @@
   &:active{
     box-shadow: $box-shadow-smallest;
   } 
-  @media only screen and (min-width: $screen-larger){
-    font: $font-standard;
-    height: $cell-larger;
-    width: $cell-larger;
-    padding: 10px 0;
-  }
-  @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+  @media only screen and (min-width: $screen-standard){
     font: $font-smaller_standard;
     padding: 7px 0;
     height: $cell-standard;

@@ -6,7 +6,7 @@
       //Set Up Image Variables
       $img_src = wp_get_attachment_image_url( get_theme_mod( 'theme_logo' ), 'small' ); 
       $img_srcset =  wp_get_attachment_image_srcset( get_theme_mod( 'theme_logo' ) );
-      $img_sizes = '(min-width: 1512px) 480px, 310px';  
+      $img_sizes = '310px';  
         
       //Logo from Customizer
       if(get_theme_mod( 'theme_alternate_logo' ) ) 

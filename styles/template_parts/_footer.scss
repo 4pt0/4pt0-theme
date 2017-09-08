@@ -127,18 +127,7 @@
     }
       
     //Responsive Sizes
-    @media only screen and (min-width: $screen-larger){
-      .content-menu{
-        .menu-item{
-          padding-right: $cell-smaller;
-          margin-right: $cell-smaller;
-        }
-      }
-      .content-social a{
-        margin-right: $cell-smallest;
-      }
-    }
-    @media only screen and (min-width: $screen-standard) and (max-width: $screen-larger){
+    @media only screen and (min-width: $screen-standard){
       .content-menu{
         .menu-item{
           padding-right: $cell-smallest;
