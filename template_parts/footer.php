@@ -54,6 +54,13 @@
       
     </div>      
   </div>
+  
+  <?php
+  //Footer Embed Codes
+  if(get_theme_mod( 'theme_footer_code' ) ) 
+    echo get_theme_mod( 'theme_footer_code' );
+  ?>
+  
 </body>
 
 <?php wp_footer();?>

@@ -10,7 +10,13 @@
   </head>
   
   <body <?php body_class(); ?>>
-    
+
+    <?php
+    //Header Embed Codes
+    if(get_theme_mod( 'theme_header_code' ) ) 
+      echo get_theme_mod( 'theme_header_code' );
+    ?>
+
     <div class="header">  
       <div class="header-content">
         
