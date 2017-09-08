@@ -13,7 +13,7 @@ if(is_singular('venture')):
       //Categories
       $categories = get_categories();
       foreach( $categories as $category )
-        echo '<a class="meta-category" href="'.get_category_link( $category->term_id ).'">'.$category->name.'</a>';
+        echo '<div class="meta-category">'.$category->name.'</div>';
         
       //Location
       $location = get_field('location');

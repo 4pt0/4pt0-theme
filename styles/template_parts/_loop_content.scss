@@ -29,6 +29,11 @@
       }    
       .meta-post_type, .meta-category, .meta-city{
         @include button-smallest();
+        cursor: auto !important;
+          box-shadow: none !important;
+        &:hover{
+          box-shadow: none !important;
+        }
       }
       .meta-post_type, .meta-category{
         margin-right: $cell-smallest;
