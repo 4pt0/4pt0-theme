@@ -15,7 +15,7 @@
   }
   
   //General Backgrounds  
-  .background-white, .background-transparent, .background-light_blue, .background-blue, .background-blue_watercolor, .background-orange {
+  .background-white, .background-transparent, .background-light_blue, .background-blue, .background-blue_watercolor {
     z-index: -2;
   }
   
@@ -44,16 +44,6 @@
   //Blue Watercolor
   .background-blue_watercolor{
     @include background('blue_watercolor');
-  }
-
-  //Orange
-  .background-orange{
-    @include background('orange_background');
-  }
-  
-  //Orange Connections
-  .background-orange{
-    @include background('orange_connections');
   }
   
 }

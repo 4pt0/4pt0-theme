@@ -19,8 +19,6 @@ if($background):
     $background_class = 'blue_background';
   if($background == 'Blue Watercolor')
     $background_class = 'blue_watercolor';
-  if($background == 'Orange')
-    $background_class = 'orange';
   ?>
   
   <div class="background-<?php echo $background_class;?>"></div>
