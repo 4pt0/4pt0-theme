@@ -12,7 +12,7 @@
     background-color: $color-orange;
     background-image: url('images/background-connections.svg');
     background-size: 100%;
-    background-position: center center;
+    background-position: left bottom;
   }
   @if $type == "light_blue" {
     background-color: $color-light_blue;

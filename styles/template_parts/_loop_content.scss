@@ -95,8 +95,9 @@
     
     //Content
     .header-content{
-  
-  
+      @include responsive-standard_container();    
+      @include responsive-standard_padding();    
+      
       //Text
       .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text{
         margin-left: auto;
@@ -172,8 +173,7 @@
       .content-options{
     		padding-top: $cell-standard;
     		text-align: center;
-        max-width: $cell-standard*23;
-        margin: 0 auto;
+        margin: 0 auto $cell-smaller auto;
     		div:first-of-type{
       		margin-left: 0!important;
     		}
@@ -185,19 +185,16 @@
   				@include button-standard();
   				border: 4px solid $color-white;
   				background: transparent; 
-          @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
-  				  border: 3px solid $color-white;
-            margin-left: 0;
-          }
   				@media only screen and (max-width: $screen-smallest){
             width: 100%;
             margin-left: 0;
     		  }
   				&.selected{
     				background: $color-white;
-    				color: $color-orange;
+    				color: $color-orange;  
+    				border-color: $color-white;          
     				.map_toggle-checkbox{
-      				background: $color-orange;
+      				color: $color-orange;
     				}
   				}
   				.filter-checkbox{
@@ -206,29 +203,55 @@
   				}
         }
         .options-map_toggle{
+  				margin-left: $cell-smallest;
+          border-color: transparent;          
+          box-shadow: none;
+          position: relative;
+          padding-right: 34px;
           padding-left: 54px;
           @media only screen and (max-width: $screen-smaller){
-            padding-left: 24px;
+            padding-right: 9px;
+          }
+          @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
+            padding-right: 28px;
+          }
+          @media only screen and (max-width: $screen-smaller){
+            padding-left: 28px;
+            padding-right: 8px;
+          }
+          @media only screen and (max-width: $screen-smallest){
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 0;
           }
   				.map_toggle-checkbox{
     				position: absolute;
     				-webkit-appearance: none;
-    				border-radius: $border-radius-circle;
     				display: inline-block;
     				pointer-events: none;
-    				padding: $cell-smallest;
-    				background: $color-white;
     				outline: none;
-    				margin-right: 4px;
-    				top: 18px;
-    				left: $cell-smallest;
-            @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-      				top: 13px;
-      				padding: 12px;
-            }
-            @media only screen and (max-width: $screen-smaller){
-      				padding: 12px;
-      				top: 10px;
+            color: $color-white;
+            left: 0;
+            top: 0;
+            &:before{
+              @include fa-icon();
+      				content: $fa-var-map;
+              font-size: 2.5em;
+              margin-top: 20px;
+              margin-left: $cell-smallest;
+              @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
+                font-size: 2em;
+                margin-top: 15px;
+                margin-left: 20px;
+              }
+              @media only screen and (max-width: $screen-smaller){
+                font-size: 1.5em;
+                margin-left: 5px;
+              }
+              @media only screen and (max-width: $screen-smallest){
+                margin-top: 15px;
+                margin-left: 20px;
+              }
             }
   				}
         }

@@ -43,8 +43,7 @@ if( get_field('content_display') == 'User List' && have_rows('user_list')): whil
       ?>
       
       </div>
-      <div class="content-options">
-        <div class="options-map_toggle"><input class="map_toggle-checkbox" data-user_view="map" type="checkbox"> Map View</div>
+      <div class="content-options">        
           
         <?php
         //User Role Filters
@@ -53,6 +52,8 @@ if( get_field('content_display') == 'User List' && have_rows('user_list')): whil
           echo '<div class="options-filter"><input class="filter-checkbox" data-user_role="'.$user_role['value'].'" type="checkbox">'.$user_role['label'].'</div>';
         }
         ?>
+        
+        <div class="options-map_toggle"><input class="map_toggle-checkbox" data-user_view="map" type="checkbox"> Map View</div>
                 
       </div>
     </div>

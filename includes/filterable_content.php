@@ -40,14 +40,23 @@ function filterable_content(){
       var users = [
         
       <?php 
+      //Start Map Marker Loop
       foreach ( $users as $user ): 
         $location = get_field('location', 'user_'. $user->ID );
         $avatar =  get_avatar_url($user->ID);
+        
+        //Only show users that have location data
+        if($location):
       ?>
       
         {location: { lat: <?php  echo $location['lat']; ?>, lng:  <?php echo $location['lng']; ?>}, avatar: '<?php echo $avatar;?>', url:'<?php echo get_author_posts_url($user->ID);?>', name:'Hello' },
       
-      <?php endforeach; ?>
+      <?php 
+        endif;
+        
+      //End Map Marker Loop
+      endforeach; 
+      ?>
   
       ]
         

@@ -5,6 +5,7 @@
 //includes/filterable_content.php
 .include-filterable_content{
   position: relative;
+  
   //Map Instructions
   .filterable_content-instructions{
     position: absolute;
@@ -24,7 +25,9 @@
   //Map
   .filterable_content-map{
     width:100%; 
-    height: 90vh;
+    height: 80vh;
+    min-height: 400px;
+    max-height: 770px;
   }
 
   //List View
