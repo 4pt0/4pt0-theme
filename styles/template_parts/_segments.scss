@@ -189,6 +189,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
+    align-items: center;
     @include responsive-standard_container();    
     @media only screen and (max-width: $screen-smallest){
       display: block;
@@ -232,6 +233,9 @@
         display: block;
         width: 100%;
         @include responsive-standard_padding();
+      }
+      .media-single_media_item .single_media_item-item .item-caption{
+        font: resposive-smaller_standard_font();
       }
     }
     
