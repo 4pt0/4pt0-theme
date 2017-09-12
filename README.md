@@ -20,7 +20,7 @@ We're a stickler about naming conventions and style. Checkout [@bbertucc's gist]
 This theme works with high density pixel displays. *You should upload images that are `2500px` x `1600px` or larger.* More media specs are available on the [repo's wiki].
 
 ## Contributing
-`4pt0-theme` is open for contributions. You can report issues under the ["Issues" tab], or fork this repo and help code. We'd love to include your updates!
+`4pt0-theme` is open for edits. You can report issues under the ["Issues" tab], or fork this repo and help code. We'd love to include your updates!
 
 ## Core Dev/Design Team
 - Blake Bertuccelli ([@bbertucc])
@@ -42,7 +42,7 @@ This theme works with high density pixel displays. *You should upload images tha
 [DRY]:https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [@tosbey1]:https://github.com/tosbey1
 [@tevintc]:https://github.com/tevintc
-[@bbertucc's gist]:https://gist.github.com/bbertucc/0918e342a8c981e78e88e714cde1e9d5
+[@bbertucc's gist]:https://gist.github.com/bbertucc/c75276b15a87a7cc6047970d94a8c18d
 [code guide]:http://codeguide.co/
 [@mdo]:https://github.com/mdo
 ["Issues" tab]:https://github.com/4pt0/4pt0-theme/issues
