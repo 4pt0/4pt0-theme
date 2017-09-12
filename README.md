@@ -22,12 +22,16 @@ This theme works with high density pixel displays. *You should upload images tha
 ## Contributing
 `4pt0-theme` is open for edits. You can report issues under the ["Issues" tab], or fork this repo and help code. We'd love to include your updates!
 
-## Core Dev/Design Team
+## Theme Contributors
 - Blake Bertuccelli ([@bbertucc])
+- Breanna Harvey ([@breleha])
 - Tevin Clark ([@tevintc])
 - Jihad Doucette
+- Rapahel Gang ([@raphaelgang])
+- Cambria Martinelli ([@CambriaS])
 - Taylor Osbey ([@tosbey1])
 - Alberta Wright
+- 
 - **You?** Start contributing and we'll add your name.
 
 [repo's wiki]:https://github.com/4pt0/4pt0-theme/wiki
@@ -38,6 +42,9 @@ This theme works with high density pixel displays. *You should upload images tha
 [Sage]:https://github.com/roots/sage
 [_s]:https://github.com/Automattic/_s
 [@bbertucc]:https://github.com/bbertucc
+[@breleha]:https://github.com/breleha
+[@raphaelgang]:https://github.com/raphaelgang
+[@CambriaS]:https://github.com/CambriaS
 [DeployHQ]:https://www.deployhq.com/
 [DRY]:https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [@tosbey1]:https://github.com/tosbey1
