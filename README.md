@@ -31,7 +31,6 @@ This theme works with high density pixel displays. *You should upload images tha
 - Cambria Martinelli ([@CambriaS])
 - Taylor Osbey ([@tosbey1])
 - Alberta Wright
-- 
 - **You?** Start contributing and we'll add your name.
 
 [repo's wiki]:https://github.com/4pt0/4pt0-theme/wiki
