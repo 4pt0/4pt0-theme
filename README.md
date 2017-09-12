@@ -1,6 +1,6 @@
 # 4.0 Schools WordPress Theme
 
-This public repo contains the _upcoming_ WordPress theme for [4pt0.org]. This theme is designed with young creatives from [YEP Design Works].
+This public repo contains the WordPress theme behind [4pt0.org]. This theme is designed with young creatives from [YEP Design Works].
 
 ## Issue Reporting and Questions
 Issues and questions can be added under this repo's ["Issues" tab]. Labels should be added to each issue and issues can be assigned to particular developers. [@bbertucc] is the primary developer of the 4.0 Schools project. Checkout the [repo wiki] for helpful guides.
