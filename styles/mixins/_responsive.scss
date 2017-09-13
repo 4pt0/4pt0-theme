@@ -20,13 +20,10 @@
 @mixin responsive-smaller_container(){
   margin: 0 auto;
   @media only screen and (min-width: $screen-standard){
-	  width: $screen-smaller;
-  }
-  @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-	  width: $screen-smallest;
-  }
-  @media only screen and (max-width: $screen-smaller){
-	  max-width: $screen-smallest;
+    width: $screen-smaller;
+  }  
+  @media only screen and (max-width: $screen-standard){
+	  max-width: 500px;
   }  
 }
 
@@ -45,13 +42,13 @@
 @mixin responsive-larger_padding(){
   overflow: hidden;
   @media only screen and (min-width: $screen-standard){
-	  padding: $cell-standard*2 0;
+	  padding: $cell-standard*2 $cell-smallest;
   }
   @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-	  padding: $cell-smaller*2 0;
+	  padding: $cell-smaller*2 $cell-smallest;
   }
   @media only screen and (max-width: $screen-smaller){
-	  padding: $cell-smallest*2 0;
+	  padding: $cell-smallest*2 $cell-smallest;
   }
 } 
 
@@ -119,8 +116,8 @@
   	width: $cell-standard * 6;
   }
   @media only screen and (max-width: $screen-standard){
-  	height: $cell-smaller * 6;
-  	width: $cell-smaller * 6;
+  	height: 100%;
+  	width: 100%;
   }
 }
 

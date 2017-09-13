@@ -61,22 +61,30 @@
   border-top: $border-standard;
   @include responsive-standard_padding();
   .standard_content-page_title, .standard_content-the_content{
-    @include responsive-standard_container();
     @include responsive-side_padding();
+    margin: 0 auto;
+    max-width: $width-container-standard;
   }
   .standard_content-page_title {
   	margin: 0 auto;
     color: $color-dark_blue;
-    @include responsive-largest_standard_font();
+    font: $font-larger_standard;
+    @media only screen and (max-width: $screen-smaller){
+      font: $font-standard;
+    }
   }  
   .standard_content-the_content{
-    @include responsive-standard_font();
+    font: $font-smaller_standard;
+    @media only screen and (max-width: $screen-smaller){
+      font: $font-smallest_standard;
+    }
   }
 }
 
 //Segments + User List
 .loop_content-segments, 
 .loop_content-user_list{  
+  
   //Single Segment + User List Header
   .segments-segment,
   .user_list-header{
@@ -96,54 +104,91 @@
     //Content
     .header-content{
       @include responsive-standard_container();    
-      @include responsive-standard_padding();    
+      @include responsive-larger_padding();    
       
-      //Text
-      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text{
+      //Text and Meida
+      & > div {
         margin-left: auto;
         margin-right: auto;
-        
+      }
+    
+      //Text (All)
+      .content-brief_text, .content-regular_text, .content-regular_text_with_paragraphs, .content-long_text{
+    
         //Title, Subtitle and Body
-      	.brief_text-title, .regular_text-title, .long_text-title,
-      	.brief_text-subtitle, .regular_text-subtitle, .long_text-subtitle,
-      	.brief_text-body, .regular_text-body, .long_text-body{
-          text-align: center;
-        }
-        
-        //Title and Body
-        .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title,
-        .brief_text-body, .regular_text-body, .regular_text_with_paragraphs-body, .long_text-body{
+        & > div{
           margin-top: $cell-smaller;
         }
-                
+        
         //Title
-        .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title {
+        .brief_text-title, .regular_text-title, .regular_text_with_paragraphs-title, .long_text-title{
           @include responsive-larger_standard_font();
-      	}
-      	
-      	//Subtitle
-        .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle, .long_text-subtitle{
-          margin-top: $cell-smallest;
-        	@include responsive-alternate_font();
+        }
+        
+        //Subtitle
+        .brief_text-subtitle, .regular_text-subtitle, .regular_text_with_paragraphs-subtitle,  .long_text-subtitle{
+          @include responsive-alternate_font();
         }
         
         //Body
-      	.brief_text-body {
-          @include responsive-standard_font();
-      	}
-      	.regular_text-body, .regular_text_with_paragraphs-body, .long_text-body {
+        .brief_text-body, .regular_text-body, .regular_text_with_paragraphs-body, .long_text-body{
           @include responsive-smaller_standard_font();
-      	}
-      	.long_text-body {
+        }
+        
+      } 
+      
+      //Text (Brief)
+      .content-brief_text{
+        @include responsive-smaller_container();    
+        & > div{
+          text-align: center;
+        }
+        .brief_text-body, .brief_text_inverted-body{
+        }
+      } 
+      
+      //Text (Regular)
+      .content-regular_text{
+        @include responsive-smaller_container();    
+        & > div{
+          text-align: center;
+        }
+        .regular_text-body, .regular_text_inverted-body{
+        }
+      } 
+    
+      //Text (Regular with Paragraphs)
+      .content-regular_text_with_paragraphs{
+        @include responsive-smaller_container();    
+        & > div{
+        }
+        .regular_text_with_paragraphs-body, .regular_text_with_paragraphs_inverted-body{
+        }
+      } 
+      
+      //Text (Long)
+      .content-long_text{
+        & > div{
+        }
+        .long_text-title, .long_text_inverted-title, .long_text-subtitle, .long_text_inverted-subtitle{
+          @include responsive-smaller_container();  
+          @include responsive-top_padding();
+          text-align: center; 
+        }
+        .long_text-body, .long_text_inverted-body{
+          @include responsive-standard_padding();    
+          @include responsive-standard_container();    
         	text-align: justify;
         	column-count: 2;
-        	column-gap: $cell-standard;
-          @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
-        	  column-gap: $cell-smallest;
+          @media only screen and (min-width: $screen-standard){
+        	  column-gap: $cell-standard;
           }
-          @media only screen and (max-width: $screen-smallest){
+          @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
+        	  column-gap: $cell-smaller;
+          }
+          @media only screen and (max-width: $screen-smaller){
         	  column-count: 1;
-          }
+          }      
         	p:first-of-type{
           	margin-top: 0;
           	&:first-letter{
@@ -157,105 +202,24 @@
               }
           	}
         	}
-      	}
-      	
-        //Text Widths
-        .content-brief_text, .content-long_text{
-          max-width: $cell-standard*19; 
         }
-        .content-regular_text, .content-regular_text_with_paragraphs{
-          max-width: $cell-standard*15; 
-        }
-      	
       }
-      
-      //Options
-      .content-options{
-    		padding-top: $cell-standard;
-    		text-align: center;
-        margin: 0 auto $cell-smaller auto;
-    		div:first-of-type{
-      		margin-left: 0!important;
-    		}
-    		.options-map_toggle, .options-filter{
-  				display: inline-block;
-  				margin-left: $cell-smallest;
-  				margin-top: $cell-smallest;
-  				position: relative;
-  				@include button-standard();
-  				border: 4px solid $color-white;
-  				background: transparent; 
-  				@media only screen and (max-width: $screen-smallest){
-            width: 100%;
-            margin-left: 0;
-    		  }
-  				&.selected{
-    				background: $color-white;
-    				color: $color-orange;  
-    				border-color: $color-white;          
-    				.map_toggle-checkbox{
-      				color: $color-orange;
-    				}
-  				}
-  				.filter-checkbox{
-  					position: absolute;
-  					left: -10000000px;
-  				}
-        }
-        .options-map_toggle{
-  				margin-left: $cell-smallest;
-          border-color: transparent;          
-          box-shadow: none;
-          position: relative;
-          padding-right: 34px;
-          padding-left: 54px;
-          @media only screen and (max-width: $screen-smaller){
-            padding-right: 9px;
-          }
-          @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
-            padding-right: 28px;
-          }
-          @media only screen and (max-width: $screen-smaller){
-            padding-left: 28px;
-            padding-right: 8px;
-          }
-          @media only screen and (max-width: $screen-smallest){
-            padding-left: 0;
-            padding-right: 0;
-            margin-left: 0;
-          }
-  				.map_toggle-checkbox{
-    				position: absolute;
-    				-webkit-appearance: none;
-    				display: inline-block;
-    				pointer-events: none;
-    				outline: none;
-            color: $color-white;
-            left: 0;
-            top: 0;
-            &:before{
-              @include fa-icon();
-      				content: $fa-var-map;
-              font-size: 2.5em;
-              margin-top: 20px;
-              margin-left: $cell-smallest;
-              @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
-                font-size: 2em;
-                margin-top: 15px;
-                margin-left: 20px;
-              }
-              @media only screen and (max-width: $screen-smaller){
-                font-size: 1.5em;
-                margin-left: 5px;
-              }
-              @media only screen and (max-width: $screen-smallest){
-                margin-top: 15px;
-                margin-left: 20px;
-              }
-            }
-  				}
-        }
-      }      
+  
     }
   }
+  
+  //User Map
+  .user_list-user_map{
+    position: relative;
+  
+    //Map
+    .user_map-the_map{
+      width:100%; 
+      height: 80vh;
+      min-height: 400px;
+      max-height: 770px;
+    }
+  
+  }  
+  
 }

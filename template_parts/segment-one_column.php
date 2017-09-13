@@ -14,7 +14,7 @@ if( (get_sub_field('segment_display') == 'One Column' || get_sub_field('segment_
   //Set Text Extentions By Character and Paragraph Count
   $text_characters = strlen(strip_tags($body));
   $text_paragraphs = substr_count($body, '<p');
-  if($text_characters < 300)
+  if($text_characters <= 300)
     $text_class = 'brief_text';
   if( ($text_characters > 300) && ($text_characters < 800) )
     $text_class = 'regular_text';

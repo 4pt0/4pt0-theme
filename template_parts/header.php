@@ -40,7 +40,7 @@
           echo '<div class="content-alternate_logo"> <a class="alternate_logo-link" href="'.get_home_url().'"><img class="link-image" src="'.esc_url($alternate_img_src).'" srcset="'.esc_attr($alternate_img_srcset).'" sizes="'.$alternate_img_sizes.'" alt="4.0 Schools"></a></div>';
         ?>
         
-        <a class="content-toggle" id="header_menu_toggle"> Menu</a>
+        <a class="content-toggle" id="header_menu_toggle"></a>
 
         <?php
         //Header Navigation

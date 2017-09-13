@@ -32,12 +32,6 @@ jQuery(document).ready(function($) {
 		$('.one_column_content-title').css('opacity', 0);
 		$('.one_column_content-segment_body').addClass('animated');
 		$('.one_column_content-segment_body').css('opacity', 0);
-		$('.blocks-page').addClass('animated');
-		$('.blocks-page').css('opacity', 0);
-		$('.blocks-alumni_quote').addClass('animated');
-		$('.blocks-alumni_quote').css('opacity', 0);
-		$('.blocks-link').addClass('animated');
-		$('.blocks-link').css('opacity', 0);
 		$('.posts-single_post').addClass('animated');
 		$('.posts-single_post').css('opacity', 0);
   	
@@ -70,24 +64,6 @@ jQuery(document).ready(function($) {
   }, {
     offset: '90%'
   });  
-  $(".blocks-page").waypoint(function () {
-    itemQueue.push(this.element)
-    processItemQueue()
-  }, {
-    offset: '90%'
-  });  
-	$(".blocks-alumni_quote").waypoint(function () {
-    itemQueue.push(this.element)
-    processItemQueue()
-  }, {
-    offset: '90%'
-  });
-  $(".blocks-link").waypoint(function () {
-    itemQueue.push(this.element)
-    processItemQueue()
-  }, {
-    offset: '90%'
-  });
 	$(".posts-single_post").waypoint(function () {
     itemQueue.push(this.element)
     processItemQueue()

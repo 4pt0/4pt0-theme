@@ -7,7 +7,7 @@
       minZoom: 5,
       scrollwheel: false,
       streetViewControl: false,
-      center: {lat: 32.8320981, lng: -89.1752648},
+      center: {lat: 36.3049825, lng: -97.9643273},
       mapTypeId: 'Watercolor',
       mapTypeControlOptions: {
         mapTypeIds: ['']
@@ -16,8 +16,6 @@
     
     //Watercolor Tiles      
     map.mapTypes.set('Watercolor', new google.maps.StamenMapType('watercolor'));
-
-    //Set Data
 
     //Set Markers    
     var richMarkers = users.map(function(user, i) {
@@ -41,8 +39,8 @@
       }]
 
     });
-	google.maps.event.addListenerOnce(map, 'idle', function() {
-   google.maps.event.trigger(map, 'resize');
-	});
+  	google.maps.event.addListenerOnce(map, 'idle', function() {
+      google.maps.event.trigger(map, 'resize');
+  	});
   };
 })(jQuery);     

@@ -2,79 +2,6 @@
 # Elements, such as dynamic AJAX lists, in a PHP Includes File
 --------------------------------------------------------------*/
 
-//includes/filterable_content.php
-.include-filterable_content{
-  position: relative;
-  
-  //Map Instructions
-  .filterable_content-instructions{
-    position: absolute;
-    right: 15%;
-    bottom: 15%;
-    font: $font-standard;
-    color: $color-white;
-    text-shadow: $text-shadow-standard;
-    display: flex;
-    vertical-align: middle;
-    line-height: 100px;
-    .instructions-point{
-      margin: 0 3px; 
-    }
-  }
-
-  //Map
-  .filterable_content-map{
-    width:100%; 
-    height: 80vh;
-    min-height: 400px;
-    max-height: 770px;
-  }
-
-  //List View
-  .filterable_content-list{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
-    .list-single_user {
-    	background:$color-blue_gradient;
-    	width: 31.33333333333%;
-    	margin: 1%;
-      display: block;
-    	color: $color-white;
-    	text-decoration: none;
-    	padding: $cell-smallest;
-    	text-align: center;
-    	box-shadow: $box-shadow-standard;
-    	@media only screen and (max-width: $screen-smaller){
-        width: 48%;
-      }
-    	@media only screen and (max-width: $screen-smallest){
-        width: 98%;
-      }
-      .single_user-avatar {
-      	display: inline-block;
-        background-color: $color-white;
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 100%;
-        padding-bottom: 100%;
-    		border-radius: 50%;
-      }
-      .single_user-full_name, .single_user-title{
-        padding-top: $cell-smallest/2;
-      }
-      .single_user-full_name {
-        @include responsive-standard_font();
-      }
-      .single_user-title {
-        text-transform: capitalize;
-        @include responsive-smaller_standard_font();
-      }
-    }
-  }
-}
-
 //includes/shortcode.php
 .include-newsletter_signup {
 	background-color: $color-light_blue;
@@ -91,7 +18,10 @@
 		color: $color-dark_blue;
 		padding-right: $cell-smallest;
 		display: inline-block;
-		@include responsive-standard_font();
+    font: $font-smaller_standard;
+    @media only screen and (max-width: $screen-smaller){
+      font: $font-smallest_standard;
+    }
     @media only screen and (max-width: $screen-smallest) {
 			display: block;
 			padding-right: 0;
@@ -114,7 +44,10 @@
 			border: 0;
 			width: 100%;
 			line-height: 1;
-      @include responsive-standard_font();
+      font: $font-smaller_standard;
+      @media only screen and (max-width: $screen-smaller){
+        font: $font-smallest_standard;
+      }
       @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard) {
   			padding: $cell-smallest 30px;
       }      
@@ -131,7 +64,9 @@
       top: 0px;
       right: 0px;
       @include button-standard();
-      @media only screen and (max-width: $screen-smaller) {
+      font: $font-smaller_standard !important;
+      @media only screen and (max-width: $screen-smaller){
+        font: $font-smallest_standard !important;
   			margin-top: $cell-smallest;
   		}
 		}

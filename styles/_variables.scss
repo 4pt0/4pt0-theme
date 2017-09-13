@@ -22,8 +22,6 @@ $font-family-alternate: 'matt_font', cursive;
 $font-FontAwesome: 'FontAwesome';
 $font-weight-bold: 700;
 $font-weight-standard: 400;
-
-//Item specific variables
 $line-height-standard: 1.4em;
 
 //Font Settings
@@ -69,3 +67,6 @@ $box-shadow-smallest: 0px 1px 2px -1px $color-dark_gray;
 $box-shadow-smaller: 0px 1px 6px -1px $color-standard;
 $box-shadow-standard: 0px 1px 12px -1px $color-standard;
 $text-shadow-standard: 1px 1px 3px $color-dark_gray;
+
+//Additional
+$width-container-standard: $cell-standard*20;

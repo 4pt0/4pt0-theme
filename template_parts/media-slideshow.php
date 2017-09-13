@@ -28,14 +28,30 @@ if ( get_sub_field('add_media') == 'Slideshow' ):
     $media_link = $image['sizes']['large'];
     if($link_url != null)
       $media_link = $link_url;
+
+    //Popup External Image Links and Link Links in New Tab
+    if( ($media_type == 'Link' || $media_type == 'Image') && (parse_url($link_url)['host'] != $_SERVER['HTTP_HOST']) ){
+      
+      //External Links
+      $link_target = 'target="_blank"';
+      
+    }else{
+      
+      //External Links
+      $link_target = 'target="_self"';
+      
+    }
     ?>
     
   <a 
     class="slideshow-slide" 
     href="<?php echo $media_link ?>" 
     data-fancybox="gallery-<?php echo $gallery_id?>"
-    
+  
     <?php 
+    //Return Link Target
+    echo $link_target;
+
     if($caption) 
       echo 'data-caption="'.$caption.'"'; 
     if($media_type == 'PDF') 

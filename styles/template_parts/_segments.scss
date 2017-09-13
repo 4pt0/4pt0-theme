@@ -235,7 +235,11 @@
         @include responsive-standard_padding();
       }
       .media-single_media_item .single_media_item-item .item-caption{
-        font: resposive-smaller_standard_font();
+        @include responsive-smaller_standard_font();
+        padding: $cell-smallest;
+        @media only screen and (max-width: $screen-smaller){
+      	  padding: $cell-smallest/2;
+        }
       }
     }
     

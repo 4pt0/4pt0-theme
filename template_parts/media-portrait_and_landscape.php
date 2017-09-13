@@ -31,6 +31,19 @@ if ( get_sub_field('add_media') == 'Portrait and Landscape' ):
       $link_url = $image['sizes']['large'];
     if($media_type == 'PDF')
       $link_url = 'javascript:;';
+      
+    //Popup External Image Links and Link Links in New Tab
+    if( ($media_type == 'Link' || $media_type == 'Image') && (parse_url($link_url)['host'] != $_SERVER['HTTP_HOST']) ){
+      
+      //External Links
+      $link_target = 'target="_blank"';
+      
+    }else{
+      
+      //External Links
+      $link_target = 'target="_self"';
+      
+    }
     
     ?>
     
@@ -39,6 +52,9 @@ if ( get_sub_field('add_media') == 'Portrait and Landscape' ):
       href="<?php echo $link_url ?>" 
       
       <?php 
+      //Return Link Targer
+      echo $link_target;
+
       //Set Fancybox Gallery Settings
       if( ($link_url == $image['sizes']['large']) || ($media_type == 'PDF') || ($media_type == 'YouTube Video') )
         echo 'data-fancybox="gallery-'.$gallery_id.'"';

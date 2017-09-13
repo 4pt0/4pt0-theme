@@ -11,13 +11,7 @@ if(is_author()):
   $quote = get_field('quote', 'user_'.$user_data->ID);
   $facebook_url = get_field('facebook_url', 'user_'.$user_data->ID);
   $twitter_handle = get_field('twitter_handle', 'user_'.$user_data->ID);
-
-  //Location
-  if($location){
-    $city = explode( "," , $location['address'])[1];    
-  }else{
-    $city = null;
-  }
+  $linkedin_url = get_field('linkedin_url', 'user_'.$user_data->ID);
   
   //User Meta
   $first_name = $user_data->first_name;    
@@ -29,8 +23,9 @@ if(is_author()):
   if(empty($last_name))
     $last_name = $user_data->display_name;
   
-  //Bio
-  $bio = get_the_author_meta('description', $user_data->ID)
+  //Standard User Fields
+  $bio = get_the_author_meta('description', $user_data->ID);
+  $website = get_the_author_meta('website', $user_data->ID);
  
 ?>
 
@@ -38,7 +33,7 @@ if(is_author()):
   <div class="user-header">
 	  <div class="header-content">
 		  <div class="content-avatar">
-				<div class="avatar-headshot"><?php echo get_avatar( $user_data->ID, 1000 ); ?></div>
+				<div class="avatar-headshot"><?php echo get_avatar( $user_data->ID, 400 ); ?></div>
 		  </div>
 			<div class= "content-meta">
 				<div class="meta-name"><?php echo $first_name.' '.$last_name; ?></div>
@@ -74,15 +69,17 @@ if(is_author()):
 				<div class="meta-tags">
   				
 				  <?php
-  				//Roles
+  				//Show Roles              
   				if(!empty($user_data->roles)){
-    				foreach( $user_data->roles as $role)
+    				
+    				//Remove any Mention of WordPress Standard Roles
+    				$filtered_roles = array_diff($user_data->roles, array('subscriber', 'administrator', 'author', 'editor'));
+    				
+    				//Show Each Role
+    				foreach( $filtered_roles as $role)
     			    echo '<div class="tags-role">'.str_replace ('_', ' ', $role).'</div>'; 
+    			    
   				}
-  				  				
-  				//Location
-  				if($location)
-				    echo '<div class="tags-location">'.$city.'</div>';
 				  ?>
 				  
 			  </div>
@@ -123,7 +120,7 @@ if(is_author()):
 				<?php
         //Venture Website
         if(get_field('official_website'))
-				  echo '<a class="venture-url" href="'.get_field('official_website').'">Visit '.str_replace ('http://', '', get_field('official_website')).'</a>';
+				  echo '<a class="venture-url" href="'.get_field('official_website').'">Visit '.str_replace (array('http://', '/'), '', get_field('official_website')).'</a>';
 				
   		  //Reset Venture Data
   		  wp_reset_postdata();
@@ -162,15 +159,19 @@ if(is_author()):
 						//Facebook 
     				if($facebook_url)
   						echo '<a class="social_media-link" href="'.$facebook_url.'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
-						?>
+
+						//LinkedIn 
+    				if($linkedin_url)
+  						echo '<a class="social_media-link" href="'.$linkedin_url.'" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
+  						?>
 						
 				  </div>
 				  
 				  <?php
           //End Social
-  				endif;
-  				?>
-  				
+  				endif;  
+				  ?>
+				  
 				</div>
 			</div>
 			

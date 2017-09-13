@@ -30,9 +30,6 @@ include_once('includes/tinymce.php' );
 //Custom Post Types
 include_once('includes/custom_post_types.php' );
 
-//Filterable Content Area
-include_once('includes/filterable_content.php' );
-
 //Newsletter Signup Shortcode
 include_once('includes/newsletter_signup.php' );
 ?>

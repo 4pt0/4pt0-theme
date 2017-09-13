@@ -20,13 +20,22 @@
 		.header-content {
 			margin: 0 auto;
       display: flex;
+      flex-wrap: wrap;
     	justify-content: center;
     	align-items: center;
+    	align-content: center;
+      max-width: $cell-standard*20;
       @include responsive-standard_padding();
-			@media only screen and (max-width: $screen-smallest) {
-				flex-direction: column;
+			@media only screen and (max-width: $screen-smaller) {
+        width: 100%;
 			}
       .content-avatar {
+        width: 40%;
+        text-align: right;
+  			@media only screen and (max-width: $screen-smallest) {
+    			width: 100%;
+          text-align: center;
+  			}
   	    .avatar-headshot {
   			  img {
             @include responsive-circle();
@@ -34,19 +43,21 @@
   		  }
   	  }
       .content-meta {
+        width: 60%;
   	    display: flex;
   	    flex-direction: column;
         color: $color-dark_blue;
         @include responsive-padding_left();
     		@media only screen and (max-width: $screen-smallest) {
           padding-left: 0;
-          text-align: center
+    			width: 100%;
+          text-align: center;
         }
   	    .meta-name{
           @include responsive-larger_standard_font();
         }
         .meta-title_and_venture{
-          @include responsive-standard_font();
+          @include responsive-smaller_standard_font();
           div:nth-child(2){
             &:before{
               content: '•';
@@ -59,9 +70,9 @@
           }
         }
         .meta-tags {
-          margin-top: $cell-smallest;
           .tags-role, .tags-location{
             @include button-smallest();
+            margin-top: $cell-smallest; 
             margin-right: $cell-smallest;
             text-transform: capitalize;
         		@media only screen and (max-width: $screen-smallest) {
@@ -91,35 +102,25 @@
   }
   .user-bio {
     margin: 0 auto;
-    max-width: $cell-standard*23;
-    @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-  	  max-width: $cell-smaller*23;
-    }
-    @media only screen and (max-width: $screen-smaller){
-  	  max-width: $cell-smallest*38;
-    }
+    max-width: $cell-standard*20;
     @include responsive-standard_padding();
 	  .bio-title {
-      @include responsive-smaller_standard_font();
+      font: $font-standard;
       margin-bottom: $cell-smallest;
 	  }
 	  .bio-body{
-      @include responsive-standard_font();
+      font: $font-smaller_standard;
 	  }
   }
   .user-footer { 
 		background-color: $color-light_blue;
 	  .footer-venture_and_contact {
       display: flex;
-    	justify-content: center;
-    	align-items: center;
+    	justify-content: left;
       align-items: stretch;
       width: 100%;
-      max-width: $cell-standard*23;
+      max-width: $cell-standard*20;
       margin: 0 auto;
-      @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
-    	  max-width: $cell-smaller*23;
-      }
       @media only screen and (max-width: $screen-smaller){
     	  max-width: $cell-smallest*38;
     	  display: block;
@@ -131,12 +132,14 @@
 			  margin-right: $cell-standard;
         max-width: $cell-standard*14;
         width: 100%;
+			  border-right: $border-standard;
         @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){
       	  max-width: $cell-smaller*14;
 			    margin-right: $cell-smaller;
         }
         @media only screen and (max-width: $screen-smaller){
 			    margin-right: 0;
+			    border-right: 0;
         }
 			  .venture-heading {
           @include responsive-smaller_standard_font();
@@ -156,7 +159,6 @@
 		  }
 		  .venture_and_contact-contact {
 			  padding-left: $cell-standard;
-			  border-left: $border-standard;
         max-width: $cell-standard*8;
         width: 100%;
         @media only screen and (min-width: $screen-smaller) and (max-width: $screen-standard){

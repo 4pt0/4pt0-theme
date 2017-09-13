@@ -27,27 +27,27 @@
         <?php
         //Facebook Link
         if(get_theme_mod( 'theme_facebook_url' ))
-          echo '<a class="social-facebook"  href="'.get_theme_mod( 'theme_facebook_url' ).'"><span class="facebook-icon"></span></a>';
+          echo '<a class="social-facebook"  href="'.get_theme_mod( 'theme_facebook_url' ).'" target="_blank"><span class="facebook-icon"></span></a>';
   
         //Twitter Link
         if(get_theme_mod( 'theme_twitter_url' ))
-          echo '<a class="social-twitter"  href="'.get_theme_mod( 'theme_twitter_url' ).'"><span class="twitter-icon"></span></a>';
+          echo '<a class="social-twitter"  href="'.get_theme_mod( 'theme_twitter_url' ).'" target="_blank"><span class="twitter-icon"></span></a>';
         
         //Instagram Link
         if(get_theme_mod( 'theme_instagram_url' ))
-          echo '<a class="social-instagram"  href="'.get_theme_mod( 'theme_instagram_url' ).'"><span class="instagram-icon"></span></a>';
+          echo '<a class="social-instagram"  href="'.get_theme_mod( 'theme_instagram_url' ).'" target="_blank"><span class="instagram-icon"></span></a>';
   
         //Pinterest Link
         if(get_theme_mod( 'theme_pinterest_url' ))
-          echo '<a class="social-pinterest"  href="'.get_theme_mod( 'theme_pinterest_url' ).'"><span class="pinterest-icon"></span></a>';
+          echo '<a class="social-pinterest"  href="'.get_theme_mod( 'theme_pinterest_url' ).'" target="_blank"><span class="pinterest-icon"></span></a>';
 
-        //Pinterest Link
+        //Youtube Link
         if(get_theme_mod( 'theme_youtube_url' ))
-          echo '<a class="social-youtube"  href="'.get_theme_mod( 'theme_pinterest_url' ).'"><span class="youtube-icon"></span></a>';
+          echo '<a class="social-youtube"  href="'.get_theme_mod( 'theme_youtube_url' ).'" target="_blank"><span class="youtube-icon"></span></a>';
 
-        //Pinterest Link
+        //Medium Link
         if(get_theme_mod( 'theme_medium_url' ))
-          echo '<a class="social-medium"  href="'.get_theme_mod( 'theme_medium_url' ).'"><span class="medium-icon"></span></a>';
+          echo '<a class="social-medium"  href="'.get_theme_mod( 'theme_medium_url' ).'" target="_blank"><span class="medium-icon"></span></a>';
         ?>
       
       </div>

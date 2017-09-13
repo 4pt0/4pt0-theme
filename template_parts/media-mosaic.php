@@ -42,7 +42,9 @@ if( get_sub_field('add_media') == 'Mosaic'):
           <div class="content-quote">  
                     
             <?php 
-            if (get_field('quote', 'user_'.$alumni_id)){
+            if (get_sub_field('quote_text')){
+              the_sub_field('quote_text');
+            }elseif (get_field('quote', 'user_'.$alumni_id)){
               the_field('quote', 'user_'.$alumni_id);
             }else{
               echo 'No quote available.';
@@ -58,8 +60,10 @@ if( get_sub_field('add_media') == 'Mosaic'):
           <div class="content-alumni_roles">
             
             <?php 
+    				$filtered_roles = array_diff(get_userdata($alumni_id)->roles, array('subscriber', 'administrator', 'author', 'editor'));
+    				              
             //Roles
-            foreach(get_userdata($alumni_id)->roles as $role):
+            foreach($filtered_roles as $role):
               echo '<div class="alumni_roles-role">'.str_replace('_', ' ', strtolower($role)).'</div>';
             endforeach;
             ?>  

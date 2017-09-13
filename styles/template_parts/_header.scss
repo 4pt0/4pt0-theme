@@ -125,6 +125,12 @@
           margin-top: $cell-smaller;
         }
       }
+      .content-toggle{
+        &:after{
+          content: 'Menu';
+          margin-left: 5px;
+        }
+      }
     }
     @media only screen and (max-width: $screen-smaller){
       .content-logo{
@@ -147,5 +153,37 @@
     }
     
   }
+	.menu-item-has-children {
+		position: relative;
+	  .sub-menu {
+			display: none;
+			@media only screen and (max-width: $screen-smaller){
+				display: flex;
+				flex-direction: column;
+				margin: 10px 0;
+			}
+			.menu-item {
+				width: 100%;
+			}
+	  }
+  }
+
+  
+  .menu-item-has-children:hover > .sub-menu {
+		display:flex;
+			flex-direction: column;
+			position: absolute;
+			width: 100%;
+			padding: 0;
+			text-align: left;
+			padding: 10px;  
+			background-color: $color-blue;
+			box-shadow: $box-shadow-smaller;
+			.menu-item {
+				a {
+					color: white;
+				}
+			}
+	}
   
 }

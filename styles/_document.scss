@@ -43,19 +43,28 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  @include responsive-largest_standard_font();
+  font: $font-larger_standard;
+  @media only screen and (max-width: $screen-smaller){
+    font: $font-standard;
+  }
 }
 
 h2 {
-  @include responsive-larger_standard_font();
+  font: $font-alternate;
+  @media only screen and (max-width: $screen-smaller){
+    font: $font-smaller_alternate;
+  }
 }
 
 h3 {
-  @include responsive-standard_font();
+  font: $font-smaller_standard;
+  @media only screen and (max-width: $screen-smaller){
+    font: $font-smallest_standard;
+  }
 }
 
 h4 {
-  @include responsive-smaller_standard_font();
+  font: $font-smallest_standard;
 }
 
 .lead{

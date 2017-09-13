@@ -40,28 +40,48 @@ if( get_field('content_display') == 'User List' && have_rows('user_list')): whil
       //Segment Body
       if($body)
         echo '<div class="'.$text_class.'-body'.$body_class_extention.'">'.get_sub_field('body').'</div>';
+                //Begin User Query
+      	$users = get_users(array(
+      		'number' => -1,
+      		'role__in' => 'launch_fellow',
+      		'meta_key' => 'location'
+      	));     
       ?>
       
       </div>
-      <div class="content-options">        
-          
-        <?php
-        //User Role Filters
-        $user_roles = get_sub_field('user_list_roles');
-        foreach ($user_roles as $user_role){
-          echo '<div class="options-filter"><input class="filter-checkbox" data-user_role="'.$user_role['value'].'" type="checkbox">'.$user_role['label'].'</div>';
-        }
-        ?>
-        
-        <div class="options-map_toggle"><input class="map_toggle-checkbox" data-user_view="map" type="checkbox"> Map View</div>
-                
-      </div>
     </div>
   </div>
-  <div class="user_list-include">
+  <div class="user_list-user_map">
+    <div class="user_map-the_map"></div>
     <script>
-      //Load Ajax User list
-      jQuery('.user_list-include').filterableContent();
+      (function( $ ) {
+        var users = [
+          
+        <?php 
+      	 
+        //Start Map Marker Loop
+        foreach ( $users as $user ): 
+          $location = get_field('location', 'user_'. $user->ID );
+          $avatar =  get_avatar_url($user->ID);
+          
+          //Only show users that have location data
+          if($location):
+        ?>
+        
+          {location: { lat: <?php  echo $location['lat']; ?>, lng:  <?php echo $location['lng']; ?>}, avatar: '<?php echo $avatar;?>', url:'<?php echo get_author_posts_url($user->ID);?>', name:'Hello' },
+        
+        <?php 
+          endif;
+          
+        //End Map Marker Loop
+        endforeach; 
+        ?>
+    
+        ]
+          
+        $('.user_map-the_map').userMap(users, '<?php echo get_template_directory_uri();?>');
+        
+      })(jQuery);     
     </script>
   </div>
 </div>
