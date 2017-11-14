@@ -76,6 +76,7 @@ if ( get_sub_field('add_media') == 'Grid' ):
         ?>
 
       </div>
+      <div class="item-height"></div>
       
       <?php 
       //YouTube Play Icon

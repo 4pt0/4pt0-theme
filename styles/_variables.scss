@@ -59,7 +59,7 @@ $image-square_width: $image-base_height;
 //Border Settings
 $border-width-standard: 3px;
 $border-standard: $border-width-standard solid $color-transparent_gray;
-$border-radius-standard: 999999999px; //A Huge Number to make sure rectangles stay rounded
+$border-radius-standard: 6px; //A Huge Number to make sure rectangles stay rounded
 $border-radius-circle: 50%;
 
 //Shadows

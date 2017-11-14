@@ -8,11 +8,12 @@
 	margin: 0 $cell-standard*-1;
 	border-radius: $border-radius-standard;
 	padding: $cell-smaller $cell-standard; 
+  text-shadow: none !important;
 	@media only screen and (max-width: $screen-smaller) {
 		justify-content: center;
 		padding: $cell-smallest;
 		margin: 0;
-		border-radius: 0;
+		border-radius: 10px;
 	}
 	.newsletter_singup-label {
 		color: $color-dark_blue;

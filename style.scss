@@ -28,6 +28,7 @@ Tags:
 --------------------------------------------------------------*/
 @import "styles/mixins/backgrounds";
 @import "styles/mixins/buttons";
+@import "styles/mixins/media";
 @import "styles/mixins/responsive";
 
 /*--------------------------------------------------------------
@@ -44,7 +45,6 @@ Tags:
 /*--------------------------------------------------------------
 # Additional Elements: Script Styles, Includes, Header, .. etc.
 --------------------------------------------------------------*/
-@import "styles/etc/animate";
 @import "styles/etc/includes";
 @import "styles/etc/fancybox";
 @import "styles/etc/wordpress";

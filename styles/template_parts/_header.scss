@@ -32,6 +32,7 @@
       text-align: right;
       list-style: none;
       .menu-item{
+        position: relative;
         text-transform: uppercase;
         letter-spacing: 1px;
         @include responsive-smallest_standard_font();
@@ -40,28 +41,85 @@
         }
         &.current-menu-item{
           a{
-            display: inline-block;
-            position: relative;
-            &:after{
-              content: '';
-              position: absolute;
-              width: 100%;
-              bottom: -6px;
-              left: 0;
-              border-bottom: 3px solid $color-standard;
-            }
+            border-bottom: 3px solid $color-standard;
           }
         }
+        
+        //Hover State
+    		&:hover{
+      		a{
+      		  opacity: .8;    
+            @media only screen and (max-width: $screen-standard){
+              opacity: 1;
+            }
+      		}
+    		}
+        
+        //Dropdown Menu
+    	  .sub-menu {
+    			display: none;
+          margin: 0;
+          padding: 0;
+          text-align: left;
+          background: $color-white;
+          z-index: 99999;
+      		@media only screen and (max-width: $screen-standard){
+            display: block;
+            margin-top: $cell-smallest;
+          }
+    			.menu-item {
+    				width: 100%;
+    				display: block;
+    				padding: 0;
+    				margin: 0;
+    				&.current-menu-item{
+      				a:after{
+                display: none;
+              }
+    				}
+      		  a {
+        		  display: block;
+        		  padding: $cell-smallest/2 $cell-smallest;
+        		  margin:0;
+        		  border-bottom: 1px solid $color-light_gray;
+        		  transition: .2s background;
+        		  &:hover{
+          		  background: $color-transparent_gray;
+                @media only screen and (max-width: $screen-standard){
+                  background: $color-white;
+                }
+        		  }
+        		  &:active{
+          		  opacity: .6;
+        		  }
+            }
+  
+    			}
+    	  }
+        &:hover > .sub-menu {
+      		display: block;
+      		list-style: none;
+      		position: absolute;
+      		min-width: $cell-standard*5;
+      		box-shadow: $box-shadow-smaller;
+      		@media only screen and (max-width: $screen-standard){
+            position: relative;
+            display: block;
+            min-width: 100%;
+            box-shadow: none;
+          }
+      	}
+        
+        //Menu Links 
         a{
           text-decoration: none;
           color: $color-dark_blue;
         }
+        
       }
-      @media only screen and (max-width: $screen-smaller){
-        display: none;
-      }
+
     }
-    
+
     //Toggle
     .content-toggle{
       display: none;
@@ -71,6 +129,47 @@
         @include fa-icon();
         content: $fa-var-bars
       }
+    }
+    
+    //Mobile Toggle Settings (Triggered via themeHeaderNavigation.js)
+    &.navigationOpen{
+      
+      //Toggle
+      .content-toggle{
+        &:before{
+          content: $fa-var-close
+        }
+      }
+      
+      //Menu
+      .content-menu{
+        display: block;
+        width: 100%;
+        padding: 0;
+        .menu-item{
+          display: block;
+          padding: $cell-smaller/2;
+          margin: 0;
+          text-align: left;
+          border-top: $border-standard;
+          &:first-of-type{
+            margin-top: $cell-smaller/2;
+          }
+          &:last-of-type{
+            border-bottom: $border-standard;
+          }
+          &.item-button{
+            margin-left: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            width: 100%;
+            a{
+              width: 100%;
+            }
+          }
+        }        
+      }
+      
     }
     
     //Responsive Settings
@@ -87,28 +186,17 @@
       }
       .content-menu{
         width: 65%;
-        .menu-item{
+        & > .menu-item{
           display: inline-block !important;
           margin-right: $cell-smallest;
+          overflow: visible !important;
         }
       }
     }
     @media only screen and (max-width: $screen-standard){
       align-content: center;
       .content-menu{
-        display: block;
-        width: 100%;
-        padding: 0;
-        margin: $cell-smaller 0 0 0;
-        .menu-item{
-          display: none;
-          text-align: left;
-          border-top: $border-standard;
-          padding: $cell-smallest;
-          &:last-of-type{
-            border-bottom: $border-standard;
-          }
-        }
+        display: none;
       }
       .content-toggle{
         display: block;
@@ -121,7 +209,7 @@
       }
       .content-menu{
         margin: 0;
-        .menu-item:first-of-type{
+        & > .menu-item:first-of-type{
           margin-top: $cell-smaller;
         }
       }
@@ -153,37 +241,5 @@
     }
     
   }
-	.menu-item-has-children {
-		position: relative;
-	  .sub-menu {
-			display: none;
-			@media only screen and (max-width: $screen-smaller){
-				display: flex;
-				flex-direction: column;
-				margin: 10px 0;
-			}
-			.menu-item {
-				width: 100%;
-			}
-	  }
-  }
-
-  
-  .menu-item-has-children:hover > .sub-menu {
-		display:flex;
-			flex-direction: column;
-			position: absolute;
-			width: 100%;
-			padding: 0;
-			text-align: left;
-			padding: 10px;  
-			background-color: $color-blue;
-			box-shadow: $box-shadow-smaller;
-			.menu-item {
-				a {
-					color: white;
-				}
-			}
-	}
-  
+    
 }

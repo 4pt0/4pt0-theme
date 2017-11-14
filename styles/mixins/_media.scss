@@ -1,0 +1,60 @@
+/*--------------------------------------------------------------
+# Media Items Referenced in _media.scss: 
+--------------------------------------------------------------*/
+
+//Item
+@mixin media-item(){
+  position: relative; 
+  display: inline-block;
+  overflow: hidden;
+  color: $color-white;
+  text-decoration: none;
+  transition: .1s box-shadow;
+  &:hover{
+    box-shadow: $box-shadow-standard;
+  }
+  
+  //All Child Elements
+  & > div {
+    //position: absolute;
+    width: 100%
+  }
+}
+
+//Image
+@mixin media-image(){
+  height: 100%;
+  position: absolute;
+  .image-the_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+//Caption
+@mixin media-caption(){
+  position: absolute;
+  bottom: 0;
+  background: $color-dark_blue_gradient;
+}
+
+//Icon
+@mixin media-icon(){ 
+  display: flex;
+  position: absolute;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  &:before{
+    @include fa-icon();
+    text-shadow: 1px 1px 30px rgba(0,0,0,.4);
+  }
+  &:active{
+    opacity: .7;
+  }
+  @media only screen and (max-width: $screen-smaller){
+	  font-size: 3em !important;
+  }
+}

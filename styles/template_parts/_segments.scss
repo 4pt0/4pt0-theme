@@ -201,10 +201,7 @@
       flex-wrap: wrap;
       align-content: center;
       width: 40%;
-      @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
-        width: 49%;
-      }      
-      @media only screen and (max-width: $screen-smallest){
+      @media only screen and (max-width: $screen-smaller){
         display: block;
         width: 100%;
       }
@@ -226,10 +223,7 @@
     //Media
     .content_with_left_text-media, .content_with_right_text-media, .content_with_left_text_inverted-media, .content_with_right_text_inverted-media{
       width: 56%;
-      @media only screen and (min-width: $screen-smallest) and (max-width: $screen-standard){
-        width: 49%;
-      }      
-      @media only screen and (max-width: $screen-smallest){
+      @media only screen and (max-width: $screen-smaller){
         display: block;
         width: 100%;
         @include responsive-standard_padding();

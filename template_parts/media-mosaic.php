@@ -22,7 +22,7 @@ if( get_sub_field('add_media') == 'Mosaic'):
       $alumni_id = get_sub_field('alumni')[ID];
     ?>
     
-    <div class="blocks-<?php echo $sanitized_box_type; ?> <?php if($block_background) echo 'with_background'; ?>" <?php if($block_background) echo 'style="background-image:url('.$block_background['sizes']['large'].')"'; ?>>
+    <div class="blocks-<?php echo $sanitized_box_type; ?> <?php if($block_background) echo 'with_background'; ?>" <?php if($block_background) echo 'style="background-image:url('.$block_background['sizes']['medium'].')"'; ?>>
        
       <?php        
       //Page Clickable Area
@@ -76,7 +76,8 @@ if( get_sub_field('add_media') == 'Mosaic'):
       //End Alumni Quote
       endif;  
       ?>
-       
+      
+      <div class="<?php echo $sanitized_box_type;?>-height"></div> 
     </div>
 
     <?php

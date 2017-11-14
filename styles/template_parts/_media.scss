@@ -19,8 +19,7 @@
       background-repeat: no-repeat;
       background-color: $color-orange;
       position: relative;
-      @include responsive-image_padding_bottom(161);
-      margin-bottom: 1%;
+      margin-bottom: 10px;
       
       //Bigger Content
       &:nth-of-type(odd){
@@ -31,6 +30,12 @@
             margin-right: $cell-standard;
           }
         }
+        
+        //Set Height
+        .link-height, .page-height, .alumni_quote-height{
+          padding-bottom: $image-base_height;
+        }
+        
       }
       
       //Smaller Content
@@ -39,6 +44,10 @@
         .content-quote:before{
           @include fa-icon();
           content: $fa-var-quote-right;
+        }
+        //Set Height
+        .link-height, .page-height, .alumni_quote-height{
+          padding-bottom: 100%;
         }
       }
       
@@ -110,10 +119,11 @@
         }
       }
       
-      //Link Blcok
+      //Link Block
       &.blocks-link{
         @include responsive-standard_font();
       }
+      
     }
         
     //Bocks (Standard to Larger screen)
@@ -223,7 +233,9 @@
         &:nth-of-type(odd), &:nth-of-type(even){
           margin-right: 0;
           width: 100%;
-          padding-bottom: $image-base_height;
+          .link-height, .page-height, .alumni_quote-height{
+            padding-bottom: $image-base_height;
+          }
         }
         &:nth-of-type(even){
           &:before{
@@ -235,88 +247,20 @@
         }
         &.blocks-alumni_quote{
           padding: $cell-smallest 0;
-          margin: $cell-smallest 0;
+          margin: $cell-smaller 0;
           .alumni_quote-user{
             position: relative;
             .user-content{
               padding: 0 $cell-smallest;
             }
           }
+          .alumni_quote-height{
+            display: none;
+          }
         }
       }
     }
   }
-}
-
-///Media Globals
-.media-single_media_item, .media-slideshow, .media-portrait_and_landscape, .media-grid{
-  
-  //Items, Slides
-  .single_media_item-item, .slideshow-slide, .portrait_and_landscape-landscape_with_right_portrait, .portrait_and_landscape-landscape_with_left_portrait, .portrait_and_landscape-left_portrait, .portrait_and_landscape-right_portrait, .grid-item{
-    position: relative; 
-    display: inline-block;
-    overflow: hidden;
-    color: $color-white;
-    text-decoration: none;
-    transition: .1s box-shadow;
-    &:hover{
-      box-shadow: $box-shadow-standard;
-    }
-
-    //All Child Elements
-    & > div {
-      position: absolute;
-      width: 100%
-    }
-
-    //Image
-    .item-image, .slide-image, .landscape_with_right_portrait-image, .landscape_with_left_portrait-image, .left_portrait-image, .right_portrait-image{
-      height: 100%;
-      .image-the_image{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    //Caption
-    .item-caption, .slide-caption, .landscape_with_left_portrait-caption, .landscape_with_right_portrait-caption, .left_portrait-caption, .right_portrait-caption{
-      bottom: 0;
-      background: $color-dark_blue_gradient;
-    }
-
-    //Icons
-    .item-play_icon, .item-pdf_icon, .landscape_with_left_portrait-pdf_icon, .landscape_with_right_portrait-pdf_icon, .landscape_with_left_portrait-pdf_icon, .landscape_with_right_portrait-play_icon,  .left_portrait-play_icon, .right_portrait-pdf_icon{
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      position: absolute;
-      &:before{
-        @include fa-icon();
-        text-shadow: 1px 1px 30px rgba(0,0,0,.4);
-      }
-      &:active{
-        opacity: .7;
-      }
-      @media only screen and (max-width: $screen-smaller){
-    	  font-size: 3em !important;
-      }
-    }
-    .item-pdf_icon, .portrait-pdf_icon, .landscape-pdf_icon{
-      &:before{
-        content: $fa-var-file-pdf-o;
-      }
-    }
-    .item-play_icon, .portrait-play_icon, .landscape-play_icon{
-      &:before{
-        content: $fa-var-play-circle-o;
-      }
-    }
- 
-  }
-  
 }
 
 //Grid
@@ -329,36 +273,63 @@
   //Grid Items
   .grid-item{
     width: 32.66666667%;
-    @include responsive-image_padding_bottom(302); 
     background: $color-blue;
     margin-bottom: 1%;
     margin-right: 1%;
+    @include media-item();
     &:nth-of-type(3n), &:last-of-type{
       margin-right: 0;
     }
     @media only screen and (min-width: $screen-smallest) and (max-width: $screen-smaller){
-      width: 49.5%;
-      @include responsive-image_padding_bottom(201); 
+      width: 48.5%;
+      &:nth-of-type(3n), &:last-of-type{
+        margin-right: 1%;
+      }
     }
     @media only screen and (max-width: $screen-smallest){
   	  width: 100% !important;
-      @include responsive-image_padding_bottom(100); 
+  	  margin-right: 0!important;
+  	  margin-bottom: 10px;
+    }
+    
+    //Image
+    .item-image{
+      @include media-image();
     }
     
     //Caption
     .item-caption {
       @include responsive-smallest_standard_font();
       padding: $cell-smallest;
+      @include media-caption();
       @media only screen and (max-width: $screen-smaller){
     	  padding: $cell-smallest/2;
       }
     }    
     
+    //Set Height of Items
+    .item-height{
+      padding-bottom: $image-base_height;
+    }
+    
     //Icon
     .item-pdf_icon, .item-play_icon, {
       font-size: 4.5em;
+      @include media-icon();
     }
+    .item-pdf_icon{
+      &:before{
+        content: $fa-var-file-pdf-o;
+      }
+    }
+    .item-play_icon{
+      &:before{
+        content: $fa-var-play-circle-o;
+      }
+    }
+    
   }
+  
 }
 
 //Portrait and Landscape
@@ -371,22 +342,45 @@
   .portrait_and_landscape-landscape_with_right_portrait, .portrait_and_landscape-landscape_with_left_portrait,
   .portrait_and_landscape-left_portrait, .portrait_and_landscape-right_portrait{
     @include responsive-image_padding_bottom(146); 
-
+    @include media-item();
+    
+    //Image
+    .landscape_with_right_portrait-image, .landscape_with_left_portrait-image, .left_portrait-image, .right_portrait-image{
+      @include media-image();
+    }    
     
     //Caption
     .landscape_with_left_portrait-caption, .landscape_with_right_portrait-caption, .left_portrait-caption, .right_portrait-caption{
       @include responsive-smaller_standard_font();
       padding: $cell-smaller;
+      @include media-caption();
       @media only screen and (max-width: $screen-smaller){
     	  padding: $cell-smaller/2;
       }
     }
+
+    //Icon
+    .landscape_with_left_portrait-pdf_icon, .landscape_with_right_portrait-pdf_icon, .landscape_with_left_portrait-pdf_icon, .landscape_with_right_portrait-play_icon,  .left_portrait-play_icon, .right_portrait-pdf_icon {
+      font-size: 4.5em;
+      @include media-icon();
+    }
+    .landscape_with_left_portrait-pdf_icon, .landscape_with_right_portrait-pdf_icon, .landscape_with_left_portrait-pdf_icon{
+      &:before{
+        content: $fa-var-file-pdf-o;
+      }
+    }
+    .landscape_with_right_portrait-play_icon, .left_portrait-play_icon, .right_portrait-pdf_icon{
+      &:before{
+        content: $fa-var-play-circle-o;
+      }
+    }    
     
   }
   
   //Landscape (All)
   .portrait_and_landscape-landscape_with_right_portrait, .portrait_and_landscape-landscape_with_left_portrait{
     width: 68.2771855%;
+    
   }
   
   //Landscape (Portrait Right)
@@ -418,11 +412,18 @@
   //Item
   .single_media_item-item{
     width: 100%;
+    @include media-item();
     @include responsive-image_padding_bottom(100); 
+
+    //Image
+    .item-image{
+      @include media-image();
+    }
 
     //Caption
     .item-caption{
       @include responsive-standard_font();
+      @include media-caption();
       padding: $cell-smaller;
       @media only screen and (max-width: $screen-smaller){
     	  padding: $cell-smaller/2;
@@ -432,8 +433,21 @@
     //Icons
     .item-play_icon, .item-pdf_icon{
       font-size: 7.5em;
+      @include media-icon();
     }
+    .item-pdf_icon{
+      &:before{
+        content: $fa-var-file-pdf-o;
+      }
+    }
+    .item-play_icon{
+      &:before{
+        content: $fa-var-play-circle-o;
+      }
+    }
+
   }
+  
 }
 
 //Slideshow
@@ -444,11 +458,17 @@
   
   //Item
   .slideshow-slide{
+    @include media-item();
     position: absolute;
     width: 100%;
     @include responsive-image_padding_bottom(100); 
     @media only screen and (max-width: $screen-smallest){
   	  width: 100% !important;
+    }
+    
+    //Image
+    .slide-image{
+      @include media-image();
     }
 
     //Caption
@@ -456,6 +476,7 @@
       font: $font-smallest_standard;
       padding: $cell-smaller;
       z-index: 2;
+      
       @media only screen and (max-width: $screen-smaller){
     	  padding: $cell-smaller/2;
       }
