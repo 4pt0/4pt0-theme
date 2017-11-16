@@ -23,6 +23,7 @@ if( get_field('content_display') == 'Segmented Page' && have_rows('segments') ):
     get_template_part('template_parts/segment', 'background');
     get_template_part('template_parts/segment', 'one_column');
     get_template_part('template_parts/segment', 'two_column');
+    get_template_part('template_parts/segment', 'timeline');
     get_template_part('template_parts/segment', 'button');
     get_template_part('template_parts/segment', 'scroll_icon'); //Unique for 4.0 Website
     ?>

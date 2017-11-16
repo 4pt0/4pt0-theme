@@ -263,6 +263,130 @@
       
 }
 
+//Timeline
+.segment-timeline{
+  position: relative;
+  @include responsive-standard_padding();    
+  overflow: scroll;
+  
+  //Markers
+  .timeline-markers{
+    display: flex;
+    
+    //Single Marker
+    .markers-single_marker{
+      position: relative;
+      border-top: $cell-smallest solid $color-dark_gray;
+      padding: $cell-smaller;
+      min-width: 280px;
+      max-width: 320px;
+      &:before{
+        position: absolute;
+        top: -22px;
+        content: '•';
+        color: $color-dark_gray;
+        border-radius: 999999999px;
+        background: $color-dark_gray;
+        display: inline-block;
+        width: $cell-smaller;
+        height: $cell-smaller;
+      }
+      
+      //The Marker
+      .single_marker-the_marker{
+        .the_marker-text{
+          color: $color-dark_gray;
+        }
+      }
+      
+      //Marker Content
+      .single_marker-content{
+        
+        .content-marker_title, .content-marker_body, .content-marker_link{
+          margin-top: $cell-smallest;
+        } 
+        .content-marker_title{
+          font: $font-smaller_standard;
+        }
+        .content-marker_body{
+          font: $font-smallest_standard;
+        }
+        .content-marker_link{
+          display: block;
+        }
+      }
+      
+      //Make Marker Accomplished
+      &.make_accomplished{
+        border-color: $color-orange !important;
+        &:before{
+          color: $color-orange;
+          background: $color-orange;
+        }
+        .single_marker-the_marker{
+          .the_marker-text{
+            color: $color-orange;
+          }
+        }
+      }
+      
+    }
+    
+  }
+  
+  //Make Timeline Vertical
+  &.make_vertical{
+    max-width: 670px;
+    margin: 0 auto;
+    overflow: visible;
+    .timeline-markers{
+      flex-direction: column;
+      margin-left: 320px;
+      .markers-single_marker{
+        border-top: 0;
+        border-left: $cell-smallest solid $color-dark_gray;
+        padding: $cell-smaller;
+        min-width: 280px;
+        max-width: 320px;
+        &:before{
+          top: 10px;
+          left: -21px;
+        }          
+        &:nth-of-type(even){
+          left: -306px;
+          text-align: right;
+          border-right: $cell-smallest solid $color-dark_gray;;
+          border-left: 0;
+          &:before{
+            right: -21px;
+            left: initial;
+          }
+        }        
+      }         
+    }
+
+    @media only screen and (max-width: 680px){
+  	  .timeline-markers{
+    	  margin-left: 0;
+    	  .markers-single_marker{
+      	  &:nth-of-type(even){
+        	  left: 0;
+        	  border-left: $cell-smallest solid $color-dark_gray;
+        	  border-right: 0;
+        	  text-align: left;
+            &:before{
+              right: initial;
+              left: -21px;
+            }
+      	  }
+        }
+  	  }
+    }    
+
+  }
+  
+}
+
 //Button
 .segment-button{
   @include responsive-standard_padding();
